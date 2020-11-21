@@ -77,7 +77,7 @@ author:
 footer:
   links:
     - label: "Linkedin"
-      icon: "fab fa-fw fa-link"
+      icon: "fas fa-fw fa-link"
       url: "https://www.linkedin.com/in/james-hay-1974a0123/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
