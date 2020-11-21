@@ -1,6 +1,6 @@
 ---
 title: "Diablo on Linux"
-date: 2020-11-22
+date: 2019-07-03
 categories:
   - projects
   
@@ -50,7 +50,7 @@ Obviously we want to actually generate our files so we can compile the game.
 
 Once this is done run ````make```` which will take about two or so minutes, then copy your diabdat.mpq file which you put into a safe place into the build folder, and run devilutionx
 
-It takes literal minutes following this recipe.. but the errors were numerous when I was fumbling my way through this process half cut and on a distro entirely unsuited for anything other than boot2roots.
+It takes literal minutes following this recipe.. but the errors were numerous when I was fumbling my way through this process half cut and on a distro entirely unsuited for anything other than boot2roots, literally one day after the video from MVG was uploaded; there was no one else doing this then.
 
 TA DA
 
