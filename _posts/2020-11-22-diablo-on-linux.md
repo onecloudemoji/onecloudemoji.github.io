@@ -30,7 +30,7 @@ Ironically the toolset was larger than the game..
 
 - Clone the [github repo](https://github.com/diasurgical/devilutionX)
 - Enter build directory
-- ccmake ..
+- ````ccmake ..````
 
 This will bring up the ccmake, the user interface for cmake. Rather friendly in all honesty.
 
