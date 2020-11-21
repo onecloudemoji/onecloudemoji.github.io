@@ -60,7 +60,9 @@ TA DA
 
 mfw my at the time senior was very impressed that I had acomplished this, while my coworker who had to pick up all the slack was inordinately upset with my work ethic for the day
 
-![homer](/assets/images/diablo/devilhomer.gif)
+<p align="center">
+  <img src="/assets/images/diablo/devilhomer.gif" />
+</p>
 
 
 
