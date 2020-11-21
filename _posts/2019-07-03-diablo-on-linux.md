@@ -19,9 +19,9 @@ Obviously this is no where near as cool as MVG porting it to a damn switch, nor 
 
 The simplified cookbook is as follows:
 
-- Obtain GOG Diablo
+- Obtain diabdat.mpq
 - Copy diabdat.mpq to a safe place
-That has our assets. That is the soul.
+That has our assets. That is the soul. Also it simply will not run without the file.
 - Install the following packages
 
 ````cmake g++ libsdl2-dev libsdl2-mixer-dev libsdl2-ttf-dev libsodium-dev cmake-curses-gui````
@@ -48,7 +48,9 @@ Press c again whilst in the config screen to have the generate option appear
 
 Obviously we want to actually generate our files so we can compile the game.
 
-Once this is done run ````make```` which will take about two or so minutes, then copy your diabdat.mpq file which you put into a safe place into the build folder, and run devilutionx
+Once this is done run ````make```` which will take about two or so minutes, then copy your diabdat.mpq file which you put into a safe place into the build folder. Make sure you rename it with entirely lowercase characters, because it says so.
+
+Now we run devilutionx and feel like a goddamn Sorcerer. Although I do not recommend that class if you havent played the game in a while; skill is necessary.
 
 It takes literal minutes following this recipe.. but the errors were numerous when I was fumbling my way through this process half cut and on a distro entirely unsuited for anything other than boot2roots, literally one day after the video from MVG was uploaded; there was no one else doing this then.
 
