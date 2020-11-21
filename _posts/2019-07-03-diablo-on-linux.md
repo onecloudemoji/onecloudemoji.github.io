@@ -46,9 +46,9 @@ Press c again whilst in the config screen to have the generate option appear
 
 ![config2](/assets/images/diablo/configure2.jpg)
 
-Obviously we want to actually generate our files so we can compile the game.
+Obviously we want to actually generate our files so we can compile the game, so press g.
 
-Once this is done run ````make```` which will take about two or so minutes, then copy your diabdat.mpq file which you put into a safe place into the build folder. Make sure you rename it with entirely lowercase characters, because it says so.
+Once this is done, run ````make```` which will take about two or so minutes, then copy your diabdat.mpq file which you put into a safe place into the build folder. Make sure you rename it with entirely lowercase characters, because it says so.
 
 Now we run devilutionx and feel like a goddamn Sorcerer. Although I do not recommend that class if you havent played the game in a while; skill is necessary.
 
