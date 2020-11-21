@@ -44,7 +44,7 @@ Press c to enter the configuration screen.
 
 Press c again whilst in the config screen to have the generate option appear
 
-![config2](/assets/images/diablo/configure2/jpg)
+![config2](/assets/images/diablo/configure2.jpg)
 
 Obviously we want to actually generate our files so we can compile the game.
 
