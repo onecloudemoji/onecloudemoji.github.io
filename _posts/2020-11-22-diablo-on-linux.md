@@ -10,9 +10,9 @@ tags:
   - linux
 ---
 
-One drive home from my ok-in-retrospect-but-very-awful-at-the-time-job I came across [this video] (https://www.youtube.com/watch?v=5tADL_fmsHQ). I am not a fan of podcasts; I find youtube videos are always of a higher quality so I like to listen to them like one would a podcast. Eventually it brings to my attention that the Japanese PS1 Diablo port has some source code elements on the disk; a debug symbols file. How this was found is a good question. This file was coupled with more debug info found inside the MPQ archive on the PC version (debug version of the exe with insertion statments), along with 1000 hours of effort to produce a reverse engineered copy of the source. More akin to the [Pokemon Red Disassembly Project] (https://github.com/pret/pokered) than just stumbling upon the source ala [this terrible PS1 game which just had the source on the damn disk inside a renamed RAR file] (https://tcrf.net/360:_Three_Sixty).
+One drive home from my ok-in-retrospect-but-very-awful-at-the-time-job I came across [this video](https://www.youtube.com/watch?v=5tADL_fmsHQ). I am not a fan of podcasts; I find youtube videos are always of a higher quality so I like to listen to them like one would a podcast. Eventually it brings to my attention that the Japanese PS1 Diablo port has some source code elements on the disk; a debug symbols file. How this was found is a good question. This file was coupled with more debug info found inside the MPQ archive on the PC version (debug version of the exe with insertion statments), along with 1000 hours of effort to produce a reverse engineered copy of the source. More akin to the [Pokemon Red Disassembly Project](https://github.com/pret/pokered) than just stumbling upon the source ala [this terrible PS1 game which just had the source on the damn disk inside a renamed RAR file](https://tcrf.net/360:_Three_Sixty).
 
-Obviously this is no where near as cool as MVG porting it to a damn switch, nor is this especially unique, but I wanted to do it, so off I went to do it. It took me one work day (minus one very long and very boozy lunch with my [hacking homie] (https://kymb0.github.io/) to move through all the different, seemingly unconnected issues I was having. Yes, this looks very, very simple. But when I went through this
+Obviously this is no where near as cool as MVG porting it to a damn switch, nor is this especially unique, but I wanted to do it, so off I went to do it. It took me one work day (minus one very long and very boozy lunch with my [hacking homie](https://kymb0.github.io/) to move through all the different, seemingly unconnected issues I was having. Yes, this looks very, very simple. But when I went through this
 
 - there was no existing Linux template
 - I was doing it on Kali Linux because reasons
@@ -28,7 +28,7 @@ That has our assets. That is the soul.
 
 Ironically the toolset was larger than the game..
 
-- Clone the [github repo] (https://github.com/diasurgical/devilutionX)
+- Clone the [github repo](https://github.com/diasurgical/devilutionX)
 - Enter build directory
 - ccmake ..
 
