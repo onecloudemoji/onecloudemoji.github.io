@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   A dumping ground of things. Site is not guaranteed to provide value.
 twitter_username: username
 github_username: onecloudemoji
-minimal_mistakes_skin: default
+minimal_mistakes_skin: "neon"
 search: true
 
 # Build settings
