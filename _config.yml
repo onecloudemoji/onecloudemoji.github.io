@@ -58,7 +58,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "James Hay | OSCP"
+  name   : "James Hay"
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Hello, my friend. Stay a while and listen."
   location    : "Hyperbolic Time Chamber"
