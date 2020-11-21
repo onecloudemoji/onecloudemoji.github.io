@@ -21,7 +21,7 @@ twitter_username: username
 github_username: onecloudemoji
 minimal_mistakes_skin: "neon"
 search: true
-logo: "/assets/images/mylife.jpg
+logo: "/assets/images/mylife.jpg"
 
 # Build settings
 markdown: kramdown
