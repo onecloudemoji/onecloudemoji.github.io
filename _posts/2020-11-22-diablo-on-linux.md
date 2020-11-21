@@ -36,15 +36,15 @@ This will bring up the ccmake, the user interface for cmake. Rather friendly in 
 
 It will show the following; this is not an issue.
 
-IMAGE
+![cmake](/assets/images/diablo/cmake)
 
 Press c to enter the configuration screen.
 
-IMAGE
+![config1](/assets/images/diablo/configure1)
 
 Press c again whilst in the config screen to have the generate option appear
 
-IMAGE
+![config2](/assets/images/diablo/configure2)
 
 Obviously we want to actually generate our files so we can compile the game.
 
@@ -54,7 +54,7 @@ It takes literal minutes following this recipe.. but the errors were numerous wh
 
 TA DA
 
-IMAGE
+![diablo](/assets/images/diablo/diablo.png)
 
 
 
