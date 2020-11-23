@@ -29,11 +29,15 @@ IMAGE OF NETWORKS
 Install DC, and set it to one of those subnets. This machine will have only one NIC. Rename the machine (it will reboot), install AD Services, promote to domain controllrt, add a new forest and name it. I have chosen this name because I was halfcut on monster ultra (also known as /sips/) mixed with whisky because I had fuck all else.
 
 
-PS COMMAND TO RENAME MACHINE
+PS COMMAND TO RENAME MACHINE, TEST IF IT ASKS FOR AUTH WITH NO PW LOL
+Rename-Computer -NewName DC
+
 IMAGE OF ADS ADD AND FOREST AD
 
 
-Now we are going to create a user. This little guy will be the one to serve us apache. dsa.msc will bring up ADUC. I called my user testicles with the password testicles, set the password to never expire and prevent user from changing it. 
+Now we are going to create a user. This little guy will be the one to serve us apache. dsa.msc will bring up ADUC. I called my user testicles with the password testicles, set the password to never expire and prevent user from changing it. Here is a PS command to do the same thing for the domain; the /domain switch says to not make him a local account on DC.
+
+````net user testicles testicles /ADD /DOMAIN````
 
 create service account
 add spn
@@ -45,7 +49,8 @@ Create a new VM for WS (you are free to name these as you wish, I am not your ro
 
 Once it has installed, rename the new machine, join it to the domain. Here is some PS to get it on. It also works by going control panel, system, etc. 
 
-PS COMMAND AND WELCOME TO DOMAIN IMAGE
+````Rename-Computer -NewName "WS" -DomainCredential dirty_sprite\administrator -Restart````
+````Add-Computer -DomainName dirty_sprite -Restart````
 
 Next we want to download WAMP, because this is much, much easier than doing it seperatley. Before you install it, install these runtimes (assuming you have a raw R2 installation and not a patched/slipstreamed version)
 https://www.microsoft.com/en-au/download/details.aspx?id=40784
@@ -54,26 +59,32 @@ https://www.microsoft.com/en-au/download/details.aspx?id=30679
 We are good to install.
 
 edit conf to put ip into listener
+GET CLEAR INSTRUCTIONS FOR THIS
+
 add a rule in fw for 80 and 3306
+TEST IF THE WEB SERVER WILL STILL PUNCH A HOLE IF YOU DO NOT OPEN THESE PROTS?
 
 edit the http-vhost conf to add this
 Require all granted
 as per https://stackoverflow.com/questions/89118/apache-gives-me-403-access-forbidden-when-documentroot-points-to-two-different-d
+GET MORE INSTRUCTIONS
+
 
 Obviously this is a super retarded idea in the real world, but for our lab to demonstrate a technique and provide a vector we will allow remote access from ANY host to user root. Who has no password. Run mysql and feed it this:
 
-create user 'root'@'%' identified by '';
+PUT INSTRUCTIONS ON HOW TO OPEN A SHELL
+````create user 'root'@'%' identified by '';
 grant all privileges on *.* to 'root'@'%'
-with grant option;
+with grant option;````
 
 It reads easy enough; create user root at any location, identified by nothing, give access to everything on everything to root from any location with the grant option.
 
 But wait! Why are we creating root when we logged into sql to run these commands as root? Well turns out that localhost root and a remote location root are actually two seperate accounts! The root you used to create the remote root are infact two seperate accounts. So when remote root pwns the network, it wont be your account who did it. Technically. 
 
-Next we will make an amendment to the mysql configuration file to allow us to use the insert into outfile command. Edit C:\wamp64\bin\mysql\mysql5.7.31\my.conf and edit the secure_file_priv to = ""
+Next we will make an amendment to the mysql configuration file to allow us to use the insert into outfile command. Edit ````C:\wamp64\bin\mysql\mysql5.7.31\my.conf```` and edit the secure_file_priv to = ""
 secure_file_priv=""
 
-Download setacl from https://helgeklein.com/download/
+Download setacl from [https://helgeklein.com/download/](https://helgeklein.com/download/)
 
 What this program will do is give our user testicles the ability to start and stop the apache and sql services. On windows these services can only be started and stopped by an admin (in pure honesty I am unsure if it is the same on linux, I just know when you catch apache shells they are www-data usually, rather than an admin)
 
@@ -85,9 +96,9 @@ setacl.exe -on "wampmariadb64" -ot srv -ace "n:testicles;p:start_stop,read" -act
 
 Give testicles full control over the wamp folder, otherwise you get "ah00015 unable to open logs" when you try start the services after giving control of them to your new user.
 
-Pull up services.msc, right click, properties on mysql.
-logon as user testicles who has no admin access
-restart services
+Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to EVERYWHERE, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. Restart the services, and you will see the status change to Running. 
+
+If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps.
 
 So now we have a basic lab setup. What can we do now we have made these strange esoteric changes? 
 - Remote access to SQL
@@ -97,4 +108,6 @@ So now we have a basic lab setup. What can we do now we have made these strange 
 
 There is plenty here to play with; its  a nice little playground for various forms of experimentation. There are many methods of escalating and moving around the domain, with and without metasploit. This post will not cover those however; this is strictly for how to build the lab. Some various ways to attack the lab will be detailed [here](link to page)
 
-INSERT GIF
+Congratulations you have built some infrastructure.
+
+![dance](/assets/images/pivotinglab/5A6BCEDA-C9C3-4744-B875-7405FC416319.gif)
