@@ -9,7 +9,9 @@ tags:
   - Pivoting
 ---
 
-Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infrastructure/sysadmin skills. For the forseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it. 
+Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infrastructure/sysadmin skills. For the forseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it and continue to excel.
+
+![career](/assets/images/pivotinglab/AAACE678-D4F5-4912-B759-A3A67EB8DF38.jpeg) 
 
 The second is I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab environment. I want to deploy disgusting malware, perform phishing using [user automation frameworks to simulate little beanbags](https://github.com/lorentzenman/sheepl) who fall (or not!) for my scans, and perhaps most of all I want to feel secure in the knowledge some dickhead isn't going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](https://0xdf.gitlab.io/2018/09/08/htb-poison.html)
 
