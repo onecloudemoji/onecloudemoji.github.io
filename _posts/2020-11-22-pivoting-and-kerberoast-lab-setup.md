@@ -93,9 +93,11 @@ What this program will do is give our user testicles the ability to start and st
 
 Run the following to allow testicles to start the services
 
-````setacl.exe -on "wampapache64" -ot srv -ace "n:testicles;p:start_stop,read" -actn ace
-setacl.exe -on "wampmysqld64" -ot srv -ace "n:testicles;p:start_stop,read" -actn ace
-setacl.exe -on "wampmariadb64" -ot srv -ace "n:testicles;p:start_stop,read" -actn ace````
+````setacl.exe -on "wampapache64" -ot srv -ace "n:testicles;p:start_stop,read" -actn ace````
+
+````setacl.exe -on "wampmysqld64" -ot srv -ace "n:testicles;p:start_stop,read" -actn ace````
+
+````setacl.exe -on "wampmariadb64" -ot srv -ace "n:testicles;p:start_stop,read" -actn ace````
 
 Give testicles full control over the wamp folder, otherwise you get "ah00015 unable to open logs" when you try start the services after giving control of them to your new user.
 
