@@ -9,20 +9,18 @@ tags:
   - Pivoting
 ---
 
-Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infra/sysadmin skills. For the forseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it. 
+Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infrastructure/sysadmin skills. For the forseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it. 
 
-The second is simply I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab. I want to deploy disgusting malware, perform phishing using [user automation frameworks to simulate little beanbags](https://github.com/lorentzenman/sheepl) who fall (or not!) for my scans, and perhaps most of all, I want to feel secure in the knowledge some dickhead isnt going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](https://0xdf.gitlab.io/2018/09/08/htb-poison.html)
+The second is I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab environment. I want to deploy disgusting malware, perform phishing using [user automation frameworks to simulate little beanbags](https://github.com/lorentzenman/sheepl) who fall (or not!) for my scans, and perhaps most of all I want to feel secure in the knowledge some dickhead isn't going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](https://0xdf.gitlab.io/2018/09/08/htb-poison.html)
 
 ![fun](/assets/images/pivotinglab/21B4DCC9-54FE-48C7-8F1D-E7468FD42F60.gif)
 A visual representation of the feeling of having your box kicked.
 
-This first exercise will be a fairly simple double purpose lab; a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
+This first exercise will be a fairly simple dual purpose lab; for the red pill we have a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and with the blue pill we have an environment to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
 
-To ease ourselves into the process of hax0rman again (as I have realistically not done any serious works in the pentesting space since passing my OSCP on 11/22/19), we will use server 2012 R2. This opens up a slew of attacks to us, and is new enough to support some of the quality of life features I find missing from earlier server versions.
+To ease ourselves into the process of hax0rman again (as I have realistically not done any serious works in the pentesting space since passing my OSCP on 11/22/19), we will use server 2012 R2. This opens up a slew of attacks to us since it really is just 2008 in disguise.
 
-
-newfeature image
-
+![disguise](/assets/images/pivotinglab/C39C5724-BAAE-4B21-9504-E3938096AD9E.gif)
 
 This will not walk you through how to install a VM. If you need THAT sort of handholding, this might not be the type of article you are ready for. [Try](https://www.freecodecamp.org/news/what-is-a-virtual-machine-and-how-to-setup-a-vm-on-windows-linux-and-mac/) [one](https://www.howtogeek.com/196060/beginner-geek-how-to-create-and-use-virtual-machines/) [of](https://lifehacker.com/how-to-set-up-a-virtual-machine-for-free-1828969527) [these](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine) [links](https://kb.vmware.com/s/article/1018415) [for](https://www.virtualbox.org/manual/ch01.html) [help](https://www.dnsstuff.com/how-to-set-up-and-configure-virtual-machine-server) [on](https://www.lifewire.com/how-to-create-virtual-machine-windows-10-4770680) [setting](https://www.zdnet.com/article/windows-10-tip-quickly-create-a-virtual-machine-to-test-new-features/) [up](https://www.groovypost.com/howto/create-virtual-machine-windows-10-hyper-v/) [vms](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
@@ -70,6 +68,11 @@ PUT COMMAND USED IN HERE
 
 PHOTOS OF SUCCESSFUL ADD
 
+Halfway through. Taking a snapshot of the DC at this point is not a good idea just FYI; the webserver isnt in AD and I cant attest to what will happen if you restore the WS who thinks it is in AD to this DC state which is not. I may try and report back.
+
+
+![ad_abuse](/assets/images/pivotinglab/23C74A94-4915-4A5C-AA7A-66C887412FD7.gif)
+What I expect to happen
 
 Create a new VM for WS (you are free to name these as you wish, I am not your robot supervisor), give this two NICs, set one to the same subnet as the DC and the other one to your "public" network. 
 
