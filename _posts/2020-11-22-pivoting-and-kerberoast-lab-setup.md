@@ -24,9 +24,12 @@ To ease ourselves into the process of hax0rman again (as I have realistically no
 
 This will not walk you through how to install a VM. If you need THAT sort of handholding, this might not be the type of article you are ready for. [Try](https://www.freecodecamp.org/news/what-is-a-virtual-machine-and-how-to-setup-a-vm-on-windows-linux-and-mac/) [one](https://www.howtogeek.com/196060/beginner-geek-how-to-create-and-use-virtual-machines/) [of](https://lifehacker.com/how-to-set-up-a-virtual-machine-for-free-1828969527) [these](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine) [links](https://kb.vmware.com/s/article/1018415) [for](https://www.virtualbox.org/manual/ch01.html) [help](https://www.dnsstuff.com/how-to-set-up-and-configure-virtual-machine-server) [on](https://www.lifewire.com/how-to-create-virtual-machine-windows-10-4770680) [setting](https://www.zdnet.com/article/windows-10-tip-quickly-create-a-virtual-machine-to-test-new-features/) [up](https://www.groovypost.com/howto/create-virtual-machine-windows-10-hyper-v/) [vms](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
+![network_diagram](/assets/images/pivotinglab/network_diag.png)
+
 Two vms (one domain controller, one web server), one domain, two private networks. "Public" access will be through the web server (WS) who has two NICs; one touching the domain controller (DC) and one for regular access. I say "public" because we will put these on host only networks with no real internet access. Feel free to be a rebel and expose these to the real world, I wont stop you; I will genuinely laugh if something bad happens though. 
 
-![network_diagram](/assets/images/pivotinglab/network_diag.png)
+![sideshowboblaugh](/assets/images/pivotinglab/5360752F-2E99-4B7C-88DC-614BB78DB872.gif)
+
 
 Set up your VM adapters so we have two different private networks; the addresses are arbitrary and I have already forgotten what strange rationale I had for the specific scopes I chose. 
 
