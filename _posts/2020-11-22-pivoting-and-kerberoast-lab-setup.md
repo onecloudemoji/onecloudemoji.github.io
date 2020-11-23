@@ -84,8 +84,8 @@ It reads easy enough; create user root at any location, identified by nothing, g
 
 But wait! Why are we creating root when we logged into sql to run these commands as root? Well turns out that localhost root and a remote location root are actually two seperate accounts! The root you used to create the remote root are infact two seperate accounts. So when remote root pwns the network, it wont be your account who did it. Technically. 
 
-Next we will make an amendment to the mysql configuration file to allow us to use the insert into outfile command. Edit ````C:\wamp64\bin\mysql\mysql5.7.31\my.conf```` and edit the secure_file_priv to = ""
-secure_file_priv=""
+Next we will make an amendment to the mysql configuration file to allow us to use the insert into outfile command. Edit ````C:\wamp64\bin\mysql\mysql5.7.31\my.conf```` and edit the secure_file_priv to = "" like so
+````secure_file_priv=""````
 
 Download setacl from [https://helgeklein.com/download/](https://helgeklein.com/download/)
 
