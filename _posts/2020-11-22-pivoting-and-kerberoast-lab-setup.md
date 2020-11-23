@@ -11,7 +11,7 @@ tags:
 
 Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infra/sysadmin skills. For the forseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it. 
 
-The second is simply I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab. I want to deploy disgusting malware, perform phishing using [user automation frameworks to simulate little beanbags](https://github.com/lorentzenman/sheepl) who fall (or not!) for my scans, and perhaps most of all, I want to feel secure in the knowledge some dickhead isnt going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](poison HTB link)
+The second is simply I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab. I want to deploy disgusting malware, perform phishing using [user automation frameworks to simulate little beanbags](https://github.com/lorentzenman/sheepl) who fall (or not!) for my scans, and perhaps most of all, I want to feel secure in the knowledge some dickhead isnt going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](https://0xdf.gitlab.io/2018/09/08/htb-poison.html)
 
 This first exercise will be a fairly simple double purpose lab; a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
 
@@ -19,11 +19,11 @@ To ease ourselves into the process of hax0rman again (as I have realistically no
 
 This will not walk you through how to install a VM. If you need THAT sort of handholding, this might not be the type of article you are ready for. [Try](https://www.freecodecamp.org/news/what-is-a-virtual-machine-and-how-to-setup-a-vm-on-windows-linux-and-mac/) [one](https://www.howtogeek.com/196060/beginner-geek-how-to-create-and-use-virtual-machines/) [of](https://lifehacker.com/how-to-set-up-a-virtual-machine-for-free-1828969527) [these](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine) [links](https://kb.vmware.com/s/article/1018415) [for](https://www.virtualbox.org/manual/ch01.html) [help](https://www.dnsstuff.com/how-to-set-up-and-configure-virtual-machine-server) [on](https://www.lifewire.com/how-to-create-virtual-machine-windows-10-4770680) [setting](https://www.zdnet.com/article/windows-10-tip-quickly-create-a-virtual-machine-to-test-new-features/) [up](https://www.groovypost.com/howto/create-virtual-machine-windows-10-hyper-v/) [vms](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
-Two vms (one domain controller, one web server), one domain, two private networks. "Public" access will be through the web server (WS) who has two NICs; one touching the domain controller (DC) an one for regular access. I say "public" because we will put these on host only networks with no real internet access. Feel free to be a rebel and expose these to the real world, I wont stop you. 
+Two vms (one domain controller, one web server), one domain, two private networks. "Public" access will be through the web server (WS) who has two NICs; one touching the domain controller (DC) an one for regular access. I say "public" because we will put these on host only networks with no real internet access. Feel free to be a rebel and expose these to the real world, I wont stop you; I will genuinely laugh if something bad happens though. 
 
 ![network_diagram](/assets/images/pivotinglab/network_diag.png)
 
-Set up your VM adapters so we have two different private networks; the addresses are arbritray and I have already forgotten what strange rationale I had for the specific numbers I chose.
+Set up your VM adapters so we have two different private networks; the addresses are arbritray and I have already forgotten what strange rationale I had for the specific scopes I chose.
 
 IMAGE OF NETWORKS
 
@@ -86,12 +86,12 @@ It reads easy enough; create user root at any location, identified by nothing, g
 
 But wait! Why are we creating root when we logged into sql to run these commands as root? Well turns out that localhost root and a remote location root are actually two seperate accounts! The root you used to create the remote root are infact two seperate accounts. So when remote root pwns the network, it wont be your account who did it. Technically. 
 
-Next we will make an amendment to the mysql configuration file to allow us to use the insert into outfile command. Edit ````C:\wamp64\bin\mysql\mysql5.7.31\my.conf```` and edit the secure_file_priv to = "" like so
+Next we will make an amendment to the mysql configuration file to allow us to use the insert into outfile command. Edit ````C:\wamp64\bin\mysql\mysql5.7.31\my.conf```` and edit the ````secure_file_priv```` to ````=""```` like so
 ````secure_file_priv=""````
 
 Download setacl from [https://helgeklein.com/download/](https://helgeklein.com/download/)
 
-What this program will do is give our user testicles the ability to start and stop the apache and sql services. On windows these services can only be started and stopped by an admin (in pure honesty I am unsure if it is the same on linux, I just know when you catch apache shells they are www-data usually, rather than an admin)
+What this program will do is give our dear old testicles the ability to start and stop the apache and sql services. On windows these services can only be started and stopped by an admin (in pure honesty I am unsure if it is the same on linux, I just know when you catch apache shells they are www-data usually, rather than an admin).
 
 Run the following to allow testicles to start the services
 
@@ -101,11 +101,13 @@ Run the following to allow testicles to start the services
 
 ````setacl.exe -on "wampmariadb64" -ot srv -ace "n:testicles;p:start_stop,read" -actn ace````
 
-Give testicles full control over the wamp folder, otherwise you get "ah00015 unable to open logs" when you try start the services after giving control of them to your new user.
+Give testicles full control over the base wamp folder, otherwise you get "ah00015 unable to open logs" when you try start the services after giving control of them to your new user. I right clicked the folder and in the security tab of properties did it that way. Trying to find a PS method was taking too long when its about three clicks to acheive this. If you find a self contained one liner, do let me know.
 
 Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to EVERYWHERE, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. Restart the services, and you will see the status change to Running. 
 
-If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps.
+If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps. If neither of these help, youre on your own buddy.
+
+![help](/assets/images/pivotinglab/418F526D-1944-4FF0-AE82-8EDC67238465.gif)
 
 So now we have a basic lab setup. What can we do now we have made these strange esoteric changes? 
 - Remote access to SQL
