@@ -74,11 +74,11 @@ PUT COMMAND USED IN HERE
 
 PHOTOS OF SUCCESSFUL ADD
 
-Halfway through. Taking a snapshot of the DC at this point is not a good idea just FYI; the webserver isnt in AD and I cant attest to what will happen if you restore the WS who thinks it is in AD to this DC state which is not. I may try and report back.
+Wehave finished with the DC. Taking a snapshot of the DC at this point is not a good idea just FYI; the webserver isnt in AD and I cant attest to what will happen if you restore the WS who thinks it is in AD to this DC state which obvioudly does not have the machine we haven't created yet in its AD. I may try and report back.
 
 
 ![ad_abuse](/assets/images/pivotinglab/23C74A94-4915-4A5C-AA7A-66C887412FD7.gif)
-What I expect to happen
+What I expect to happen.
 
 Create a new VM for WS (you are free to name these as you wish, I am not your robot supervisor), give this two NICs, set one to the same subnet as the DC and the other one to your "public" network. 
 
