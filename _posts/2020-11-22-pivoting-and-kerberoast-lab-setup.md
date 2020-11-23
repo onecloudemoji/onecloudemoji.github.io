@@ -103,7 +103,7 @@ Edit the http-vhost conf (\wamp\bin\apache\apacheX.X.X\conf\extra) to add this
 
 in between the directory tags. Delete everything else in between the directory tags, as per [this guide](https://stackoverflow.com/questions/89118/apache-gives-me-403-access-forbidden-when-documentroot-points-to-two-different-d) From memory this was to fix it so I can view the apache server from my attack box, where as until I did this I could only see it from local host. The issues I encountered are very very different from when I did WAMP attacks on my local box for OSCP prep thats for sure..
 
-![thinky](/assets/images/pivotinglab/thinky.png)
+![thinky](/assets/images/pivotinglab/thnky.png)
 
 
 Next we do some things to the database. Obviously this is a super retarded idea in the real world, but for our lab to demonstrate a technique and provide a vector we will allow remote access from ANY host to user root. Who has no password. Open cmd in the folder your mysql exe is (wamp\bin\mysql\mysqlX.X.X\bin) and feed it this:
