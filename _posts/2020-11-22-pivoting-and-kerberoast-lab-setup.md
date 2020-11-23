@@ -17,8 +17,6 @@ The second is I wish to perform things in the labs that simply wouldn't fly in a
 
 ![fun](/assets/images/pivotinglab/21B4DCC9-54FE-48C7-8F1D-E7468FD42F60.gif)
 
-A visual representation of the feeling of having your box kicked.
-
 This first exercise will be a fairly simple dual purpose lab; for the red pill we have a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and with the blue pill we have an environment to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
 
 To ease ourselves into the process of hax0rman again (as I have realistically not done any serious works in the pentesting space since passing my OSCP on 11/22/19), we will use server 2012 R2. This opens up a slew of attacks to us since it really is just 2008 in disguise.
@@ -79,8 +77,6 @@ Wehave finished with the DC. Taking a snapshot of the DC at this point is not a 
 
 
 ![ad_abuse](/assets/images/pivotinglab/23C74A94-4915-4A5C-AA7A-66C887412FD7.gif)
-
-What I expect to happen.
 
 Create a new VM for WS (you are free to name these as you wish, I am not your robot supervisor), give this two NICs, set one to the same subnet as the DC and the other one to your "public" network. 
 
@@ -152,13 +148,12 @@ Give testicles full control over the base wamp folder, otherwise you get "ah0001
 ![tellmemore](/assets/images/pivotinglab/E6C5D755-6EAF-42AC-B1C6-878BF59603F1.jpeg)
 
 
-Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to EVERYWHERE, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. Restart the services, and you will see the status change to Running. 
+Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to EVERYWHERE, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. 
 
 ![sadlyseesaws.exe](/assets/images/pivotinglab/842CEF40-E5D1-4FAA-993C-5BB46C672289.gif)
 
-This is you if you set up your lab to auto win every time.
 
-If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps. If neither of these help, youre on your own buddy.
+Restart the services, and you will see the status change to Running. If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps. If neither of these help, youre on your own buddy.
 
 ![help](/assets/images/pivotinglab/418F526D-1944-4FF0-AE82-8EDC67238465.gif)
 
