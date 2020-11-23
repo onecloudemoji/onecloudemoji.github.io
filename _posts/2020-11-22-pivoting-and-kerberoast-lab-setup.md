@@ -145,6 +145,9 @@ Run the following to allow testicles to start the services
 
 Give testicles full control over the base wamp folder, otherwise you get "ah00015 unable to open logs" when you try start the services after giving control of them to your new user. I right clicked the folder and in the security tab of properties did it that way. Trying to find a PS method was taking too long when its about three clicks to acheive this. If you find a self contained one liner, do let me know.
 
+![tellmemore](/assets/images/pivotinglab/E6C5D755-6EAF-42AC-B1C6-878BF59603F1.jpeg)
+
+
 Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to EVERYWHERE, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. Restart the services, and you will see the status change to Running. 
 
 If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps. If neither of these help, youre on your own buddy.
