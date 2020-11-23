@@ -54,6 +54,7 @@ IMAGE OF ADS ADD AND FOREST AD
 
 I have chosen this name because I was halfcut on monster ultra (also known as /sips/) mixed with whisky because I wanted to try replicate this strange, extremley potent thing I had in Japan I got from Lawsons that had the texture and flavour of softdrink but with 9% alcohol per can. It came close and I got ripped real fast, so mission acomplished I guess.
 
+![crabjuice](/assets/images/pivotinglab/2092B4A7-3CD3-4DDA-A7FE-DB5C09D02404.jpeg)
 
 Now we are going to create a user. This little guy will be the one to serve us apache. dsa.msc will bring up ADUC. I called my user testicles with the password testicles, set the password to never expire and prevent user from changing it. Here is a PS command to do the same thing for the domain; the /domain switch says to not make him a local account on DC.
 
