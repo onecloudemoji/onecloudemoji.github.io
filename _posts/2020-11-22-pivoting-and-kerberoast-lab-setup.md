@@ -17,11 +17,11 @@ The second is I wish to perform things in the labs that simply wouldn't fly in a
 
 ![fun](/assets/images/pivotinglab/21B4DCC9-54FE-48C7-8F1D-E7468FD42F60.gif)
 
-This first exercise will be a fairly simple dual purpose lab; for the red pill we have a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and with the blue pill we have an environment to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
+This first exercise will be a fairly simple dual purpose lab; a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and an environment to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
 
-To ease ourselves into the process of hax0rman again (as I have realistically not done any serious works in the pentesting space since passing my OSCP on 11/22/19), we will use server 2012 R2. This opens up a slew of attacks to us since it really is just 2008 in disguise.
+To ease ourselves into the process of hax0rman again (as I have realistically not done any serious works in the pentesting space since passing my OSCP on 11/11/19), we will use server 2012 R2. This opens up a slew of attacks to us since it really is just 2008 in disguise.
 
-![disguise](/assets/images/pivotinglab/C39C5724-BAAE-4B21-9504-E3938096AD9E.gif)
+![disguise](/assets/images/pivotinglab/ELdtPPSWkAAjfP6.jpg)
 
 This will not walk you through how to install a VM. If you need THAT sort of handholding, this might not be the type of article you are ready for. [Try](https://www.freecodecamp.org/news/what-is-a-virtual-machine-and-how-to-setup-a-vm-on-windows-linux-and-mac/) [one](https://www.howtogeek.com/196060/beginner-geek-how-to-create-and-use-virtual-machines/) [of](https://lifehacker.com/how-to-set-up-a-virtual-machine-for-free-1828969527) [these](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine) [links](https://kb.vmware.com/s/article/1018415) [for](https://www.virtualbox.org/manual/ch01.html) [help](https://www.dnsstuff.com/how-to-set-up-and-configure-virtual-machine-server) [on](https://www.lifewire.com/how-to-create-virtual-machine-windows-10-4770680) [setting](https://www.zdnet.com/article/windows-10-tip-quickly-create-a-virtual-machine-to-test-new-features/) [up](https://www.groovypost.com/howto/create-virtual-machine-windows-10-hyper-v/) [vms](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
@@ -34,13 +34,9 @@ Two vms (one domain controller, one web server), one domain, two private network
 
 Set up your VM adapters so we have two different private networks; the addresses are arbitrary and I have already forgotten what strange rationale I had for the specific scopes I chose. 
 
-Install DC, and set it to one of those subnets. This machine will have only one NIC. Rename the machine (it will reboot), install AD Services, promote to domain controller, add a new forest and name it. 
+Install DC, and set it to one of those subnets. This machine will have only one NIC. If you didnt set a good password for your administrator account when building the VM, do that now. Rename the machine, install AD Services, promote to domain controller, add a new forest and name it. Run these in an elevated PS window.
 
-PS COMMAND TO RENAME MACHINE, TEST IF IT ASKS FOR AUTH WITH NO PW LOL
 ````Rename-Computer -NewName DC````
-
-
-TRY THIS AND SEE IF IT STICKS
 
 ````Install-windowsfeature AD-domain-services````
 
@@ -50,8 +46,8 @@ TRY THIS AND SEE IF IT STICKS
 
 ````Install-WindowsFeature RSAT-ADDS````
 
+![domain](/assets/images/pivotinglab/domain.png)
 
-IMAGE OF ADS ADD AND FOREST AD
 
 I have chosen this name because I was halfcut on monster ultra (also known as /sips/) mixed with whisky because I wanted to try replicate this strange, extremley potent thing I had in Japan I got from Lawsons that had the texture and flavour of softdrink but with 9% alcohol per can. It came close and I got ripped real fast, so mission acomplished I guess.
 
@@ -67,30 +63,23 @@ In order to perform the kerberoast attack, we need to create a service account w
 
 Set up the SPN like so:
 
-````setspn -A MSSQLSvc/myhost.domain:1433 domain\accountname````  
+````setspn -A DC_NAME/ACCOUNT_NAME.DOMAIN.SUFFIX:60111 Domain\Account````  
 
-PUT COMMAND USED IN HERE
+![ad_abuse](/assets/images/pivotinglab/setspn.png)
 
-PHOTOS OF SUCCESSFUL ADD
 
 Wehave finished with the DC. Taking a snapshot of the DC at this point is not a good idea just FYI; the webserver isnt in AD and I cant attest to what will happen if you restore the WS who thinks it is in AD to this DC state which obvioudly does not have the machine we haven't created yet in its AD. I may try and report back.
 
 
 ![ad_abuse](/assets/images/pivotinglab/23C74A94-4915-4A5C-AA7A-66C887412FD7.gif)
 
-Create a new VM for WS (you are free to name these as you wish, I am not your robot supervisor), give this two NICs, set one to the same subnet as the DC and the other one to your "public" network. 
+Create a new VM for WS (you are free to name these as you wish, I am not your robot supervisor), give this two NICs, set one to the same subnet as the DC and the other one to your "public" network. Rename the new machine, join it to the domain.
 
-Once it has installed, rename the new machine, join it to the domain. Here is some PS to get it on. It also works by going control panel, system, etc. 
-
-````Rename-Computer -NewName "WS" -DomainCredential dirty_sprite\administrator -Restart````
-````Add-Computer -DomainName dirty_sprite -Restart````
 
 
 Make sure your subnets are networking instead of NOTworking; from this machine make sure you can ping your attack machine (which is ONLY on subnet1) and the domain controller (which is ONLY on subnet2). 
 
-IMAGE OF PINGS WORKING
-
-
+![sorcery](/assets/images/pivotinglab/urawizard.jpg)
 
 Next we want to download WAMP, because this is much, much easier than doing it seperatley. Before you install it, install these runtimes (assuming you have a raw R2 installation and not a patched/slipstreamed version)
 
@@ -99,17 +88,19 @@ https://www.microsoft.com/en-au/download/details.aspx?id=30679
 
 We are good to install.
 
-edit conf to put ip into listener
-GET CLEAR INSTRUCTIONS FOR THIS
+When it is installed, edit httpd.conf (wamp\bin\apache\apacheX.X.X\conf) to put the IP of the webserver and what port you want it to hang off into the "Listen" section as shown below.
 
-add a rule in fw for 80 and 3306
-TEST IF THE WEB SERVER WILL STILL PUNCH A HOLE IF YOU DO NOT OPEN THESE PROTS?
+![listenhereulilshit](/assets/images/pivotinglab/listen.jpg)
 
-Edit the http-vhost conf to add this
+Add rules in the firewall for 80 and 3306; only the inbound is needed. If you forget this part, it will not work. Its easy as tho.
+
+![fwrules](/assets/images/pivotinglab/firewall.png)
+
+Edit the http-vhost conf (\wamp\bin\apache\apacheX.X.X\conf\extra) to add this
 
 ````Require all granted````
 
-as per [this guide](https://stackoverflow.com/questions/89118/apache-gives-me-403-access-forbidden-when-documentroot-points-to-two-different-d) From memory this was to fix it so I can view the apache server from my attack box, where as until I did this I could only see it from local host? The issues I encountered are very very different from when I did WAMP attacks on my local box for OSCP prep thats for sure..
+in between the directory tags. Delete everything else in between the directory tags, as per [this guide](https://stackoverflow.com/questions/89118/apache-gives-me-403-access-forbidden-when-documentroot-points-to-two-different-d) From memory this was to fix it so I can view the apache server from my attack box, where as until I did this I could only see it from local host? The issues I encountered are very very different from when I did WAMP attacks on my local box for OSCP prep thats for sure..
 
 
 Obviously this is a super retarded idea in the real world, but for our lab to demonstrate a technique and provide a vector we will allow remote access from ANY host to user root. Who has no password. Open cmd in the folder your mysql exe is (wamp\bin\mysql\mysqlX.X.X\bin) and feed it this:
