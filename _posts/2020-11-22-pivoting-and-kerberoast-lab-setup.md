@@ -16,6 +16,7 @@ Because I feel like being fancy, I have decided to go on the journey of setting 
 The second is I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab environment. I want to deploy disgusting malware, perform phishing using [user automation frameworks to simulate little beanbags](https://github.com/lorentzenman/sheepl) who fall (or not!) for my scans, and perhaps most of all I want to feel secure in the knowledge some dickhead isn't going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](https://0xdf.gitlab.io/2018/09/08/htb-poison.html)
 
 ![fun](/assets/images/pivotinglab/21B4DCC9-54FE-48C7-8F1D-E7468FD42F60.gif)
+
 A visual representation of the feeling of having your box kicked.
 
 This first exercise will be a fairly simple dual purpose lab; for the red pill we have a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and with the blue pill we have an environment to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
@@ -78,6 +79,7 @@ Wehave finished with the DC. Taking a snapshot of the DC at this point is not a 
 
 
 ![ad_abuse](/assets/images/pivotinglab/23C74A94-4915-4A5C-AA7A-66C887412FD7.gif)
+
 What I expect to happen.
 
 Create a new VM for WS (you are free to name these as you wish, I am not your robot supervisor), give this two NICs, set one to the same subnet as the DC and the other one to your "public" network. 
@@ -154,11 +156,11 @@ Pull up services.msc, right click, properties on mysql/apache etc. There is a ta
 
 ![sadlyseesaws.exe](/assets/images/pivotinglab/842CEF40-E5D1-4FAA-993C-5BB46C672289.gif)
 
+This is you if you set up your lab to auto win every time.
 
 If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps. If neither of these help, youre on your own buddy.
 
 ![help](/assets/images/pivotinglab/418F526D-1944-4FF0-AE82-8EDC67238465.gif)
-This is you if you set up your lab to auto win every time.
 
 So now we have a basic lab setup. What can we do now we have made these strange esoteric changes? 
 - Remote access to SQL
