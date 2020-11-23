@@ -19,8 +19,7 @@ This will not walk you through how to install a VM. If you need THAT sort of han
 
 Two vms (one domain controller, one web server), one domain, two private networks. "Public" access will be through the web server (WS) who has two NICs; one touching the domain controller (DC) an one for regular access. I say "public" because we will put these on host only networks with no real internet access. Feel free to be a rebel and expose these to the real world, I wont stop you. 
 
-NETWORK DIAGRAM GOES HERE
-
+![network_diagram](/assets/images/pivotinglab/network_diag.png)
 
 Set up your VM adapters so we have two different private networks; the addresses are arbritray and I have already forgotten what strange rationale I had for the specific numbers I chose.
 
