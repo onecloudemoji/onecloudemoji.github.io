@@ -150,6 +150,9 @@ Give testicles full control over the base wamp folder, otherwise you get "ah0001
 
 Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to EVERYWHERE, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. Restart the services, and you will see the status change to Running. 
 
+![sadlyseesaws.exe](/assets/images/pivotinglab/842CEF40-E5D1-4FAA-993C-5BB46C672289.gif)
+
+
 If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps. If neither of these help, youre on your own buddy.
 
 ![help](/assets/images/pivotinglab/418F526D-1944-4FF0-AE82-8EDC67238465.gif)
