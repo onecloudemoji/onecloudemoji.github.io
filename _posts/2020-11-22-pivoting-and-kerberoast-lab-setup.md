@@ -11,7 +11,7 @@ tags:
 
 Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infra/sysadmin skills. For the forseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it. 
 
-The second is simply I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab. I want to deploy disgusting malware, perform phishing using user automation frameworks to simulate little beanbags who fall (or not!) for my scams, and perhaps most of all, I want to feel secure in the knowledge some dickhead isnt going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](poison HTB link)
+The second is simply I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab. I want to deploy disgusting malware, perform phishing using [user automation frameworks to simulate little beanbags](https://github.com/lorentzenman/sheepl) who fall (or not!) for my scans, and perhaps most of all, I want to feel secure in the knowledge some dickhead isnt going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](poison HTB link)
 
 This first exercise will be a fairly simple double purpose lab; a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
 
