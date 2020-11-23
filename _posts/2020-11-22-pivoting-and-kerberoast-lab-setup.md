@@ -83,8 +83,9 @@ Make sure your subnets are networking instead of NOTworking; from this machine m
 
 Next we want to download WAMP, because this is much, much easier than doing it seperatley. Before you install it, install these runtimes (assuming you have a raw R2 installation and not a patched/slipstreamed version)
 
-https://www.microsoft.com/en-au/download/details.aspx?id=40784
-https://www.microsoft.com/en-au/download/details.aspx?id=30679
+[https://www.microsoft.com/en-au/download/details.aspx?id=40784](https://www.microsoft.com/en-au/download/details.aspx?id=40784)
+
+[https://www.microsoft.com/en-au/download/details.aspx?id=30679](https://www.microsoft.com/en-au/download/details.aspx?id=30679)
 
 We are good to install.
 
@@ -100,10 +101,12 @@ Edit the http-vhost conf (\wamp\bin\apache\apacheX.X.X\conf\extra) to add this
 
 ````Require all granted````
 
-in between the directory tags. Delete everything else in between the directory tags, as per [this guide](https://stackoverflow.com/questions/89118/apache-gives-me-403-access-forbidden-when-documentroot-points-to-two-different-d) From memory this was to fix it so I can view the apache server from my attack box, where as until I did this I could only see it from local host? The issues I encountered are very very different from when I did WAMP attacks on my local box for OSCP prep thats for sure..
+in between the directory tags. Delete everything else in between the directory tags, as per [this guide](https://stackoverflow.com/questions/89118/apache-gives-me-403-access-forbidden-when-documentroot-points-to-two-different-d) From memory this was to fix it so I can view the apache server from my attack box, where as until I did this I could only see it from local host. The issues I encountered are very very different from when I did WAMP attacks on my local box for OSCP prep thats for sure..
+
+![thinky](/assets/images/pivotinglab/thinky.png)
 
 
-Obviously this is a super retarded idea in the real world, but for our lab to demonstrate a technique and provide a vector we will allow remote access from ANY host to user root. Who has no password. Open cmd in the folder your mysql exe is (wamp\bin\mysql\mysqlX.X.X\bin) and feed it this:
+Next we do some things to the database. Obviously this is a super retarded idea in the real world, but for our lab to demonstrate a technique and provide a vector we will allow remote access from ANY host to user root. Who has no password. Open cmd in the folder your mysql exe is (wamp\bin\mysql\mysqlX.X.X\bin) and feed it this:
 
 ````mysql.exe -u root````
 
@@ -140,7 +143,7 @@ Give testicles full control over the base wamp folder, otherwise you get "ah0001
 ![tellmemore](/assets/images/pivotinglab/E6C5D755-6EAF-42AC-B1C6-878BF59603F1.jpeg)
 
 
-Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to EVERYWHERE, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. 
+Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to the domain, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. 
 
 ![sadlyseesaws.exe](/assets/images/pivotinglab/842CEF40-E5D1-4FAA-993C-5BB46C672289.gif)
 
