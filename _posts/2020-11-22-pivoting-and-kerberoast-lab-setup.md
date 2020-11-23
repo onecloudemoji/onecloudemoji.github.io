@@ -13,20 +13,26 @@ Because I feel like being fancy, I have decided to go on the journey of setting 
 
 The second is simply I wish to perform things in the labs that simply wouldn't fly in any other commercial pentesting lab. I want to deploy disgusting malware, perform phishing using [user automation frameworks to simulate little beanbags](https://github.com/lorentzenman/sheepl) who fall (or not!) for my scans, and perhaps most of all, I want to feel secure in the knowledge some dickhead isnt going to revert the box I am 9 hours deep in (I am looking right at you, [Poison](https://0xdf.gitlab.io/2018/09/08/htb-poison.html)
 
+![fun](/assets/images/pivotinglab/21B4DCC9-54FE-48C7-8F1D-E7468FD42F60.gif)
+A visual representation of the feeling of having your box kicked.
+
 This first exercise will be a fairly simple double purpose lab; a two machine domain to practice pivoting and attacking a machine you have no physical connectivity to, and to practice various kerberoasting attacks via SPN abuse (perhaps others as I develop this segment, but that will be another post).
 
 To ease ourselves into the process of hax0rman again (as I have realistically not done any serious works in the pentesting space since passing my OSCP on 11/22/19), we will use server 2012 R2. This opens up a slew of attacks to us, and is new enough to support some of the quality of life features I find missing from earlier server versions.
 
+
+newfeature image
+
+
 This will not walk you through how to install a VM. If you need THAT sort of handholding, this might not be the type of article you are ready for. [Try](https://www.freecodecamp.org/news/what-is-a-virtual-machine-and-how-to-setup-a-vm-on-windows-linux-and-mac/) [one](https://www.howtogeek.com/196060/beginner-geek-how-to-create-and-use-virtual-machines/) [of](https://lifehacker.com/how-to-set-up-a-virtual-machine-for-free-1828969527) [these](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/quick-create-virtual-machine) [links](https://kb.vmware.com/s/article/1018415) [for](https://www.virtualbox.org/manual/ch01.html) [help](https://www.dnsstuff.com/how-to-set-up-and-configure-virtual-machine-server) [on](https://www.lifewire.com/how-to-create-virtual-machine-windows-10-4770680) [setting](https://www.zdnet.com/article/windows-10-tip-quickly-create-a-virtual-machine-to-test-new-features/) [up](https://www.groovypost.com/howto/create-virtual-machine-windows-10-hyper-v/) [vms](https://blog.storagecraft.com/the-dead-simple-guide-to-installing-a-linux-virtual-machine-on-windows/).
 
-Two vms (one domain controller, one web server), one domain, two private networks. "Public" access will be through the web server (WS) who has two NICs; one touching the domain controller (DC) an one for regular access. I say "public" because we will put these on host only networks with no real internet access. Feel free to be a rebel and expose these to the real world, I wont stop you; I will genuinely laugh if something bad happens though. 
+Two vms (one domain controller, one web server), one domain, two private networks. "Public" access will be through the web server (WS) who has two NICs; one touching the domain controller (DC) and one for regular access. I say "public" because we will put these on host only networks with no real internet access. Feel free to be a rebel and expose these to the real world, I wont stop you; I will genuinely laugh if something bad happens though. 
 
 ![network_diagram](/assets/images/pivotinglab/network_diag.png)
 
 Set up your VM adapters so we have two different private networks; the addresses are arbitrary and I have already forgotten what strange rationale I had for the specific scopes I chose. 
 
-Install DC, and set it to one of those subnets. This machine will have only one NIC. Rename the machine (it will reboot), install AD Services, promote to domain controller, add a new forest and name it. I have chosen this name because I was halfcut on monster ultra (also known as /sips/) mixed with whisky because I wanted to try replicate this strange, extremley potent thing I had in Japan I got from Lawsons that had the texture and flavour of softdrink but with 9% alcohol per can. It came close and I got ripped real fast, so mission acomplished I guess.
-
+Install DC, and set it to one of those subnets. This machine will have only one NIC. Rename the machine (it will reboot), install AD Services, promote to domain controller, add a new forest and name it. 
 
 PS COMMAND TO RENAME MACHINE, TEST IF IT ASKS FOR AUTH WITH NO PW LOL
 Rename-Computer -NewName DC
@@ -43,8 +49,9 @@ Install-ADDSForest -CreateDnsDelegation:$false ` -DatabasePath "C:\Windows\NTDS"
 Install-WindowsFeature RSAT-ADDS
 
 
-
 IMAGE OF ADS ADD AND FOREST AD
+
+I have chosen this name because I was halfcut on monster ultra (also known as /sips/) mixed with whisky because I wanted to try replicate this strange, extremley potent thing I had in Japan I got from Lawsons that had the texture and flavour of softdrink but with 9% alcohol per can. It came close and I got ripped real fast, so mission acomplished I guess.
 
 
 Now we are going to create a user. This little guy will be the one to serve us apache. dsa.msc will bring up ADUC. I called my user testicles with the password testicles, set the password to never expire and prevent user from changing it. Here is a PS command to do the same thing for the domain; the /domain switch says to not make him a local account on DC.
@@ -70,6 +77,13 @@ Once it has installed, rename the new machine, join it to the domain. Here is so
 
 ````Rename-Computer -NewName "WS" -DomainCredential dirty_sprite\administrator -Restart````
 ````Add-Computer -DomainName dirty_sprite -Restart````
+
+
+Make sure your subnets are networking instead of NOTworking; from this machine make sure you can ping your attack machine (which is ONLY on subnet1) and the domain controller (which is ONLY on subnet2). 
+
+IMAGE OF PINGS WORKING
+
+
 
 Next we want to download WAMP, because this is much, much easier than doing it seperatley. Before you install it, install these runtimes (assuming you have a raw R2 installation and not a patched/slipstreamed version)
 https://www.microsoft.com/en-au/download/details.aspx?id=40784
@@ -103,6 +117,8 @@ Obviously this is a super retarded idea in the real world, but for our lab to de
 It reads easy enough; create user root at any location, identified by nothing, give access to everything on everything to root from any location with the grant option.
 
 But wait! Why are we creating root when we logged into sql to run these commands as root? Well turns out that localhost root and a remote location root are actually two seperate accounts! The root you used to create the remote root are infact two seperate accounts. So when remote root pwns the network, it wont be your account who did it. Technically. 
+
+simpsons clone photo
 
 Next we will make an amendment to the mysql configuration file to allow us to use the insert into outfile command. Edit ````C:\wamp64\bin\mysql\mysql5.7.31\my.conf```` and edit the ````secure_file_priv```` to ````=""```` like so
 ````secure_file_priv=""````
