@@ -26,20 +26,27 @@ Set up your VM adapters so we have two different private networks; the addresses
 
 IMAGE OF NETWORKS
 
+
 Install DC, and set it to one of those subnets. This machine will have only one NIC. Rename the machine (it will reboot), install AD Services, promote to domain controllrt, add a new forest and name it. I have chosen this name because I was halfcut on monster ultra (also known as /sips/) mixed with whisky because I had fuck all else.
+
 
 PS COMMAND TO RENAME MACHINE
 IMAGE OF ADS ADD AND FOREST AD
+
 
 Now we are going to create a user. This little guy will be the one to serve us apache. dsa.msc will bring up ADUC. I called my user testicles with the password testicles, set the password to never expire and prevent user from changing it. 
 
 create service account
 add spn
 
+PHOTOS OF SUCCESSFUL ADD
+
 
 Create a new VM for WS (you are free to name these as you wish, I am not your robot supervisor), give this two NICs, set one to the same subnet as the DC and the other one to your "public" network. 
 
 Once it has installed, rename the new machine, join it to the domain. Here is some PS to get it on. It also works by going control panel, system, etc. 
+
+PS COMMAND AND WELCOME TO DOMAIN IMAGE
 
 Next we want to download WAMP, because this is much, much easier than doing it seperatley. Before you install it, install these runtimes (assuming you have a raw R2 installation and not a patched/slipstreamed version)
 https://www.microsoft.com/en-au/download/details.aspx?id=40784
@@ -83,4 +90,12 @@ Pull up services.msc, right click, properties on mysql.
 logon as user testicles who has no admin access
 restart services
 
-TADA
+So now we have a basic lab setup. What can we do now we have made these strange esoteric changes? 
+- Remote access to SQL
+- Apache server served with a domain account that is not admin, providing an opertunity to priv esc rather than a remote r00t
+- Service account set up with a kerberoastable SPN
+- Seperate attack surface on a seperate subnet accessiable via pivoting
+
+There is plenty here to play with; its  a nice little playground for various forms of experimentation. There are many methods of escalating and moving around the domain, with and without metasploit. This post will not cover those however; this is strictly for how to build the lab. Some various ways to attack the lab will be detailed [here](link to page)
+
+INSERT GIF
