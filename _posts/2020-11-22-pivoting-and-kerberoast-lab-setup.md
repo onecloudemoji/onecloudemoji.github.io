@@ -156,6 +156,7 @@ Pull up services.msc, right click, properties on mysql/apache etc. There is a ta
 If you get errors that are not covered here, check your windows event viewer, or reread these steps to see if you skipped something because I have covered much painful ground work with these strange and esoteric steps. If neither of these help, youre on your own buddy.
 
 ![help](/assets/images/pivotinglab/418F526D-1944-4FF0-AE82-8EDC67238465.gif)
+This is you if you set up your lab to auto win every time.
 
 So now we have a basic lab setup. What can we do now we have made these strange esoteric changes? 
 - Remote access to SQL
