@@ -73,9 +73,9 @@ GET MORE INSTRUCTIONS
 Obviously this is a super retarded idea in the real world, but for our lab to demonstrate a technique and provide a vector we will allow remote access from ANY host to user root. Who has no password. Run mysql and feed it this:
 
 PUT INSTRUCTIONS ON HOW TO OPEN A SHELL
-````create user 'root'@'%' identified by '';
-grant all privileges on *.* to 'root'@'%'
-with grant option;````
+````create user 'root'@'%' identified by '';````
+````grant all privileges on *.* to 'root'@'%'````
+````with grant option;````
 
 It reads easy enough; create user root at any location, identified by nothing, give access to everything on everything to root from any location with the grant option.
 
