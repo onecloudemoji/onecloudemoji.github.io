@@ -37,18 +37,18 @@ Set up your VM adapters so we have two different private networks; the addresses
 Install DC, and set it to one of those subnets. This machine will have only one NIC. Rename the machine (it will reboot), install AD Services, promote to domain controller, add a new forest and name it. 
 
 PS COMMAND TO RENAME MACHINE, TEST IF IT ASKS FOR AUTH WITH NO PW LOL
-Rename-Computer -NewName DC
+````Rename-Computer -NewName DC````
 
 
 TRY THIS AND SEE IF IT STICKS
 
-Install-windowsfeature AD-domain-services
+````Install-windowsfeature AD-domain-services````
 
-Import-Module ADDSDeployment
+````Import-Module ADDSDeployment````
 
-Install-ADDSForest -CreateDnsDelegation:$false ` -DatabasePath "C:\Windows\NTDS" ` -DomainMode "Win2012R2" ` -DomainName "dirty_sprite.net" ` -DomainNetbiosName "dirty_sprite" `  -ForestMode "Win2012R2" `  -InstallDns:$true `  -LogPath "C:\Windows\NTDS" `  -NoRebootOnCompletion:$false `  -SysvolPath "C:\Windows\SYSVOL" `  -Force:$true
+````Install-ADDSForest -CreateDnsDelegation:$false ` -DatabasePath "C:\Windows\NTDS" ` -DomainMode "Win2012R2" ` -DomainName "dirty_sprite.net" ` -DomainNetbiosName "dirty_sprite" `  -ForestMode "Win2012R2" `  -InstallDns:$true `  -LogPath "C:\Windows\NTDS" `  -NoRebootOnCompletion:$false `  -SysvolPath "C:\Windows\SYSVOL" `  -Force:$true````
 
-Install-WindowsFeature RSAT-ADDS
+````Install-WindowsFeature RSAT-ADDS````
 
 
 IMAGE OF ADS ADD AND FOREST AD
@@ -67,7 +67,7 @@ In order to perform the kerberoast attack, we need to create a service account w
 
 Set up the SPN like so:
 
-setspn -A MSSQLSvc/myhost.domain:1433 domain\accountname  
+````setspn -A MSSQLSvc/myhost.domain:1433 domain\accountname````  
 
 PUT COMMAND USED IN HERE
 
@@ -93,6 +93,7 @@ IMAGE OF PINGS WORKING
 
 
 Next we want to download WAMP, because this is much, much easier than doing it seperatley. Before you install it, install these runtimes (assuming you have a raw R2 installation and not a patched/slipstreamed version)
+
 https://www.microsoft.com/en-au/download/details.aspx?id=40784
 https://www.microsoft.com/en-au/download/details.aspx?id=30679
 
