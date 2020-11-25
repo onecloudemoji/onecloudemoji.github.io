@@ -67,6 +67,12 @@ Set up the SPN like so:
 
 ![ad_abuse](/assets/images/pivotinglab/setspn.png)
 
+Essentially, when a domain account is configured to run a service in the environment, such as MS SQL, a Service Principal Name (SPN) is used in the domain to associate the service with a login account. When a user wishes to use the specific resource they receive a Kerberos ticket signed with NTLM hash of the account that is running the service.
+
+Basically mapping a service running on a server to an account it’s running as so that it can do / accept kerberos authentication.
+
+This is a bit of an oversimplification of the details of the process for sure, but the end result is that any valid domain user can request an SPN for a registered service and the Kerberos ticket received can be taken offline and cracked. There are a few different ways we can do this; on the box after getting a shell or using impacket remotely (since dear old testicles has such a poor password).
+
 
 Wehave finished with the DC. Taking a snapshot of the DC at this point is not a good idea just FYI; the webserver isnt in AD and I cant attest to what will happen if you restore the WS who thinks it is in AD to this DC state which obvioudly does not have the machine we haven't created yet in its AD. I may try and report back.
 
