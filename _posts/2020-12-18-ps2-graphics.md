@@ -18,7 +18,7 @@ Here is the resulting A/B because your attention span is smaller than a flys.
 ![A](/assets/images/ps2/A.png)
 ![B](/assets/images/ps2/B.png)
 
-Looks pretty damn good. You know how to install an emu and get your bios, so lets just get to how configured this.
+Looks pretty damn good. You know how to install an emu and get your bios, so let’s just get to how configured this.
 
 ![config](/assets/images/ps2/config.png)
 
@@ -30,12 +30,13 @@ Enable your hardware hacks. These can vary from game to game, but these sorted T
 
 ![hwh](/assets/images/ps2/hw_hacks.png)
 
-You may be wondering, "why is a simpsons obsessed poster not showcasing the improvements to one of the simpsons games?" and the answer is simply I havent gotten around to getting those isos yet, while I had the Tokyo Drift game on hand from an aborted experiment to get it to run on a laptop with an atom cpu.
+You may be wondering, "why is a Simpsons obsessed poster not showcasing the improvements to one of the Simpsons games?" and the answer is simply I haven’t gotten around to getting those isos yet, while I had the Tokyo Drift game on hand from an aborted experiment to get it to run on a laptop with an atom cpu.
 
 An actual photograph of me once I got it all running gucci
 <p align="center">
   <img src="/assets/images/ps2/fun.png" />
 </p>
+
 
 
 
