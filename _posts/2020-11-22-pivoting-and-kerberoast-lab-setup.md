@@ -9,7 +9,7 @@ tags:
   - Pivoting
 ---
 
-Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infrastructure/sysadmin skills. For the forseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it and continue to excel.
+Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infrastructure/sysadmin skills. For the foreseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it and continue to excel.
 
 ![career](/assets/images/pivotinglab/AAACE678-D4F5-4912-B759-A3A67EB8DF38.jpeg) 
 
@@ -27,14 +27,14 @@ This will not walk you through how to install a VM. If you need THAT sort of han
 
 ![network_diagram](/assets/images/pivotinglab/network_diag.png)
 
-Two vms (one domain controller, one web server), one domain, two private networks. "Public" access will be through the web server (WS) who has two NICs; one touching the domain controller (DC) and one for regular access. I say "public" because we will put these on host only networks with no real internet access. Feel free to be a rebel and expose these to the real world, I wont stop you; I will genuinely laugh if something bad happens though. 
+Two vms (one domain controller, one web server), one domain, two private networks. "Public" access will be through the web server (WS) who has two NICs; one touching the domain controller (DC) and one for regular access. I say "public" because we will put these on host only networks with no real internet access. Feel free to be a rebel and expose these to the real world, I won’t stop you; I will genuinely laugh if something bad happens though. 
 
 ![sideshowboblaugh](/assets/images/pivotinglab/5360752F-2E99-4B7C-88DC-614BB78DB872.gif)
 
 
 Set up your VM adapters so we have two different private networks; the addresses are arbitrary and I have already forgotten what strange rationale I had for the specific scopes I chose. 
 
-Install DC, and set it to one of those subnets. This machine will have only one NIC. If you didnt set a good password for your administrator account when building the VM, do that now. Rename the machine, install AD Services, promote to domain controller, add a new forest and name it. Run these in an elevated PS window.
+Install DC, and set it to one of those subnets. This machine will have only one NIC. If you didn’t set a good password for your administrator account when building the VM, do that now. Rename the machine, install AD Services, promote to domain controller, add a new forest and name it. Run these in an elevated PS window.
 
 ````Rename-Computer -NewName DC````
 
@@ -49,7 +49,7 @@ Install DC, and set it to one of those subnets. This machine will have only one 
 ![domain](/assets/images/pivotinglab/domain.png)
 
 
-I have chosen this name because I was halfcut on monster ultra (also known as /sips/) mixed with whisky because I wanted to try replicate this strange, extremley potent thing I had in Japan from one of the literally thousands of Lawsons that are fucking everywhere in Tokyo. It had the texture and flavour of softdrink but with 9% alcohol per can, made by Suntory and called ZERO or something. It came close and I got ripped real fast, so mission acomplished I guess.
+I have chosen this name because I was halfcut on monster ultra (also known as /sips/) mixed with whisky because I wanted to try replicate this strange, extremely potent thing I had in Japan from one of the literally thousands of Lawsons that are fucking everywhere in Tokyo. It had the texture and flavour of soft drink but with 9% alcohol per can, made by Suntory and called ZERO or something. It came close and I got ripped real fast, so mission accomplished I guess.
 
 ![crabjuice](/assets/images/pivotinglab/2092B4A7-3CD3-4DDA-A7FE-DB5C09D02404.jpeg)
 
@@ -69,12 +69,12 @@ Set up the SPN like so:
 
 Essentially, when a domain account is configured to run a service in the environment, such as MS SQL, a Service Principal Name (SPN) is used in the domain to associate the service with a login account. When a user wishes to use the specific resource they receive a Kerberos ticket signed with NTLM hash of the account that is running the service.
 
-Basically mapping a service running on a server to an account it’s running as so that it can do / accept kerberos authentication.
+Basically mapping a service running on a server to an account it’s running as so that it can do / accept Kerberos authentication.
 
 This is a bit of an oversimplification of the details of the process for sure, but the end result is that any valid domain user can request an SPN for a registered service and the Kerberos ticket received can be taken offline and cracked. There are a few different ways we can do this; on the box after getting a shell or using impacket remotely (since dear old testicles has such a poor password).
 
 
-Wehave finished with the DC. Taking a snapshot of the DC at this point is not a good idea just FYI; the webserver isnt in AD and I cant attest to what will happen if you restore the WS who thinks it is in AD to this DC state which obvioudly does not have the machine we haven't created yet in its AD. I may try and report back.
+Weave finished with the DC. Taking a snapshot of the DC at this point is not a good idea just FYI; the webserver isnt in AD and I can’t attest to what will happen if you restore the WS who thinks it is in AD to this DC state which obviously does not have the machine we haven't created yet in its AD. I may try and report back.
 
 
 ![ad_abuse](/assets/images/pivotinglab/23C74A94-4915-4A5C-AA7A-66C887412FD7.gif)
@@ -83,11 +83,11 @@ Create a new VM for WS (you are free to name these as you wish, I am not your ro
 
 
 
-Make sure your subnets are networking instead of NOTworking; from this machine make sure you can ping your attack machine (which is ONLY on subnet1) and the domain controller (which is ONLY on subnet2). 
+Make sure your subnets are networking instead of NOT working; from this machine make sure you can ping your attack machine (which is ONLY on subnet1) and the domain controller (which is ONLY on subnet2). 
 
 ![sorcery](/assets/images/pivotinglab/urawizard.jpg)
 
-Next we want to download WAMP, because this is much, much easier than doing it seperatley. Before you install it, install these runtimes (assuming you have a raw R2 installation and not a patched/slipstreamed version)
+Next we want to download WAMP, because this is much, much easier than doing it separately. Before you install it, install these runtimes (assuming you have a raw R2 installation and not a patched/slipstreamed version)
 
 [https://www.microsoft.com/en-au/download/details.aspx?id=40784](https://www.microsoft.com/en-au/download/details.aspx?id=40784)
 
@@ -99,7 +99,7 @@ When it is installed, edit httpd.conf (wamp\bin\apache\apacheX.X.X\conf) to put 
 
 ![listenhereulilshit](/assets/images/pivotinglab/listen.jpg)
 
-Add rules in the firewall for 80 and 3306; only the inbound is needed. If you forget this part, it will not work. Its easy as tho.
+Add rules in the firewall for 80 and 3306; only the inbound is needed. If you forget this part, it will not work. It’s easy as tho.
 
 ![fwrules](/assets/images/pivotinglab/firewall.png)
 
@@ -107,7 +107,7 @@ Edit the http-vhost conf (\wamp\bin\apache\apacheX.X.X\conf\extra) to add this
 
 ````Require all granted````
 
-in between the directory tags. Delete everything else in between the directory tags, as per [this guide](https://stackoverflow.com/questions/89118/apache-gives-me-403-access-forbidden-when-documentroot-points-to-two-different-d) From memory this was to fix it so I can view the apache server from my attack box, where as until I did this I could only see it from local host. The issues I encountered are very very different from when I did WAMP attacks on my local box for OSCP prep thats for sure..
+in between the directory tags. Delete everything else in between the directory tags, as per [this guide](https://stackoverflow.com/questions/89118/apache-gives-me-403-access-forbidden-when-documentroot-points-to-two-different-d) From memory this was to fix it so I can view the apache server from my attack box, where as until I did this I could only see it from local host. The issues I encountered are very very different from when I did WAMP attacks on my local box for OSCP prep that’s for sure..
 
 ![thinky](/assets/images/pivotinglab/thnky.png)
 
@@ -124,7 +124,7 @@ Next we do some things to the database. Obviously this is a super retarded idea 
 
 It reads easy enough; create user root at any location, identified by nothing, give access to everything on everything to root from any location with the grant option.
 
-But wait! Why are we creating root when we logged into sql to run these commands as root? Well turns out that localhost root and a remote location root are actually two seperate accounts! The root you used to create the remote root are infact two seperate accounts. So when remote root pwns the network, it wont be your account who did it. Technically. 
+But wait! Why are we creating root when we logged into sql to run these commands as root? Well turns out that localhost root and a remote location root are actually two separate accounts! The root you used to create the remote root are in fact two separate accounts. So when remote root pwns the network, it won’t be your account who did it. Technically. 
 
 ![clone](/assets/images/pivotinglab/A7E29E17-6D4D-4FC8-9B8F-3792B56EC036.jpeg)
 
@@ -144,12 +144,12 @@ Run the following to allow testicles to start the services
 
 ````setacl.exe -on "wampmariadb64" -ot srv -ace "n:testicles;p:start_stop,read" -actn ace````
 
-Give testicles full control over the base wamp folder, otherwise you get "ah00015 unable to open logs" when you try start the services after giving control of them to your new user. I right clicked the folder and in the security tab of properties did it that way. Trying to find a PS method was taking too long when its about three clicks to acheive this. If you find a self contained one liner, do let me know.
+Give testicles full control over the base wamp folder, otherwise you get "ah00015 unable to open logs" when you try start the services after giving control of them to your new user. I right clicked the folder and in the security tab of properties did it that way. Trying to find a PS method was taking too long when it’s about three clicks to achieve this. If you find a self-contained one liner, do let me know.
 
 ![tellmemore](/assets/images/pivotinglab/E6C5D755-6EAF-42AC-B1C6-878BF59603F1.jpeg)
 
 
-Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to the domain, select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, its just when you catch your webshell, it will come back as NT SYSTEM. And thats just no fun. 
+Pull up services.msc, right click, properties on mysql/apache etc. There is a tab "Log On". Select "This account", browse, change the scope to the domain, and select testicles or whoever you created who has no admin access. Why do we bother? Well you CAN leave it as "Local System Account" if you like, it’s just when you catch your webshell, and it will come back as NT SYSTEM. And that’s just no fun. 
 
 ![sadlyseesaws.exe](/assets/images/pivotinglab/842CEF40-E5D1-4FAA-993C-5BB46C672289.gif)
 
@@ -160,12 +160,13 @@ Restart the services, and you will see the status change to Running. If you get 
 
 So now we have a basic lab setup. What can we do now we have made these strange esoteric changes? 
 - Remote access to SQL
-- Apache server served with a domain account that is not admin, providing an opertunity to priv esc rather than a remote r00t
+- Apache server served with a domain account that is not admin, providing an opportunity to priv esc rather than a remote r00t
 - Service account set up with a kerberoastable SPN
-- Seperate attack surface on a seperate subnet accessiable via pivoting
+- Separate attack surface on a separate subnet accessible via pivoting
 
-There is plenty here to play with; its  a nice little playground for various forms of experimentation. There are many methods of escalating and moving around the domain, with and without metasploit. This post will not cover those however; this is strictly for how to build the lab. Some various ways to attack the lab will be detailed [here](link to page)
+There is plenty here to play with; it’s a nice little playground for various forms of experimentation. There are many methods of escalating and moving around the domain, with and without metasploit. This post will not cover those however; this is strictly for how to build the lab. Some various ways to attack the lab will be detailed [here](link to page)
 
 Congratulations you have built some infrastructure.
 
 ![dance](/assets/images/pivotinglab/5A6BCEDA-C9C3-4744-B875-7405FC416319.gif)
+
