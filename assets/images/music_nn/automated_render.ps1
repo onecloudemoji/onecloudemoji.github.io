@@ -21,11 +21,12 @@ $original = Get-Content -path "C:\Program Files\REAPER (x64)\batch.txt"
 
 (Get-Content -path "C:\Program Files\REAPER (x64)\batch.txt" -Raw) -replace 'REPLACE_TEXT', $filenames | Set-Content -Path "C:\Program Files\REAPER (x64)\batch.txt"
 
-#5) run the batch processing and sleep for $num_outputs seconds
+#5) run the batch processing and sleep for $num_outputs x 2.5 seconds
 
 cd "C:\Program Files\REAPER (x64)"
 .\reaper -batchconvert batch.txt
-Start-Sleep -s 20
+$num_outputs = [int]$num_outputs
+Start-Sleep -s ($num_outputs * 2.5)
 #6) move the midi files to a processed folder once rendering has completed
 
 Get-ChildItem -Path "E:\SNES MIDIS\Generated Midi" -Recurse -File | Move-Item -Destination "E:\SNES MIDIS\Rendered Midi"
