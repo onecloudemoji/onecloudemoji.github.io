@@ -4,7 +4,7 @@ $num_steps = Read-Host -Prompt 'How many steps should they be?'
 
 
 #2) run nn generation and put them into a folder labeled not processed
-polyphony_rnn_generate --run_dir="C:\Users\root\Desktop\blog posts\nn project\polyphony_rnn\logdir\run3" --hparams="batch_size=64,rnn_layer_sizes=[128,128,128]" --output_dir="E:\SNES MIDIS\Generated Midi" --num_outputs=$num_outputs --num_steps=$num_steps --primer_melody="[20]" --condition_on_primer=true --inject_primer_during_generation=false
+polyphony_rnn_generate --run_dir="E:\SNES MIDIS\NN\polyphony_rnn\logdir\run3" --hparams="batch_size=64,rnn_layer_sizes=[128,128,128]" --output_dir="E:\SNES MIDIS\Generated Midi" --num_outputs=$num_outputs --num_steps=$num_steps --primer_melody="[20]" --condition_on_primer=true --inject_primer_during_generation=false
 
 #3) get names of things in the not processed folder 
 
@@ -26,7 +26,7 @@ $original = Get-Content -path "C:\Program Files\REAPER (x64)\batch.txt"
 cd "C:\Program Files\REAPER (x64)"
 .\reaper -batchconvert batch.txt
 $num_outputs = [int]$num_outputs
-Start-Sleep -s ($num_outputs * 2.5)
+Start-Sleep -s ((($num_steps/128) * 1.5) * $num_outputs)
 #6) move the midi files to a processed folder once rendering has completed
 
 Get-ChildItem -Path "E:\SNES MIDIS\Generated Midi" -Recurse -File | Move-Item -Destination "E:\SNES MIDIS\Rendered Midi"
