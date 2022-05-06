@@ -34,7 +34,7 @@ Reviewing this json post release and I can see all the variables I have set were
 Half the battle in this project was wrangling the unattended.xml. There’s a lot of left over artifacts in there showcasing the development of my logic. There’s quite a few things you can NOT do in the out of box deployment phase. Here we set up part of the work in getting this into a domain controller. We set a scheduled task to change the ip address at every boot so it stays static. We set this because there’s some issue with vagrant. When you set up a dhcp address reservation using vmware, vagrant will not realise an address has been handed out to the machine, and the provisioning process will hang thinking its still waiting for an address to be handed out. tbh I should investigate this a bit more and report it to vagrant, but that can do on the ever increasing to do list.
 
 Getting the badblood folder unzipped has been commented out of the unattended, because SOMETIMES, not always, which was irritating, it wouldn’t unzip completely before the shutdown was triggered, meaning the badblood installation would fail. 
-![fail](/assets/images/vagrant/want_to_fail.gif)
+![fail](/assets/images/vagrant/want_to_fail.png)
 
 The vagrant_file.template is where the real fun begins. This is where we manually specify modifications to the .vmx file itself. Setting the vmnetwork it connects to, the cpu count, ram etc etc. There’s no limit to the modifications you can make here. What’s listed was all I needed to get this working, but you can do way more. XXXX site link
 
@@ -50,9 +50,10 @@ Whilst this all sounds logical and straightforward, the truth was it took a lot 
 
 ![disabled](/assets/images/vagrant/disabled.png)
 
-But we got there in the end, and it works. Its a nice standalone piece. I was thinking of having this also provision the workstation, but I am not sure how necessary and useful that would be. A workstation is easy as fuck to move between domains, where as standing up and down a dc is no easy task. There is a hell of a story that I sm referencing from my days working at a local MSP that one day I will link here, but it needs heavy sanitization and I may not ever get to it.  
+But we got there in the end, and it works. Its a nice standalone piece. I was thinking of having this also provision the workstation, but I am not sure how necessary and useful that would be. A workstation is easy as fuck to move between domains, where as standing up and down a dc is no easy task. There is a hell of a story that I am referencing from my days working at a local MSP that one day I will link here, but it needs heavy sanitization and I may not ever get to it.  
 
-![secret](/assets/images/vagrant/secret.png)
+![secret](/assets/images/vagrant/topsecret.png)
 
-Maybe I will add in the packer scripts for the ws, but it is just as easy to n
+It is interesting just how much has changed since my last lab post, which was put up when I honestly didn't think I was going to get into sec. I was making mad fucking stacks contracting as a sysad, and thought I was going to stick with that for a while. Turns out that tired shit about money not being everything actually holds some weight. Who would have known that young people are fucking stupid. 
 
+![fin](/assets/images/vagrant/fin.png)
