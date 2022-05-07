@@ -58,6 +58,7 @@ Half the battle in this project was wrangling the unattended.xml. There’s a lo
 We set a scheduled task to change the ip address at every boot so it stays static. We set this because there’s some issue with vagrant. When you set up a dhcp address reservation using vmware, vagrant will not realise an address has been handed out to the machine, and the provisioning process will hang thinking its still waiting for an address to be handed out. 
 
 tbh I should investigate this a bit more and report it to vagrant and make myself look really good, but that can do on the ever increasing to do list.
+
 ![hero](/assets/images/vagrant/hero.png)
 
 
