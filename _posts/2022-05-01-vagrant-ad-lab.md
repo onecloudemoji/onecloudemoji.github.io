@@ -69,7 +69,7 @@ Set your winrm.host address to the address you set to be statically assigned in 
 
 ![memory](/assets/images/vagrant/memory.png)
 
-Ensure the shared folders is disabled. as part of the process I made sure vmware tools was NOT installed. I don’t need it for this, and it was a fucking hassle even attempting to get it working. So I just bypassed it entirely.
+Ensure the shared folders is disabled. as part of the process I made sure vmware tools was NOT installed. I don’t need it for this, and it was a fucking hassle even attempting to get it working. So I just bypassed it entirely. If you feel you need it on your installations, I can only offer you [a link to a script which can aid in the process](https://raw.githubusercontent.com/taliesins/packer-baseboxes/master/windows/common/install-vmware-tools.ps1), but it comes with a question: do you really need this? Its a domain controller, for what purpose are you putting vmware tools on it?
 
 The shell provisioners are scripts executed inline against the box. They are executed in order of listing. The set registry is named so because of my previous idea to use reg keys to know when and when not this machine was a domain controller. I abandoned this for simply setting a new scheduled task during the dc promo stage, which will trigger at next reboot (after the dc has completed its promo entirely)
 
