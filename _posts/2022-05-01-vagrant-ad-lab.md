@@ -49,7 +49,7 @@ Reviewing this json post release and I can see all the variables I have set were
 
 The post processors section is where you can set the output name and dir of your box file. This is NOT the same thing as output directory; THAT is only a temp space for the vm to be built! It also appears the checksum makes literally 0 difference whether its set correctly; I was accidentally using the md5 hash instead of the sha1 and packer didn’t notice. but it will complain if you leave it empty.
 
-![complain](/assets/images/vagrant/complain.jpg)
+![complain](/assets/images/vagrant/complain.png)
 
 Half the battle in this project was wrangling the unattended.xml. There’s a lot of left over artifacts in there showcasing the development of my logic. There’s quite a few things you can NOT do in the out of box deployment phase. Here we set up part of the work in getting this into a domain controller. 
 
