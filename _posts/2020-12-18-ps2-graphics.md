@@ -3,6 +3,7 @@ title: "PS2 Graphics Improvements"
 date: 2020-12-18
 categories:
   - experiments
+  - games
   
 tags:
   - emulation
