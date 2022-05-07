@@ -14,6 +14,8 @@ There is an evergrowing list of shit in a little folder on my desktop, called 'b
 
 It is filled with half baked and harebrained projects I have worked on at various times.
 
+![idea](/assets/images/esxi/idea.png)
+
 Quite a few of these are simply the result of me being a cheapskate and refusing to purchase a tool that would benefit me and help me acheive my end aim.  This  is one of those projects.
 
 It is the result of spending some serious time within the OSCP labs, and being impressed with the way the users could manipulate the underlying machines. In my days as a sysad I fielded many calls from clients asking us to kick their machines in the guts for them; a  portal like in the labs was mindblowing.
