@@ -23,9 +23,7 @@ This was one of the most interesting parts of doing work in [OFFSHORE](https://w
 
 ![offshore](/assets/images/vagrant/offshore.png)
 
-Years beforehand, I had heard of vagrant and their specific vmware workstation plugin. At the time, it was a paid product, so I put it on hold until I had the time to really dig into something with a cost on it. I hadn’t known the plugin had become open source until that study day; I was actually going to present a case to work to have them purchase it for me lol. Was a hell of a convenient coincidence.
-
-![money](/assets/images/vagrant/money.png)
+Years beforehand, I had heard of vagrant and their specific vmware workstation plugin. At the time, it was a paid product, so I put it on hold until I had the time to really dig into something with a cost on it. I hadn’t known the plugin had become open source until that study day; I was actually going to present a case to work to have them purchase it for me lol.
 
 This is the first stage of the project; it will morph into various variants; eventually there will be a fully automated version of the entire [pivot lab project](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/) and various other things. There is no timeline for release, but I need it taken off my whiteboard where it has been since 2019.
 
@@ -91,7 +89,9 @@ Good lord that was exhausting to type out.
 
 ![exhausting](/assets/images/vagrant/exhausting.png)
 
-Well I got there in the end, and it works. Its a nice standalone piece. I was thinking of having this also provision the workstation, but I am not sure how necessary and useful that would be. A workstation is easy as fuck to move between domains, where as standing up and down a dc is no easy task. There is a hell of a story that I am referencing from my days working at a local MSP that one day I will link here, but it needs heavy sanitization and I may not ever get to it.
+Well I got there in the end, and it works. Its a nice standalone piece. I was thinking of having this also provision the workstation, but I am not sure how necessary and useful that would be. A workstation is easy as fuck to move between domains, where as standing up and down a dc is no easy task. 
+
+There is a hell of a story that I am referencing from my days working at a local MSP that one day I will link here, but it needs heavy sanitization and I may not ever get to it.
 
 ![secret](/assets/images/vagrant/topsecret.png)
 
