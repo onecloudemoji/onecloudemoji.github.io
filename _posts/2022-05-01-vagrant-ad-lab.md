@@ -80,7 +80,9 @@ Well I got there in the end, and it works. Its a nice standalone piece. I was th
 
 ![secret](/assets/images/vagrant/topsecret.png)
 
-It is interesting just how much has changed since my last lab post, which was put up when I honestly didn't think I was going to get into sec. I was making mad fucking stacks contracting as a sysad, and thought I was going to stick with that for a while. Turns out that tired, trite shit about money not being everything actually holds some weight. Who would have known that young people are fucking stupid. 
+It is interesting just how much has changed since my last lab post, which was put up when I honestly didn't think I was going to get into sec. I was making mad stacks contracting as a sysad, and thought I was going to stick with that for a the rest of my days. I just enjoyed doing this sort of stuff for fun. Its that wonderful intersection of both my interests; infrastructure and hacking. Turns out that tired, trite shit about money not being everything actually holds some weight. Who would have known that young people are fucking stupid.
+
+It also feels very, very good to complete another project. Makes me want to kick more things off that to do list. Something something object in motion and all that. 
 
 ![fin](/assets/images/vagrant/fin.png)
 
