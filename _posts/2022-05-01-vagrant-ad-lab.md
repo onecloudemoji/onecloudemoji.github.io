@@ -51,19 +51,16 @@ Reviewing this json post release and I can see all the variables I have set were
 
 The post processors section is where you can set the output name and dir of your box file. This is NOT the same thing as output directory; THAT is only a temp space for the vm to be built! It also appears the checksum makes literally 0 difference whether its set correctly; I was accidentally using the md5 hash instead of the sha1 and packer didn’t notice. but it will complain if you leave it empty.
 
-![complain](/assets/images/vagrant/complain.png)
-
 Half the battle in this project was wrangling the unattended.xml. There’s a lot of left over artifacts in there showcasing the development of my logic. There’s quite a few things you can NOT do in the out of box deployment phase. Here we set up part of the work in getting this into a domain controller. 
 
 We set a scheduled task to change the ip address at every boot so it stays static. We set this because there’s some issue with vagrant. When you set up a dhcp address reservation using vmware, vagrant will not realise an address has been handed out to the machine, and the provisioning process will hang thinking its still waiting for an address to be handed out. 
 
-tbh I should investigate this a bit more and report it to vagrant and make myself look really good, but that can do on the ever increasing to do list.
+tbh I should investigate this a bit more and report it to vagrant and make myself look really good, but that can go on the ever increasing to do list.
 
 ![hero](/assets/images/vagrant/hero.png)
 
 
 Getting the badblood folder unzipped has been commented out of the unattended, because SOMETIMES, not always, which was irritating, it wouldn’t unzip completely before the shutdown was triggered, meaning the badblood installation would fail. 
-![fail](/assets/images/vagrant/want_to_fail.png)
 
 The vagrant_file.template is where the real fun begins. This is where we manually specify modifications to the .vmx file itself. Setting the vmnetwork it connects to, the cpu count, ram etc etc. There’s no limit to the modifications you can make here. What’s listed was all I needed to get this working, but you can do way more. I dont know who this guy is, but he is a fucking wizard. [There is all sorts of crazy things you can modify in a .vmx I had no idea about](http://sanbarrow.com/vmx.html).
 
