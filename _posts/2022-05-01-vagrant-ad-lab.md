@@ -17,10 +17,11 @@ On a trip away, I caught up with my [hacking homie](https://kymb0.github.io/) fo
 
 The reality is when I started down this path, I avoided doing Active Directory exploitation because it was just too time consuming to set up infrastucture, use a single attack to destroy it, and then need to stand it up again. This is the sort of tool I wanted to exist when I was begining my journey. 
 
-What is most important though, is the deployment of the [badblood project](https://github.com/davidprowe/BadBlood) within the DC. It automatically fills your domain with some wack shit for you to practice your AD techniques on. Heaps of stuff a bloodhound instance will pick up; SPNs, about 2500 users (some whom are ACTUALLY DOMAIN CONTROLLERS), some with weak, weak passwords for kerberoasting superduper random permissions (some that are totally nonsensicle just for experimenting) and the meat of it all, ACLs. This was one of the most interesting parts of doing work in [OFFSHORE](https://www.hackthebox.com/hacker/pro-labs), the strange ways that I had no idea AD could work. Due to the randomization of this tool though, a lot of scenarios not possible to see in those static environments will appear.
+What is most important though, is the deployment of the [badblood project](https://github.com/davidprowe/BadBlood) within the DC. It automatically fills your domain with some wack shit for you to practice your AD techniques on. Heaps of stuff a bloodhound instance will pick up; SPNs, about 2500 users (some whom are ACTUALLY DOMAIN CONTROLLERS), some with weak, weak passwords for kerberoasting superduper random permissions (some that are totally nonsensicle just for experimenting) and the meat of it all, ACLs. 
+
+This was one of the most interesting parts of doing work in [OFFSHORE](https://www.hackthebox.com/hacker/pro-labs), the strange ways that I had no idea AD could work. Due to the randomization of this tool though, a lot of scenarios not possible to see in those static environments will appear. Here is a casual flex because I cannot find an appropriate picture to put here.
 
 ![offshore](/assets/images/vagrant/offshore.png)
-Here is a casual flex because I cannot find an appropriate picture to put here.
 
 Years beforehand, I had heard of vagrant and their specific vmware workstation plugin. At the time, it was a paid product, so I put it on hold until I had the time to really dig into something with a cost on it. I hadn’t known the plugin had become open source until that study day; I was actually going to present a case to work to have them purchase it for me lol. Was a hell of a convenient coincidence.
 
@@ -30,7 +31,11 @@ This is the first stage of the project; it will morph into various variants; eve
 
 ![todo](/assets/images/vagrant/todo.png)
 
-This project took a lot more work to sort out than I expected. Mostly because I was framing it wrong. This is a two phase execution; first packer creates the base golden image, then vagrant "provisions" the image. Except its not golden images in the sense I’m used to; the .box file that’s created from packer has already had the OS installed, and packer turns the .box into a .vmx, where I was imagining the golden image was the thing being installed by vagrant, like an image being pushed by sccm. If that still seems confusing, try this: packer creates the vm, installs the OS, performs any setup listed in the unattended.xml, and then crunches this all into a compressed vm image. Vagrant then takes this compressed image, powers it up, and runs any provisioning scripts you set. 
+This project took a lot more work to sort out than I expected. Mostly because I was framing it wrong. 
+
+This is a two phase execution; first packer creates the base golden image, then vagrant "provisions" the image. Except its not golden images in the sense I’m used to; the .box file that’s created from packer has already had the OS installed, and packer turns the .box into a .vmx, where I was imagining the golden image was the thing being installed by vagrant, like an image being pushed by sccm. 
+
+If that still seems confusing, try this: packer creates the vm, installs the OS, performs any setup listed in the unattended.xml, and then crunches this all into a compressed vm image. Vagrant then takes this compressed image, powers it up, and runs any provisioning scripts you set. 
 
 ![confusing](/assets/images/vagrant/confusing.png)
 
@@ -38,20 +43,28 @@ So how does this all work? Well there is a list of setup instructions and prereq
 
 As seen in the readme, the first command we run from inside the folder is ````packer build DC.json````
 
-Packer takes in the json, which starts setting a few things up. External scripts and shit you want run during build can be hosted on a floppy, such as the unattended.xml etc. Inside the builders section you can specify which hypervisor you are using. there’s a few different options, inc hyper v and other bullshit solutions. There’s ability to provision to esxi, but the only reason I was using esxi in the past for my automated lab was the costing of the vagrant plugin. I think I have released those shitty scripts somewhere XXXX
+Packer takes in the json, which starts setting a few things up. External scripts and shit you want run during build can be hosted on a floppy, such as the unattended.xml etc. Inside the builders section you can specify which hypervisor you are using. there’s a few different options, inc hyper v and other bullshit solutions. There’s ability to provision to esxi, but the only reason I was using esxi in the past for my automated lab was the costing of the vagrant plugin. [I think I have released those shitty scripts somewhere](https://onecloudemoji.github.io/labbing/esxi-revert-panel/).
 
 ![esxi](/assets/images/vagrant/esxi.jpg)
 
-Reviewing this json post release and I can see all the variables I have set were completely unnecessary, but may aid others in understanding what’s going on. The post processors section is where you can set the output name and dir of your box file. This is NOT the same thing as output directory; THAT is only a temp space for the vm to be built! It also appears the checksum makes literally 0 difference whether its set correctly; I was accidentally using the md5 hash instead of the sha1 and packer didn’t notice. but it will complain if you leave it empty.
+Reviewing this json post release and I can see all the variables I have set were completely unnecessary, but may aid others in understanding what’s going on. 
+
+The post processors section is where you can set the output name and dir of your box file. This is NOT the same thing as output directory; THAT is only a temp space for the vm to be built! It also appears the checksum makes literally 0 difference whether its set correctly; I was accidentally using the md5 hash instead of the sha1 and packer didn’t notice. but it will complain if you leave it empty.
 
 ![complain](/assets/images/vagrant/complain.png)
 
-Half the battle in this project was wrangling the unattended.xml. There’s a lot of left over artifacts in there showcasing the development of my logic. There’s quite a few things you can NOT do in the out of box deployment phase. Here we set up part of the work in getting this into a domain controller. We set a scheduled task to change the ip address at every boot so it stays static. We set this because there’s some issue with vagrant. When you set up a dhcp address reservation using vmware, vagrant will not realise an address has been handed out to the machine, and the provisioning process will hang thinking its still waiting for an address to be handed out. tbh I should investigate this a bit more and report it to vagrant, but that can do on the ever increasing to do list.
+Half the battle in this project was wrangling the unattended.xml. There’s a lot of left over artifacts in there showcasing the development of my logic. There’s quite a few things you can NOT do in the out of box deployment phase. Here we set up part of the work in getting this into a domain controller. 
+
+We set a scheduled task to change the ip address at every boot so it stays static. We set this because there’s some issue with vagrant. When you set up a dhcp address reservation using vmware, vagrant will not realise an address has been handed out to the machine, and the provisioning process will hang thinking its still waiting for an address to be handed out. 
+
+tbh I should investigate this a bit more and report it to vagrant and make myself look really good, but that can do on the ever increasing to do list.
+![hero](/assets/images/vagrant/hero.png)
+
 
 Getting the badblood folder unzipped has been commented out of the unattended, because SOMETIMES, not always, which was irritating, it wouldn’t unzip completely before the shutdown was triggered, meaning the badblood installation would fail. 
 ![fail](/assets/images/vagrant/want_to_fail.png)
 
-The vagrant_file.template is where the real fun begins. This is where we manually specify modifications to the .vmx file itself. Setting the vmnetwork it connects to, the cpu count, ram etc etc. There’s no limit to the modifications you can make here. What’s listed was all I needed to get this working, but you can do way more. XXXX site link
+The vagrant_file.template is where the real fun begins. This is where we manually specify modifications to the .vmx file itself. Setting the vmnetwork it connects to, the cpu count, ram etc etc. There’s no limit to the modifications you can make here. What’s listed was all I needed to get this working, but you can do way more. I dont know who this guy is, but he is a fucking wizard. [There is all sorts of crazy things you can modify in a .vmx I had no idea about](http://sanbarrow.com/vmx.html).
 
 Set your winrm.host address to the address you set to be statically assigned in the ip update script. The provisioning process will not allow an ip change after winrm has made a connection. This was an important note I needed to keep track of. I mention it in case I need to know it later.
 
@@ -70,7 +83,9 @@ So once we have appropriately configured our files (or not! It is not necessary 
 ````vagrant box add DC file://EXPLICIT LOCATION YOU CREATED THE BOX INCLUDING DRIVE LETTER/DC.box````
 This is the only part of the build that I am not happy with; I do not know how to have vagrant accept the .box file with a relative path. To add a bit of clarity, here is the actual command I was issuing to have my box added whilst building this ````vagrant box add DC file://L:/ADLAB/machines/DC/DC.box````
 
-The last piece of the puzzle is the Vagrantfile within the root. This is what ties it all together. After creating the box with packer, it technically doesnt have a name yet. But if we inspect the previous command we can see ````add DC```` the DC argument is the name vagrant will give the vm. Yes this may be confusing since we named the box DC, inside the OS itself and outside. But it all ties together inside the Vagrantfile. ````    domaincontroller.vm.box = "DC"```` lists the name of the vm that vagrant will power on when issing the final command ````vagrant up````
+The last piece of the puzzle is the Vagrantfile within the root. This is what ties it all together. After creating the box with packer, it technically doesnt have a name yet. But if we inspect the previous command we can see ````add DC````. The DC argument is the name vagrant will give the vm. 
+
+Yes this may be confusing since we named the box DC, inside the OS itself and outside. But it all ties together inside the Vagrantfile. ````    domaincontroller.vm.box = "DC"```` lists the name of the vm that vagrant will power on when issing the final command ````vagrant up````
 
 Good lord that was exhausting to type out.
 
