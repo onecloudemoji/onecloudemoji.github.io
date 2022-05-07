@@ -60,7 +60,7 @@ I dont have the desire to complete a project like that anymore; standard boot2ro
  
  This probably sounds more negative than it needed to be. The reality is I became adicted to doing boot2roots whilst trying to get my OSCP because I knew every one I did made it more possible for me to pass. Now there is a distinction here that needs to be picked up on; I was studying to pass OSCP, not get into the field. 
  
- Being a sysad I KNEW the reality was not going to be like those boxes. Maybe 15 years ago. I can see some of that shit appearing in 2006. Not when I was doing it in 2018/2019. I knew enough to know environments just arent built that way, and someone (ie the entire """cyber""" industry) was trying to pull a swifty on me. 
+ Being a sysad I KNEW the reality was not going to be like those boxes. Maybe 15 years ago. I can see some of that shit appearing in 2006. Not when I was doing it in 2018/2019. I knew enough to know environments just arent built that way, and someone (ie the entire cyber industry) was trying to pull a swifty on me. 
  
 ![waitasecond](/assets/images/esxi/waitasecond.png)
 
