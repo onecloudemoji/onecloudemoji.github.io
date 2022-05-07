@@ -17,13 +17,13 @@ On a trip away, I caught up with my [hacking homie](https://kymb0.github.io/) fo
 
 The reality is when I started down this path, I avoided doing Active Directory exploitation because it was just too time consuming to set up infrastucture, use a single attack to destroy it, and then need to stand it up again. This is the sort of tool I wanted to exist when I was begining my journey. 
 
-What is most important though, is the deployment of the [badblood project](https://github.com/davidprowe/BadBlood) within the DC. It automatically fills your domain with some wack shit for you to practice your AD techniques on. Heaps of stuff a bloodhound instance will pick up; SPNs, about 2500 users (some whom are ACTUALLY DOMAIN CONTROLLERS), some with weak, weak passwords for kerberoasting superduper random permissions (some that are totally nonsensicle just for experimenting) and the meat of it all, ACLs. 
+What is most important though, is the deployment of the [badblood project](https://github.com/davidprowe/BadBlood) within the DC. It automatically fills your domain with some wack shit for you to practice your AD techniques on. Heaps of stuff a bloodhound instance will pick up; SPNs, about 2500 users (some whom are ACTUALLY DOMAIN CONTROLLERS), some with weak, weak passwords for kerberoasting, superduper random permissions (some that are totally nonsensicle just for experimenting) and the meat of it all, ACLs. 
 
 This was one of the most interesting parts of doing work in [OFFSHORE](https://www.hackthebox.com/hacker/pro-labs), the strange ways that I had no idea AD could work. Due to the randomization of this tool though, a lot of scenarios not possible to see in those static environments will appear. Here is a casual flex because I cannot find an appropriate picture to put here.
 
 ![offshore](/assets/images/vagrant/offshore.png)
 
-Years beforehand, I had heard of vagrant and their specific vmware workstation plugin. At the time, it was a paid product, so I put it on hold until I had the time to really dig into something with a cost on it. I hadn’t known the plugin had become open source until that study day; I was actually going to present a case to work to have them purchase it for me lol.
+Years beforehand, I had heard of vagrant and their specific vmware workstation plugin. At the time, it was a paid product, so I put it on hold until I had the time to really dig into something with a cost on it. I hadn’t known the plugin had become open source until that study day; I was actually going to present a case to work to have them purchase it for me as part of my training and development. Funny how things work out.
 
 This is the first stage of the project; it will morph into various variants; eventually there will be a fully automated version of the entire [pivot lab project](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/) and various other things. There is no timeline for release, but I need it taken off my whiteboard where it has been since 2019.
 
@@ -43,6 +43,7 @@ As seen in the readme, the first command we run from inside the folder is ````pa
 
 Packer takes in the json, which starts setting a few things up. External scripts and shit you want run during build can be hosted on a floppy, such as the unattended.xml etc. Inside the builders section you can specify which hypervisor you are using. there’s a few different options, inc hyper v and other bullshit solutions. There’s ability to provision to esxi, but the only reason I was using esxi in the past for my automated lab was the costing of the vagrant plugin. [I think I have released those shitty scripts somewhere](https://onecloudemoji.github.io/labbing/esxi-revert-panel/).
 
+A visual representation of the clusterfuck I made because I didnt want to pay for a tool to make my life easier so I spent expentially more time making a worse solution.
 ![esxi](/assets/images/vagrant/esxi.jpg)
 
 Reviewing this json post release and I can see all the variables I have set were completely unnecessary, but may aid others in understanding what’s going on. 
@@ -66,9 +67,9 @@ The vagrant_file.template is where the real fun begins. This is where we manuall
 
 Set your winrm.host address to the address you set to be statically assigned in the ip update script. The provisioning process will not allow an ip change after winrm has made a connection. This was an important note I needed to keep track of. I mention it in case I need to know it later.
 
-Ensure the shared folders is disabled. as part of the process I made sure vmware tools was NOT installed. I don’t need it for this, and it was a fucking hassle even attempting to get it working. So I just bypassed it entirely.
+![memory](/assets/images/vagrant/memory.png)
 
-![whatsthepoint](/assets/images/vagrant/whatsthepoint.png)
+Ensure the shared folders is disabled. as part of the process I made sure vmware tools was NOT installed. I don’t need it for this, and it was a fucking hassle even attempting to get it working. So I just bypassed it entirely.
 
 The shell provisioners are scripts executed inline against the box. They are executed in order of listing. The set registry is named so because of my previous idea to use reg keys to know when and when not this machine was a domain controller. I abandoned this for simply setting a new scheduled task during the dc promo stage, which will trigger at next reboot (after the dc has completed its promo entirely)
 
