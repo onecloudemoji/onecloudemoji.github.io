@@ -26,7 +26,7 @@ This is a retrospective post. It was not written in 2021, but thats what the tim
 
 ![lie](/assets/images/esxi/lie.png)
 
-To help clear it out (and add another throwaway line to my [capstone blogpost](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/)) this small post was written.
+To help clear out that folder (and add another throwaway line to my [capstone blogpost](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/)) this small post was written.
 
 It can be found [here](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/master/assets/images/esxi/lab_reset_sanitised.py). I honestly dont even care for it enough to make a whole repo for it. I have moved right on from using esxi as a base. My thinking on  how to ensure the machines were constantly "deployable" was to mark the vhds as read only. That way whenever the machine was re/booted it would go back to its previous state, since nothing can be  written to the file.
 
