@@ -30,7 +30,13 @@ This is the first stage of the project; it will morph into various variants; eve
 
 ![todo](/assets/images/vagrant/todo.png)
 
-This project took a lot more work to sort out than I expected. Mostly because I was framing it wrong. This is a two phase execution; first packer creates the base golden image, then vagrant "provisions" the image. Except its not golden images in the sense I’m used to; the .box file that’s created from packer has already had the OS installed, and packer turns the .box into a .vmx, where I was imagining the golden image was the thing being installed by vagrant, like an image being pushed by sccm.
+This project took a lot more work to sort out than I expected. Mostly because I was framing it wrong. This is a two phase execution; first packer creates the base golden image, then vagrant "provisions" the image. Except its not golden images in the sense I’m used to; the .box file that’s created from packer has already had the OS installed, and packer turns the .box into a .vmx, where I was imagining the golden image was the thing being installed by vagrant, like an image being pushed by sccm. If that still seems confusing, try this: packer creates the vm, installs the OS, performs any setup listed in the unattended.xml, and then crunches this all into a compressed vm image. Vagrant then takes this compressed image, powers it up, and runs any provisioning scripts you set. 
+
+![confusing](/assets/images/vagrant/confusing.png)
+
+So how does this all work? Well there is a list of setup instructions and prereqs in the readme. This post will not go into detail about them. Feel free to send me a message on LinkedIn if you need a hand getting it set up.
+
+As seen in the readme, the first command we run from inside the folder is ````packer build DC.json````
 
 Packer takes in the json, which starts setting a few things up. External scripts and shit you want run during build can be hosted on a floppy, such as the unattended.xml etc. Inside the builders section you can specify which hypervisor you are using. there’s a few different options, inc hyper v and other bullshit solutions. There’s ability to provision to esxi, but the only reason I was using esxi in the past for my automated lab was the costing of the vagrant plugin. I think I have released those shitty scripts somewhere XXXX
 
@@ -59,7 +65,16 @@ Whilst this all sounds logical and straightforward, the truth was it took a lot 
 
 ![disabled](/assets/images/vagrant/disabled.png)
 
-But we got there in the end, and it works. Its a nice standalone piece. I was thinking of having this also provision the workstation, but I am not sure how necessary and useful that would be. A workstation is easy as fuck to move between domains, where as standing up and down a dc is no easy task. There is a hell of a story that I am referencing from my days working at a local MSP that one day I will link here, but it needs heavy sanitization and I may not ever get to it.
+So once we have appropriately configured our files (or not! It is not necessary to configure anything to get this working out of the box!) the next think we need to do it have vagrant add our .box file as a full virtual machine image. 
+
+````vagrant box add DC file://EXPLICIT LOCATION YOU CREATED THE BOX INCLUDING DRIVE LETTER/DC.box````
+This is the only part of the build that I am not happy with; I do not know how to have vagrant accept the .box file with a relative path. To add a bit of clarity, here is the actual command I was issuing to have my box added whilst building this ````vagrant box add DC file://L:/ADLAB/machines/DC/DC.box````
+
+The last piece of the puzzle is the Vagrantfile within the root. This is what ties it all together. After creating the box with packer, it technically doesnt have a name yet. But if we inspect the previous command we can see ````add DC```` the DC argument is the name vagrant will give the vm. Yes this may be confusing since we named the box DC, inside the OS itself and outside. But it all ties together inside the Vagrantfile. ````    domaincontroller.vm.box = "DC"```` lists the name of the vm that vagrant will power on when issing the final command ````vagrant up````
+
+
+
+Well I got there in the end, and it works. Its a nice standalone piece. I was thinking of having this also provision the workstation, but I am not sure how necessary and useful that would be. A workstation is easy as fuck to move between domains, where as standing up and down a dc is no easy task. There is a hell of a story that I am referencing from my days working at a local MSP that one day I will link here, but it needs heavy sanitization and I may not ever get to it.
 
 ![secret](/assets/images/vagrant/topsecret.png)
 
