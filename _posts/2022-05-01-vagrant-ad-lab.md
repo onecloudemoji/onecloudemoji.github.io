@@ -72,7 +72,9 @@ This is the only part of the build that I am not happy with; I do not know how t
 
 The last piece of the puzzle is the Vagrantfile within the root. This is what ties it all together. After creating the box with packer, it technically doesnt have a name yet. But if we inspect the previous command we can see ````add DC```` the DC argument is the name vagrant will give the vm. Yes this may be confusing since we named the box DC, inside the OS itself and outside. But it all ties together inside the Vagrantfile. ````    domaincontroller.vm.box = "DC"```` lists the name of the vm that vagrant will power on when issing the final command ````vagrant up````
 
+Good lord that was exhausting to type out.
 
+![exhausting](/assets/images/vagrant/exhausting.png)
 
 Well I got there in the end, and it works. Its a nice standalone piece. I was thinking of having this also provision the workstation, but I am not sure how necessary and useful that would be. A workstation is easy as fuck to move between domains, where as standing up and down a dc is no easy task. There is a hell of a story that I am referencing from my days working at a local MSP that one day I will link here, but it needs heavy sanitization and I may not ever get to it.
 
