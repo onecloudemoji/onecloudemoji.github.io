@@ -28,7 +28,7 @@ This is a retrospective post. It was not written in 2021, but thats what the tim
 
 To help clear it out (and add another throwaway line to my [capstone blogpost](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/)) this small post was written.
 
-It can be found here. I honestly dont even care for it enough to make a whole repo for it. I have moved right on from using esxi as a base. My thinking on  how to ensure the machines were constantly "deployable" was to mark the vhds as read only. That way whenever the machine was re/booted it would go back to its previous state, since nothing can be  written to the file.
+It can be found [here](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/master/assets/images/esxi/lab_reset_sanitised.py). I honestly dont even care for it enough to make a whole repo for it. I have moved right on from using esxi as a base. My thinking on  how to ensure the machines were constantly "deployable" was to mark the vhds as read only. That way whenever the machine was re/booted it would go back to its previous state, since nothing can be  written to the file.
 
 This is an actual picture of myself after thinking up this idea.
 ![stupid](/assets/images/esxi/stupid.png)
@@ -45,3 +45,15 @@ Are you suggesting you ran vms on an esxi installation inside a vmware workstati
 Yes, fictional reader, I did.
 
 As we can see, the issues with this "solution" are mounting up.
+
+The script itself is no exception to this dodgy sort of methodology. As stated, I wasnt working with vcenter, so I did not have the ability to add tags to the machines. This means each machine needed to have a marker for which "stage" it was in (the _l1 and _l2  for level 1 and 2 respectively)
+
+The idea was as you progress and get flags, you will find one that will open up a new network, exactly like the corp/student/admin networks in the OSCP lab. The script is then having a form of "persistence" via the use of cookies.
+
+Its rough, and its  shit. But I can say, IT DID WORK! The irony of  why it was put on hold was once again costing; I need more RAM and more SSDs to host this entire lab. It was going to be 4 levels I think from memory. I just dont have the resources to host all of that all the time.
+
+![poor](/assets/images/esxi/poor.png)
+
+I dont have the desire to complete a project like that anymore; standard boot2roots and CTFs just do not interest me anymore. The reality is the real penetration testing work is nothing like the environments offsec, HTB etc put out. It seems pointless to even do those sort of boxes now I have a different skillset I need to sharpen.
+
+ ![sharpen](/assets/images/esxi/sharpen.png)
