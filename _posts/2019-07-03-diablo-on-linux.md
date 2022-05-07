@@ -3,6 +3,7 @@ title: "Diablo on Linux"
 date: 2019-07-03
 categories:
   - projects
+  - games
   
 tags:
   - why?
