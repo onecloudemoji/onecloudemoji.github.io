@@ -26,6 +26,8 @@ Its addictive to get those points. I know, because whilst in two separate very e
 
 My [hacking homie](https://kymb0.github.io/) recognised that I was in a messed up mind state a few years ago, and wanted to help bring me back out of the void. One of the many things he did was he decided we should both sign up for [Offshore](https://app.hackthebox.com/prolabs/overview/offshore), one of the HTB pro labs, and spend some time together bonding over this. 
 
+![friends](/assets/images/gamification/friends.png)
+
 And much like in the OSCP labs, I could feel myself doing the Zerg rush to get flags again. One prime example is the end game state of the first domain; you are using powerview to abuse some AD rights that bloodhound has shown you. And I vividly remember just half skimming the overview that bloodhound gives you on how to abuse that particular DACL, to get the flag as quickly as possible. 
 
 In the end I did finish the lab, but it was hollow. I didn’t learn as much as I expected, because I wasn’t there to learn. I was there to play games. Is this a personal fault? No, the platform literally has the word "gamified" on the front page! It was MADE to be this way.
