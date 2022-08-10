@@ -47,7 +47,9 @@ There is exceptionally little real world crossover between these gamified concep
 
 ![ctf](/assets/images/gamification/ctfs.jpg)
 
-You cannot learn how an environment works while playing a game, because you will always, ALWAYS, be playing a game when in that environment. Without the feeling of sheer panic as you push a misconfiguration to production, and having to write a root cause analysis on the fuckup which FORCES you to understand what happened, how it happened, WHY it happened, and perhaps most critical, how to prevent it from happening again ("dont do it" is not an acceptable response to how do we prevent this from occuring again), you cannot truely grasp what it is you are doing in your game. You cannot gamify the fuckery a misconfigured SYSVOL can cause, because who the fuck is going to provide that scenario, one that runs risk of nuking their entire platform? But you miss out, because the game says it will not be played this way. These are things you can only get from three places; textbooks, building labs, and doing WORK.
+You cannot learn how an environment works while playing a game, because you will always, ALWAYS, be playing a game when in that environment. Without the feeling of sheer panic as you push a misconfiguration to production, and having to write a root cause analysis on the fuckup which FORCES you to understand what happened, how it happened, WHY it happened, and perhaps most critical, how to prevent it from happening again ("dont do it" is not an acceptable response to how do we prevent this from occuring again), you cannot truely grasp what it is you are doing in your game. 
+
+You cannot gamify the fuckery a misconfigured SYSVOL can cause, because who the fuck is going to provide that scenario, one that runs risk of nuking their entire platform? But you miss out, because the game says it will not be played this way. These are things you can only get from three places; textbooks, building labs, and doing WORK.
 
 ![work](/assets/images/gamification/work.png)
 
