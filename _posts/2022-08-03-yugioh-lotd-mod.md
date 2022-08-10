@@ -133,6 +133,8 @@ These all came from https://www.goatformat.com/decks.html
 
 Eagle eyed readers may notice the list does NOT contain a goat control. This is because I have a different match in campaign 1 set up to have a classic goat control. This is a personal, selfish choice because I also wanted the ability to take my goat deck and verse all these different specimens without a mirror match. 
 
+![selfish](/assets/images/yugioh/selfish.png)
+
 I have been having enormous amounts of fun taking my dedicated GOAT control deck against this list. The AI really gets how to play these decks; I’ve given it the [Feb 2020 DragonLink](https://www.youtube.com/watch?v=xBX-dOaNA-g) and it’s unable to pilot it, same as peak [Sky Striker](https://www.youtube.com/watch?v=f3qzP3xZbX0). That video in particular, is of note to me. I was listening to it whilst I was driving to the DHL collection place to get my OSCP cert. 
 
 I have zero interest in ever taking this shit online. Years ago I wiped a YGOPRO public arena with a degenerate mystic mine burn deck; the fact that people like that can exist without penalty means online isn’t for me.   
