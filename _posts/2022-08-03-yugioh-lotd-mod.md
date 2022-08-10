@@ -15,6 +15,8 @@ GOAT format, called so for both being the greatest of all time and for the proli
 
 Because of this, I decided to take it upon myself (whilst standing on the shoulders of giants whom have done ~~a lot~~ literally all of the work in this field) to create this; a series of custom matches to replace the pendulum campaign with a wild variety of GOAT format decks. In essence, creating my own GOAT campaign.
 
+![selfish](/assets/images/yugioh/own.png)
+
 The steps to do this are rather simple and contrived. I was going to put together a .ps1 script to do this automatically, but if anyone cares enough to actually go down this path, theres a good chance you wont be using the deck lists I set up anyway. There are matches in here that are complete blowouts, and the corresponding reverse duel is nigh on impossible. Still, I thought it was a cool thing to work on in some downtiem I had between pentests.
 
 - Copy your YGO_2020.dat and YGO_2020.toc to a working directory
@@ -38,6 +40,9 @@ Alternatively, if you are unhappy to use my decks:
 - TADA
 
 Why, one might ask, did I replace the fifth campaign? Isn’t that a bit arbitrary? The answer is very simple; I do not like the pendulum mechanic. Not one little bit. "Oh thats because you’re stuck in caveman yugioh and just cant understand the new mechanics and blah blah blah" cries the denizens of the internet whom happily pay their waifu tax and think playing fucking solitaire is the sign of a healthy game. It is not, its bullshit.
+
+![solitaire](/assets/images/yugioh/solitaire.png)
+Even Moe isnt enjoying himself doing these combos.
 
 The game peaked with the introduction of the XYZ mechanic. This to me was a healthy, natural progression. It encourages you to normal summon, the way the bloody game is supposed to be played. "You mean if I put two of these on the board, I can turn them into something else??" In all honesty it reminds me a lot of the way evolutions were handled in the early days of the Pokémon tcg. 
 
