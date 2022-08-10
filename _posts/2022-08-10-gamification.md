@@ -14,7 +14,7 @@ The cyber “industry” (and I use both terms loosely for reasons I wont get in
 
 ![factory](/assets/images/gamification/playdo.png)
 
-These are concepts straight from my days playing quake and CSS competitively; these are for GAMES. Because what’s missing from this race to the top of the ladder, is the learning.
+These are concepts straight from my days playing quake and CSS competitively; these are for GAMES. Because what’s missing from this race to the top of the ladder, is the learning. Because the reality is it was never about that. You are a product to be bought and sold, your habits too.
 
 The goal is becoming faster at playing the "game" of cyber. No one is in a rush to read more or grind out more knowledge. Ironically, in the quest to "gitgud" as quickly as possible, no one is actually "getting good". If your foundation is built on zapping through CTFs as fast as you can, getting those dopamine receptors revved up to add another point to your online platform ranking, can you honestly expect to be receiving an education?
 
