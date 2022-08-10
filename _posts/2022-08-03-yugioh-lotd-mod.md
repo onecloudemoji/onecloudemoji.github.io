@@ -138,3 +138,5 @@ I have been having enormous amounts of fun taking my dedicated GOAT control deck
 I have zero interest in ever taking this shit online. Years ago I wiped a YGOPRO public arena with a degenerate mystic mine burn deck; the fact that people like that can exist without penalty means online isn’t for me.   
 
 Anyway I hope you enjoy this rant/showcase. Stay tuned for any future projects on this game, but I am unsure what else I wish to do with it. A lot of the ideas I had have already been implanted like XXXX which allows cpu vs cpu duels!
+
+![yugioh](/assets/images/yugioh/yugioh.png)
