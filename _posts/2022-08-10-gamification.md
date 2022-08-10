@@ -10,13 +10,19 @@ tags:
 
 Games are games and learning is learning. I found out in the second fucking grade that never shall the two meet, because the quality of both declines.
 
-The cyber “industry” (and I use both terms loosely for reasons I wont get into) has really, and I mean REALLY latched onto this gamification concept. Everyone and every platform is competing for higher scores, higher ranks and first bloods in their fisher price brightly coloured play dough looking ass platforms. 
+The cyber “industry” (and I use both terms loosely for reasons I wont get into) has really, and I mean REALLY latched onto this gamification concept. Everyone and every platform is competing for higher scores, higher ranks and first bloods in their Fisher Price brightly coloured Play-Doh looking ass platforms. 
+
+![factory](/assets/images/gamification/playdo.png)
 
 These are concepts straight from my days playing quake and CSS competitively; these are for GAMES. Because what’s missing from this race to the top of the ladder, is the learning.
 
 The goal is becoming faster at playing the "game" of cyber. No one is in a rush to read more or grind out more knowledge. Ironically, in the quest to "gitgud" as quickly as possible, no one is actually "getting good". If your foundation is built on zapping through CTFs as fast as you can, getting those dopamine receptors revved up to add another point to your online platform ranking, can you honestly expect to be receiving an education?
 
+![education](/assets/images/gamification/education.png)
+
 Its addictive to get those points. I know, because whilst in two separate very expensive training grounds, I tried to get points above the learning. I got addicted to the concept of capturing the flags more than learning. I thought I was king of all shit for popping everything in the PWK labs with eternal blue and just hoovering up roots like a naughty vacuum.
+
+![vacuum](/assets/images/gamification/vacuum.png)
 
 My [hacking homie](https://kymb0.github.io/) recognised that I was in a messed up mind state a few years ago, and wanted to help bring me back out of the void. One of the many things he did was he decided we should both sign up for [Offshore](https://app.hackthebox.com/prolabs/overview/offshore), one of the HTB pro labs, and spend some time together bonding over this. 
 
