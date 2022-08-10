@@ -35,7 +35,7 @@ In the end I did finish the lab, but it was a hollow win. I didn’t learn as mu
 ![offshore](/assets/images/vagrant/offshore.png) 
 Here is my award for playing the game.
 
-What has been exceptionally helpful however, has been using my [AD lab](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/)  (and before I got the automated AD lab one set up the [Kerberoast lab](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/)) to perform all sorts of zany attacks. Did you honestly expect this to not turn into a fart huffing exercise? 
+What has been exceptionally helpful however, has been using my [automated AD lab with vagrant](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/)  (and before I got the automated AD lab one set up the [Kerberoast lab](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/)) to perform all sorts of zany attacks. Did you honestly expect this to not turn into a fart huffing exercise? 
 
 And do you know why my AD lab works as a great LEARNING platform? Because it’s boring. There’s no flags. There’s no game to play. There’s no point system. There is nothing bright and shiny you can put in your linked in headline. There’s nothing to do, EXCEPT LEARN! 
 
