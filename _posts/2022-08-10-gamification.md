@@ -53,7 +53,7 @@ You cannot gamify the fuckery a misconfigured SYSVOL can cause, because who the 
 
 ![work](/assets/images/gamification/work.png)
 
-If you need bing-bing-wahoo to get interested in a topic, guess what; the problem isn’t the topic. If you wouldn’t on your own dime and time buy a textbook on said topic to read and digest because "that’s not interesting", then you’re going through these platforms to play games, not to learn. The Library of Alexandria is readily available for every single human being to digest literally any topic on earth (and beyond). You live in the future people like Leonardo di ser Piero da Vinci could only DREAM of, and you think learning is boring? If this is the mind state you have, you do not deserve the world you live in.
+If you need bing-bing-wahoo to get interested in a topic, guess what; the problem isn’t the topic. If you wouldn’t on your own dime and time buy a textbook on said topic to read and digest because "that sounds boring", then you’re going through these platforms to play games, not to learn. The Library of Alexandria is readily available for every single human being to digest literally any topic on earth (and beyond). You live in the future people like Leonardo di ser Piero da Vinci could only DREAM of, and you think learning is boring? If this is the mind state you have, you do not deserve the world you live in.
 
 ![read](/assets/images/gamification/read.png)
 
