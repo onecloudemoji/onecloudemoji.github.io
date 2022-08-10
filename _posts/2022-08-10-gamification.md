@@ -41,7 +41,7 @@ And do you know why my AD lab works as a great LEARNING platform? Because it’s
 
 Everyone wants to play CTFs, and no one wants to hack. As Joe organ says, it’s just high tech procrastination. The achievements and point progression make it SEEM like you’re getting somewhere (“but number go up I must be on the right path!”) but the reality is you are just wanking into the bed sheets.
 
-If you need bing-bing-wahoo to get interested in a topic, guess what; the problem isn’t the topic. If you wouldn’t on your own dime and time buy a textbook on said topic to read and digest because "that’s not interesting", then you’re going through these platforms to play games, not to learn.
+If you need bing-bing-wahoo to get interested in a topic, guess what; the problem isn’t the topic. If you wouldn’t on your own dime and time buy a textbook on said topic to read and digest because "that’s not interesting", then you’re going through these platforms to play games, not to learn. The Library of Alexandria is readily available for every single human being to digest literally any topic on earth (and beyond). You live in the future people like Davinchi could only DREAM of, and you think learning is boring? If this is the mind state you have, you do not deserve the world you live in.
 
 ![read](/assets/images/gamification/read.png)
 
@@ -52,6 +52,8 @@ Learning is not fun. Anyone who says otherwise is lying and has not actually don
 ![advice](/assets/images/gamification/play.jpg)
  
  That little piece of advice took my guitar playing to another fucking level. I was able to work through Marty Friedmans [melodic control](https://www.youtube.com/watch?v=-OmDoa2SkKY). That was a pivotal moment in my life, as he is one of my last remaining heroes. It was also one of the single most frustrating experiences I have ever had the misfortune of putting myself through. And in those three gruelling months, my skillset went through the fucking roof; something that did not happen during the many years of fun "practice". 
+ 
+ I want to make something clear incase it was not readily picked up on; something that is hard, frustrating, unpleasent and unfun does not mean it is boring. 
 
 Read this [insane lunatic rant](https://onecloudemoji.github.io/games/2004-gaming/) for an in-depth rant on why games have been shit for the past 15 years or so. And essentially, the same principles apply. Getting humans addicted to something so they can literally soak up a) their money and, here’s the most important one, b) their time so they can expose them to more ads and or profile them to sell to marketers, is a solved concept. Our little rat brains have been worked out and a mapped game plan of how to get you hooked was formulated not in Dr Xs basement, but in boardrooms across the globe.
 
