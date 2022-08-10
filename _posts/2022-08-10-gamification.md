@@ -59,6 +59,10 @@ I know of multiple people who unironically were devastated when something came u
 
 ![truth](/assets/images/gamification/lie.jpg)
 
+You want some practical, tangible and actionable advice on what you should do instead? Build a small domain, fill your AD with [badblood misconfigurations](https://github.com/davidprowe/BadBlood), download vulnerable software from exploitdb (filter by "has app" on the main page), set up the [OWASP Broken Web Apps](https://sourceforge.net/projects/owaspbwa/) and go to town. When you break your domain, fix it. Try to write some tools to automate things. Spend time configuring a C2 (there are plenty of free options that work you can use, [SILENTTRINITY](https://github.com/byt3bl33d3r/SILENTTRINITY) is one. Empire WAS popular but I stopped paying attention to it when it went read only, I dont know what its status is). You can even do this locally before you complain about AWS and Azure. Run through the [burp academy](https://portswigger.net/web-security). Congratulations, you are now semi useful to an org, in a way playing online flash games all day does not prepare you for.
+
+![congrats](/assets/images/gamification/congrats.png)
+
 Learning is not fun. Anyone who says otherwise is lying and has not actually done any real learning in a long time. Having your brain stretched and reaching new depths of hell trying to gain a new wrinkle or synapse connection is not pleasant. Learning is the same as practicing an instrument; if you are just mindlessly noodling the same shapes and scales you always do, you haven’t practiced shit. You have done nothing. 
 
 ![advice](/assets/images/gamification/play.jpg)
