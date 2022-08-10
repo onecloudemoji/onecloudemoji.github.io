@@ -55,3 +55,4 @@ Learning is not fun. Anyone who says otherwise is lying and has not actually don
 
 Read this [insane lunatic rant](https://onecloudemoji.github.io/games/2004-gaming/) for an in-depth rant on why games have been shit for the past 15 years or so. And essentially, the same principles apply. Getting humans addicted to something so they can literally soak up a) their money and, here’s the most important one, b) their time so they can expose them to more ads and or profile them to sell to marketers, is a solved concept. Our little rat brains have been worked out and a mapped game plan of how to get you hooked was formulated not in Dr Xs basement, but in boardrooms across the globe.
 
+![meeting](/assets/images/gamification/meeting.png)
