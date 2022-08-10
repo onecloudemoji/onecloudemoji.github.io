@@ -17,10 +17,10 @@ Because of this, I decided to take it upon myself (whilst standing on the should
 
 The steps to do this are rather simple and contrived. I was going to put together a .ps1 script to do this automatically, but if anyone cares enough to actually go down this path, theres a good chance you wont be using the deck lists I set up anyway. There are matches in here that are complete blowouts, and the corresponding reverse duel is nigh on impossible. Still, I thought it was a cool thing to work on in some downtiem I had between pentests.
 
--Copy your YGO_2020.dat and YGO_2020.toc to a working directort
+-Copy your YGO_2020.dat and YGO_2020.toc to a working directory
 -Use `yugi_extract.py` to dump resources (found here https://www.moddb.com/mods/requiem-link-evolution/downloads/packing-scripts)
 -Inside the folder called ``decks.zip`` are a bunch of ydc files
--Copy the files from hereXXX and overwrite all the arcv decks.
+-[Copy the files from here](https://github.com/onecloudemoji/onecloudemoji.github.io/blob/master/assets/images/yugioh/arcv%20decks.zip) and overwrite all the arcv decks.
 -Run `yugi_compress.py` to generate new .dat and .toc
 -Rename the files to YGO_2020
 -Make a backup of the original .toc and .dat files incase you stuffed it up
