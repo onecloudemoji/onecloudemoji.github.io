@@ -24,13 +24,13 @@ Its addictive to get those points. I know, because whilst in two separate very e
 
 ![vacuum](/assets/images/gamification/vacuum.png)
 
-My [hacking homie](https://kymb0.github.io/) recognised that I was in a messed up mind state a few years ago, and wanted to help bring me back out of the void. One of the many things he did was he decided we should both sign up for [Offshore](https://app.hackthebox.com/prolabs/overview/offshore), one of the HTB pro labs, and spend some time together bonding over this. 
+My [hacking homie](https://kymb0.github.io/) recognised that I was in a messed up mind state a while ago, and wanted to help bring me back out of the void. One of the many things he did was he decided we should both sign up for [Offshore](https://app.hackthebox.com/prolabs/overview/offshore), one of the HTB pro labs, and spend some time together bonding over this. 
 
 ![friends](/assets/images/gamification/friends.png)
 
 And much like in the OSCP labs, I could feel myself doing the Zerg rush to get flags again. One prime example is the end game state of the first domain; you are using powerview to abuse some AD rights that bloodhound has shown you. And I vividly remember just half skimming the overview that bloodhound gives you on how to abuse that particular DACL, to get the flag as quickly as possible. 
 
-In the end I did finish the lab, but it was hollow. I didn’t learn as much as I expected, because I wasn’t there to learn. I was there to play games. Is this a personal fault? No, the platform literally has the word "gamified" on the front page! It was MADE to be this way.
+In the end I did finish the lab, but it was a hollow win. I didn’t learn as much as I expected, because I wasn’t there to learn. I was there to play games. Is this a personal fault? No, the platform literally has the word "gamified" on the front page! It was MADE to be this way. I had spent literal months playing a game, when I could have been studying.
 
 ![offshore](/assets/images/vagrant/offshore.png) 
 Here is my award for playing the game.
@@ -59,16 +59,12 @@ Learning is not fun. Anyone who says otherwise is lying and has not actually don
 
 ![advice](/assets/images/gamification/play.jpg)
  
- That little piece of advice took my guitar playing to another fucking level. I was able to work through Marty Friedmans [melodic control](https://www.youtube.com/watch?v=-OmDoa2SkKY). That was a pivotal moment in my life, as he is one of my last remaining heroes. It was also one of the single most frustrating experiences I have ever had the misfortune of putting myself through. And in those three gruelling months, my skillset went through the fucking roof; something that did not happen during the many years of fun "practice". 
+ That little piece of advice took my guitar playing to another fucking level. I was able to work through Marty Friedmans [melodic control](https://www.youtube.com/watch?v=-OmDoa2SkKY). That was a pivotal moment in my life, as he is one of my last remaining heroes and I had objectively become the best guitarist I knew due to his lessons. It was also one of the single most frustrating experiences I have ever had the misfortune of putting myself through. And in those three gruelling months, my skillset went through the fucking roof; something that did not happen during the many years of fun "practice". 
  
  I want to make something clear incase it was not readily picked up on; something that is hard, frustrating, unpleasent and unfun does not mean it is boring. None of those are synonyms for the word. I think a lot of people would do well to remember that.
  
  ![think](/assets/images/gamification/think.png)
 
-Read this [insane lunatic rant](https://onecloudemoji.github.io/games/2004-gaming/) for an in-depth rant on why games have been shit for the past 15 years or so. And essentially, the same principles apply. Getting humans addicted to something so they can literally soak up 
-a) their money 
-and, here’s the most important one, 
-b) their time so they can expose them to more ads and or profile them to sell to marketers 
-is a solved concept. Our little rat brains have been worked out and a mapped game plan of how to get you hooked was formulated not in Dr Xs basement, but in boardrooms across the globe.
+Read this [insane lunatic rant](https://onecloudemoji.github.io/games/2004-gaming/) for an in-depth rant on why games have been shit for the past 15 years or so. And essentially, the same principles apply. Getting humans addicted to something so they can literally soak up a) their money and, here’s the most important one, b) their time so they can expose them to more ads and or profile them to sell to marketers is a solved concept. It has been distilled to a literal forumla, with the user experience literally coming second to making profits. Our little rat brains have been dissected, taken apart and analysed; the mapped game plan of how to get you hooked was formulated not in Dr Xs basement, but in boardrooms across the globe.
 
-![meeting](/assets/images/gamification/meeting.png)
+![drx](/assets/images/gamification/dr_x.png)
