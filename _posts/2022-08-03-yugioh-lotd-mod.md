@@ -50,6 +50,8 @@ I say were because I have not played the TCG in so long. I found the most busted
 
 One would probably think they are very clever by making the point "you just like it cause that format was your childhood!" and that smarmy fucko would be wrong. I didn’t know it existed until 5 or so years ago. I have this strange memory of being at my MSP job with my [hacking homie](https://kymb0.github.io/) and just going on an insane diatribe to him about the format whilst sitting on an obtusely high chair and ignoring the tickets in our queue, after we had come back from sinking an obscene number of pints at lunch. He is an MTG man, I think that game stinks. Man 2019 was a different time. My entire existance was made up of listening to megacapitalg give out old school yugioh lessons, absolutley destroying an old friend with my new obtuse decks, studying for the OSCP and somehow getting paid to ignore my job.
 
+![job](/assets/images/yugioh/jobby.jpg)
+
 GOAT is slower. Its interactive. Its turn based. What the fuck do these things mean you ask? The modern game state (2017-202X) is typically done in 3 or 4 moves. Not each, in total. Its a combination of insanely long run on combos that give you an end state board in a single turn (albeit with 30/40 combos sprinkled in to get there) and that the game is mostly reliant on you topdecking the necessary pieces to interrupt these combos. If you do not, you cannot play the game anymore. Boss monsters that block every single action you can take are not healthy. You cannot hope for any sort of comeback from a game like that.
 
 ![comeback](/assets/images/yugioh/comeback.jpg)
