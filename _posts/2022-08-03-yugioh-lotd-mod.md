@@ -20,7 +20,7 @@ Because of this, I decided to take it upon myself (whilst standing on the should
 The steps to do this are rather simple and contrived. I was going to put together a .ps1 script to do this automatically, but if anyone cares enough to actually go down this path, theres a good chance you wont be using the deck lists I set up anyway. There are matches in here that are complete blowouts, and the corresponding reverse duel is nigh on impossible. Still, I thought it was a cool thing to work on in some downtiem I had between pentests.
 
 - Copy your YGO_2020.dat and YGO_2020.toc to a working directory
-- Use `yugi_extract.py` to dump resources (found here https://www.moddb.com/mods/requiem-link-evolution/downloads/packing-scripts)
+- Use `yugi_extract.py` to dump resources, which can be [found here](https://www.moddb.com/mods/requiem-link-evolution/downloads/packing-scripts)
 - Inside the folder called ``decks.zip`` are a bunch of ydc files
 - [Copy the files from here](https://github.com/onecloudemoji/onecloudemoji.github.io/blob/master/assets/images/yugioh/arcv%20decks.zip) and overwrite all the arcv decks.
 - Run `yugi_compress.py` to generate new .dat and .toc
@@ -30,7 +30,7 @@ The steps to do this are rather simple and contrived. I was going to put togethe
 - TADA
 
 Alternatively, if you are unhappy to use my decks:
-- Once you have extracted the files, use https://github.com/nzxth2/YGO_LOTD_LE_YDC_Converter to turn these ydc files to text
+- Once you have extracted the files, [use the YDC converter](https://github.com/nzxth2/YGO_LOTD_LE_YDC_Converter) to turn these ydc files to text
 - Modify the files according to the format within the GitHub readme 
 - Use the converter again to turn the txt back into a ydc once you have finished
 - Run `yugi_compress.py` to generate new .dat and .toc
@@ -134,7 +134,7 @@ Here is a list of each deck I put into this mod if you are interested in simply 
 - 33a warrior
 - 33b pixie control
 
-These all came from https://www.goatformat.com/decks.html
+These all came from [goatformat.com/decks](https://www.goatformat.com/decks.html)
 
 Eagle eyed readers may notice the list does NOT contain a goat control. This is because I have a different match in campaign 1 set up to have a classic goat control. This is a personal, selfish choice because I also wanted the ability to take my goat deck and verse all these different specimens without a mirror match. 
 
