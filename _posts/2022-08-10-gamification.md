@@ -61,10 +61,14 @@ Learning is not fun. Anyone who says otherwise is lying and has not actually don
  
  That little piece of advice took my guitar playing to another fucking level. I was able to work through Marty Friedmans [melodic control](https://www.youtube.com/watch?v=-OmDoa2SkKY). That was a pivotal moment in my life, as he is one of my last remaining heroes. It was also one of the single most frustrating experiences I have ever had the misfortune of putting myself through. And in those three gruelling months, my skillset went through the fucking roof; something that did not happen during the many years of fun "practice". 
  
- I want to make something clear incase it was not readily picked up on; something that is hard, frustrating, unpleasent and unfun does not mean it is boring. 
+ I want to make something clear incase it was not readily picked up on; something that is hard, frustrating, unpleasent and unfun does not mean it is boring. None of those are synonyms for the word. I think a lot of people would do well to remember that.
  
  ![think](/assets/images/gamification/think.png)
 
-Read this [insane lunatic rant](https://onecloudemoji.github.io/games/2004-gaming/) for an in-depth rant on why games have been shit for the past 15 years or so. And essentially, the same principles apply. Getting humans addicted to something so they can literally soak up a) their money and, here’s the most important one, b) their time so they can expose them to more ads and or profile them to sell to marketers, is a solved concept. Our little rat brains have been worked out and a mapped game plan of how to get you hooked was formulated not in Dr Xs basement, but in boardrooms across the globe.
+Read this [insane lunatic rant](https://onecloudemoji.github.io/games/2004-gaming/) for an in-depth rant on why games have been shit for the past 15 years or so. And essentially, the same principles apply. Getting humans addicted to something so they can literally soak up 
+a) their money 
+and, here’s the most important one, 
+b) their time so they can expose them to more ads and or profile them to sell to marketers 
+is a solved concept. Our little rat brains have been worked out and a mapped game plan of how to get you hooked was formulated not in Dr Xs basement, but in boardrooms across the globe.
 
 ![meeting](/assets/images/gamification/meeting.png)
