@@ -39,7 +39,11 @@ What has been exceptionally helpful however, has been using my [AD lab](https://
 
 And do you know why my AD lab works as a great LEARNING platform? Because it’s boring. There’s no flags. There’s no game to play. There’s no point system. There is nothing bright and shiny you can put in your linked in headline. There’s nothing to do, EXCEPT LEARN! 
 
-Everyone wants to play CTFs, and no one wants to hack. As Joe organ says, it’s just high tech procrastination. The achievements and point progression make it SEEM like you’re getting somewhere (“but number go up I must be on the right path!”) but the reality is you are just wanking into the bed sheets.
+![library](/assets/images/gamification/library.png)
+
+Everyone wants to play CTFs, but no one wants to hack. As Joe organ says, it’s just high tech procrastination. The achievements and point progression make it SEEM like you’re getting somewhere (“but number go up I must be on the right path!”) but the reality is you are just wanking into the bed sheets.
+
+There is exceptionally little real world crossover between these gamified concepts and the actuality. The IT sphere has never, ever, fucking EVER had a shell be popped by someone uncovering the backdoor that is via a quirky, fun, puzzle. Misconfigurations are not fun, and performing source code analysis to uncover them is always awful. These skills, are the byproduct of dry, rote textbook learning. You cannot speed learn how an environment works. You cannot gamify the fuckery a misconfigured SYSVOL can cause. These are things you get from three places; textbooks, building labs, and doing WORK.
 
 If you need bing-bing-wahoo to get interested in a topic, guess what; the problem isn’t the topic. If you wouldn’t on your own dime and time buy a textbook on said topic to read and digest because "that’s not interesting", then you’re going through these platforms to play games, not to learn. The Library of Alexandria is readily available for every single human being to digest literally any topic on earth (and beyond). You live in the future people like Davinchi could only DREAM of, and you think learning is boring? If this is the mind state you have, you do not deserve the world you live in.
 
