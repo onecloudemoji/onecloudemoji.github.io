@@ -10,13 +10,13 @@ tags:
 
 Games are games and learning is learning. I found out in the second fucking grade that never shall the two meet, because the quality of both declines.
 
-The cyber “industry” (and I use both terms loosely for reasons I wont get into) has really, and I mean REALLY latched onto this gamificaiton concept. Everyone and every platform is competing for higher scores, higher ranks and first bloods in their fisher price brightly coloured play dough looking ass platforms. 
+The cyber “industry” (and I use both terms loosely for reasons I wont get into) has really, and I mean REALLY latched onto this gamification concept. Everyone and every platform is competing for higher scores, higher ranks and first bloods in their fisher price brightly coloured play dough looking ass platforms. 
 
-These are concepts straight from my days playing quake and CSS competitively; these are for GAMES. Because whats missing from this race to the top of the ladder, is the learning.
+These are concepts straight from my days playing quake and CSS competitively; these are for GAMES. Because what’s missing from this race to the top of the ladder, is the learning.
 
-The goal is becoming faster at playing the "game" of cyber. Noone is in a rush to read more or grind out more knowledge. Ironically, in the quest to "gitgud" as quickly as possible, noone is actually "getting good". If your foundation is built on zapping through CTFs as fast as you can, getting those dopamine receptors revved up to add another point to your online platform ranking, can you honestly expect to be receiving an education?
+The goal is becoming faster at playing the "game" of cyber. No one is in a rush to read more or grind out more knowledge. Ironically, in the quest to "gitgud" as quickly as possible, no one is actually "getting good". If your foundation is built on zapping through CTFs as fast as you can, getting those dopamine receptors revved up to add another point to your online platform ranking, can you honestly expect to be receiving an education?
 
-Its addictive to get those points. I know, because whilst in two seperate very expensive training grounds, I tried to get points above the learning. I got addicted to the concept of capturing the flags more than than learning. I thought I was king of all shit for popping everything in the PWK labs with eternal blue and just hoovering up roots like a naughty vacuum.
+Its addictive to get those points. I know, because whilst in two separate very expensive training grounds, I tried to get points above the learning. I got addicted to the concept of capturing the flags more than learning. I thought I was king of all shit for popping everything in the PWK labs with eternal blue and just hoovering up roots like a naughty vacuum.
 
 My [hacking homie](https://kymb0.github.io/) recognised that I was in a messed up mind state a few years ago, and wanted to help bring me back out of the void. One of the many things he did was he decided we should both sign up for [Offshore](https://app.hackthebox.com/prolabs/overview/offshore), one of the HTB pro labs, and spend some time together bonding over this. 
 
@@ -29,7 +29,7 @@ Here is my award for playing the game.
 
 What has been exceptionally helpful however, has been using my [AD lab](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/)  (and before I got the automated AD lab one set up the [Kerberoast lab](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/)) to perform all sorts of zany attacks. Did you honestly expect this to not turn into a fart huffing exercise? 
 
-And do you know why my AD lab works as a great LEARNING platform? Because it’s boring. There’s no flags. There’s no game to play. Theres no point system. There is nothing bright and shiny you can put in your linked in headline. Theres nothing to do, EXCEPT LEARN! 
+And do you know why my AD lab works as a great LEARNING platform? Because it’s boring. There’s no flags. There’s no game to play. There’s no point system. There is nothing bright and shiny you can put in your linked in headline. There’s nothing to do, EXCEPT LEARN! 
 
 Everyone wants to play CTFs, and no one wants to hack. As Joe organ says, it’s just high tech procrastination. The achievements and point progression make it SEEM like you’re getting somewhere (“but number go up I must be on the right path!”) but the reality is you are just wanking into the bed sheets.
 
@@ -41,6 +41,7 @@ Learning is not fun. Anyone who says otherwise is lying and has not actually don
 
 ![advice](/assets/images/gamification/play.jpg)
  
- That little piece of advice took my guitar playing to another fucking level. I was able to work through Marty Friedmans [melodic control](https://www.youtube.com/watch?v=-OmDoa2SkKY). That was a pivotal moment in my life, as he is one of my last remaning heros. It was also one of the single most frustrating expeirences I have ever had the misfortune of putting myself through. And in those three grueling months, my skillset went through the fucking roof; something that did not happen during the many years of fun "practice". 
+ That little piece of advice took my guitar playing to another fucking level. I was able to work through Marty Friedmans [melodic control](https://www.youtube.com/watch?v=-OmDoa2SkKY). That was a pivotal moment in my life, as he is one of my last remaining heroes. It was also one of the single most frustrating experiences I have ever had the misfortune of putting myself through. And in those three gruelling months, my skillset went through the fucking roof; something that did not happen during the many years of fun "practice". 
 
 Read this [insane lunatic rant](https://onecloudemoji.github.io/games/2004-gaming/) for an in-depth rant on why games have been shit for the past 15 years or so. And essentially, the same principles apply. Getting humans addicted to something so they can literally soak up a) their money and, here’s the most important one, b) their time so they can expose them to more ads and or profile them to sell to marketers, is a solved concept. Our little rat brains have been worked out and a mapped game plan of how to get you hooked was formulated not in Dr Xs basement, but in boardrooms across the globe.
+
