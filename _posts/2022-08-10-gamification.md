@@ -47,6 +47,8 @@ If you need bing-bing-wahoo to get interested in a topic, guess what; the proble
 
 I know of multiple people who unironically were devastated when something came up in their lives and they couldn’t log into a platform one day, and lost their XYZ length streak. What the fuck is going on when an educational platform is putting Snapchat style dark patterns in to coerce and guilt you into using it more? It’s quite clear the intention is NOT “to get the users excited to study more” and everyone whose parroting this is lying to themselves.
 
+![truth](/assets/images/gamification/lie.jpg)
+
 Learning is not fun. Anyone who says otherwise is lying and has not actually done any real learning in a long time. Having your brain stretched and reaching new depths of hell trying to gain a new wrinkle or synapse connection is not pleasant. Learning is the same as practicing an instrument; if you are just mindlessly noodling the same shapes and scales you always do, you haven’t practiced shit. You have done nothing. 
 
 ![advice](/assets/images/gamification/play.jpg)
