@@ -28,7 +28,9 @@ I have been reading a lot of doom and gloom postings about the coming AI revolut
 
 ![oldgil](/assets/images/lemonsqueezy/oldgil.png)
 
-This post was going to be very different before I really hooked into how good these openai models are; I was going to painstakingly walk you through how to set it up manually. I figured a techincal walkthrough how to create the VM would be the perfect sort of closure for that chapter of my life; since releasing the VM I lost all desire to ever do any more boot2roots or standalone HTB machines. I am all about maximum value home labs now, something that single serving vulnhub scenarios do not provide.
+This post was going to be very different before I really hooked into how good these openai models are; I was going to painstakingly walk you through how to set it up manually. I figured a techincal walkthrough how to create the VM would be the perfect sort of closure for that chapter of my life; since releasing the VM I lost all desire to ever do any more boot2roots or standalone HTB machines. I am all about maximum value home labs now, something that single serving vulnhub scenarios do not provide. Instead, this is a nonsense rant I am delivering at 0130AM because I drank too much and cant sleep otherwise I will vomit because everything is spinning. 
+
+![puke](/assets/images/lemonsqueezy/death.jpg)
 
 The prompt i fed the machine was like so 
 
@@ -57,5 +59,5 @@ And here we are:
 
 ![woah](/assets/images/lemonsqueezy/hellyeah.png)
 
-Woah indeed. The potential for openai to easily improve my [Vagrant AD Lab](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/) and my [pivoting lab](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/) EXCITES me, and it should excite you too. This becomes the difference between a tech and an architect; being able to design environments, eyeball configs to pick up issues and direct others on the "big picture" of how your environment should look is a skill you can literally hone by playing with chatgpt. I WILL be using this to produce my labs going forward, because its up to me as the architect to properly scope and spec them. 
+Woah indeed. The potential for openai to easily improve my [Vagrant AD Lab](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/) and my [pivoting lab](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/) EXCITES me, and it should excite you too. This becomes the difference between a tech and an architect; being able to design environments, eyeball configs to pick up issues and direct others on the "big picture" of how your environment should look is a skill you can literally hone by playing with chatgpt. I WILL be using this to produce my labs going forward, because its up to me as the architect to properly scope and spec them.  
 
