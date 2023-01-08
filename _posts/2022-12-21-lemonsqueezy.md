@@ -1,5 +1,5 @@
 ---
-title: "Build you a lemonsqueezy"
+title: "Build you a LemonSqueezy"
 date: 2022-12-21
 categories:
   - learning
@@ -8,7 +8,7 @@ tags:
   - study
 ---
 
-In the start of 2020 I had the brilliant idea of creating my own vulnhub machine. Born out of frustration with the OSCP labs lacking a whole suite of techniques that are in their exam boxes, I created Lemonsqueezy as a direct combination of two exam boxes I had. 
+In the start of 2020 I had the brilliant idea of creating my own vulnhub machine. Born out of frustration with the OSCP labs lacking a whole suite of techniques that are in their exam boxes, [I created Lemonsqueezy](https://www.vulnhub.com/entry/lemonsqueezy-1%2C473/) as a direct combination of two exam boxes I had. 
 
 Whilst I had the idea after passing in November, it wasn’t until March of 2020 that I actually started putting it together. A combination of being forced to work from home due to the wuflu doing the rounds and having a low side laptop to access high side training materials (aka being paid to do nothing because ofc those materials were not accessible low side) I decided to put it together.
 
@@ -37,3 +37,25 @@ The prompt i fed the machine was like so
 and in turn it does my bidding and turns several days of work into half a minute of waiting.
 
 ![iamawashingmachine](/assets/images/lemonsqueezy/dowhatisay.png)
+
+
+And here we are:
+
+````Here is a bash script that will set up MariaDB with a user called testuser who is an admin, set up WordPress with a user called orange and password lemon, and create a WordPress draft containing a note with the password for the testuser account. It will also configure the MySQL database to allow the INTO OUTFILE SQL statement, and create a file in /etc/logrotate.d/logrotate that is world-writable and runs as a cron job every 2 minutes:````
+
+ 
+
+````#!/bin/bash# Install necessary packagesapt-get update apt-get install -y wget curl apache2 mariadb-server php-mysql # Download and extract WordPresswgethttps://wordpress.org/latest.tar.gztar -xzvf latest.tar.gz # Configure WordPressmv wordpress /var/www/html/chown -R www-data:www-data /var/www/html/wordpress/ # Create a MySQL user and database for WordPressmysql -u root <<EOF CREATE DATABASE wordpress; CREATE USER 'orange'@'localhost' IDENTIFIED BY 'lemon'; GRANT ALL PRIVILEGES ON wordpress.* TO 'orange'@'localhost'; CREATE USER 'testuser'@'localhost' IDENTIFIED BY 'testpassword'; GRANT ALL PRIVILEGES ON *.* TO 'testuser'@'localhost' WITH GRANT OPTION; FLUSH PRIVILEGES; EOF# Create a WordPress draft containing the testuser passwordwp post create --post_type='draft' --post_title='Testuser Password' --post_content="The password for the testuser account is: testpassword"# Allow the INTO OUTFILE SQL statement in the MySQL databasemysql -u root <<EOF SET GLOBAL local_infile=1; EOF# Create a world-writable file in /etc/logrotate.d/touch /etc/logrotate.d/logrotatechmod 666 /etc/logrotate.d/logrotate # Add a cron job to run every 2 minutesecho "*/2 * * * * /usr/sbin/logrotate /etc/logrotate.d/logrotate" >> /etc/crontab````
+
+````This script assumes that you have already configured Apache and MariaDB to work with PHP.````
+
+````Note: This script is for guidance only and may not work in all environments. It is recommended to test this script in a staging environment before deploying it in production.````
+
+````It is generally not recommended to allow the INTO OUTFILE SQL statement in a production environment, as it can pose a security risk. This statement allows the output of a SELECT query to be written to a file on the server, which could potentially be accessed by an attacker if the file is not properly protected.````
+
+````In addition, creating a world-writable file and running a cron job every 2 minutes may not be necessary or desirable in most situations. You should carefully consider the implications of these actions before implementing them in a production environment.````
+
+![woah](/assets/images/lemonsqueezy/hellyeah.png)
+
+Woah indeed. The potential for openai to easily improve my [Vagrant AD Lab](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/) and my [pivoting lab](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/) EXCITES me, and it should excite you too. This becomes the difference between a tech and an architect; being able to design environments, eyeball configs to pick up issues and direct others on the "big picture" of how your environment should look is a skill you can literally hone by playing with chatgpt. I WILL be using this to produce my labs going forward, because its up to me as the architect to properly scope and spec them. 
+
