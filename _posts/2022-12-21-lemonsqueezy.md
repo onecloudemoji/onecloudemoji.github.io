@@ -61,3 +61,8 @@ And here we are:
 
 Woah indeed. The potential for openai to easily improve my [Vagrant AD Lab](https://onecloudemoji.github.io/labbing/vagrant-ad-lab/) and my [pivoting lab](https://onecloudemoji.github.io/labbing/pivoting-and-kerberoast-lab-setup/) EXCITES me, and it should excite you too. This becomes the difference between a tech and an architect; being able to design environments, eyeball configs to pick up issues and direct others on the "big picture" of how your environment should look is a skill you can literally hone by playing with chatgpt. I WILL be using this to produce my labs going forward, because its up to me as the architect to properly scope and spec them.  
 
+I firmly believe if you are technical and at all worried about these fancy if/else trees taking your job, you need to suck less. The best results come from ultra specific prompts, the sort that are only able to be given by *those with the capacity and ability to build the environment themselves if needed*. If you dont actually know how to build the env you are designing, how the fuck are you going to direct the robot to do it? And perhaps most importantly, how are you going to verify what its given back is even correct if you dont know what youre looking at?
+
+Itll only replace you if you suck. Just try not sucking.
+
+![glen garry](/assets/images/lemonsqueezy/new_leads.png)
