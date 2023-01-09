@@ -12,11 +12,13 @@ In the start of 2020 I had the brilliant idea of creating my own vulnhub machine
 
 Whilst I had the idea after passing in November, it wasn’t until March of 2020 that I actually started putting it together. A combination of being forced to work from home due to the wuflu doing the rounds and having a low side laptop to access high side training materials (aka being paid to do nothing because ofc those materials were not accessible low side) I decided to put it together.
 
+![secret](/assets/images/lemonsqueezy/secret.png)
+
 It took me about a week I think? It wasn’t overly difficult, but it did require a bit of research and general learning to get it over the line; whilst I’ve been a sysad most of my career I’ve never had to deploy Wordpress nor actually go out of my way to mis configure something to make it vulnerable. It’s interesting how far out of your way one has to go to fuck things up badly enough to actually make these contrived scenarios reality.
 
 ![hmm](/assets/images/lemonsqueezy/huge_fuckup.png)
 
-So eventually it got built, released and published. A few people including my hacking homie put up writeups for it, and eventually it even made its way onto the [TJ Null OSCP prep vm list!](https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview) That felt like a big deal to me, because I grinded those vulnhub machines hard.
+So eventually it got built, released and published. A few people including [my hacking homie](https://kymb0.github.io/) put up writeups for it, and eventually it even made its way onto the [TJ Null OSCP prep vm list!](https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview) That felt like a big deal to me, because I grinded those vulnhub machines hard when I was going for my OSCP.
 
 ![tjnull](/assets/images/lemonsqueezy/tjnull_list.jpg)
 
