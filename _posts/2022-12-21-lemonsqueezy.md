@@ -63,6 +63,6 @@ Woah indeed. The potential for openai to easily improve my [Vagrant AD Lab](http
 
 I firmly believe if you are technical and at all worried about these fancy if/else trees taking your job, you need to suck less. The best results come from ultra specific prompts, the sort that are only able to be given by *those with the capacity and ability to build the environment themselves if needed*. If you dont actually know how to build the env you are designing, how the fuck are you going to direct the robot to do it? And perhaps most importantly, how are you going to verify what its given back is even correct if you dont know what youre looking at?
 
-Itll only replace you if you suck. Just try not sucking.
+Itll only replace you if you suck. Just try not sucking. Oh and I passed my OSWE.
 
 ![glen garry](/assets/images/lemonsqueezy/new_leads.png)
