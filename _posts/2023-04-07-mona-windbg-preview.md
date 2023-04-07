@@ -8,7 +8,8 @@ tags:
   - windbg
   - mona
 ---
-Because I do not wish to go any more blind than I already i am, I refuse to touch the standard version of windbg, nor do I wish to ever in my life fire up immunity again. 
+
+The next thing on my todo list is move into exploit dev. There is a strong amount of crossover between exploit dev and game hacking, which is where my real aim is. All of these require using debuggers. Because I do not wish to go any more blind than I already i am, I refuse to touch the standard version of windbg, nor do I wish to ever in my life fire up immunity again. 
 
 ![blind](/assets/images/mona/cheese.png)
 
