@@ -14,9 +14,11 @@ Because I do not wish to go any more blind than I already i am, I refuse to touc
 
 Thankfully, due to some strange oversight that I am not in the mood to investigate any further, whilst changes cant be made INSIDE the windbg preview folder itself, I can do shit TO the windbg folder after taking ownership of it and all sub files (but as mentioned, this somehow excludes the files and folders relating to windbg preview), since it is inside the windowsapps folder. 
 
-So armed with this information, I simply decided I wasnt going to play MSs game anymore, and simply shipped the files somewhere else. I zipped up the windbg folder, and moved it to a fresh VM. Following a strange mishmash of every set of instructions on [corelans windbglib readme](https://github.com/corelan/windbglib), I was able to get mona running on a bastardised windbg preview.
+So armed with this information, I decided I wasnt going to play MSs game anymore, and simply shipped the files somewhere else. I zipped up the windbg folder, and moved it to a fresh VM. Following a strange mishmash of every set of instructions on [corelans windbglib readme](https://github.com/corelan/windbglib), I was able to get mona running on a bastardised windbg preview.
 
-i seem to be having a lot of issues with the interner lately. either something is wrong with my google account and my search results are slowly becoming poisoned, google search is steadily becoming worse and worse with every passing year, or i have [ONCE AGAIN stumbled upon a problem no other human being has had](https://onecloudemoji.github.io/projects/model-location/). as special as i think i am, the odds of me being the only human being in the infosec sphere who has fucking HAD IT with how hard to read the common debugging tools are and wanting to implement the mona suite into the preview version seem incredibly low. 
+I seem to be having a lot of issues with the internet lately. either something is wrong with my google account and my search results are slowly becoming poisoned, google search is steadily becoming worse and worse with every passing year, or i have [ONCE AGAIN stumbled upon a problem no other human being has had](https://onecloudemoji.github.io/projects/model-location/). as special as i think i am, the odds of me being the only human being in the infosec sphere who has fucking HAD IT with how hard to read the common debugging tools are and wanting to implement the mona suite into the preview version seem incredibly low. 
+
+![internet](/assets/images/mona/internet.png)
 
 theres two parts to this, each with their own set of problems. the first step is getting the debugger.
 
