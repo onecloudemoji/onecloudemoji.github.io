@@ -8,13 +8,17 @@ tags:
   - windbg
   - mona
 ---
-Because I do not wish to go any more blind than I already i am, I refuse to touch the standard version of windbg, nor do I wish to ever in my life fire up immunity again. windbg preview looks nice, REAL nice. Its a good tool. I WANT to like it, but because its a windows store application, its a fucking nightmare to manipulate. This is another of those trustedinstaller situations, things I thought I had left behind in my sordid sysadmin past. Any problem that repeatedly has the solution "use hirens boot cd" can get absolutley fucked, I am not dealing with bullshit like that.
+Because I do not wish to go any more blind than I already i am, I refuse to touch the standard version of windbg, nor do I wish to ever in my life fire up immunity again. 
 
 ![blind](/assets/images/mona/cheese.png)
 
+windbg preview looks nice, REAL nice. Its a good tool. I WANT to like it, but because its a windows store application, its a fucking nightmare to manipulate. This is another of those trustedinstaller situations, things I thought I had left behind in my sordid sysadmin past. Any problem that repeatedly has the solution "use hirens boot cd" can get absolutley fucked, I am not dealing with bullshit like that.
+
+![old](/assets/images/mona/old.png)
+
 Thankfully, due to some strange oversight that I am not in the mood to investigate any further, whilst changes cant be made INSIDE the windbg preview folder itself, I can do shit TO the windbg folder after taking ownership of it and all sub files (but as mentioned, this somehow excludes the files and folders relating to windbg preview), since it is inside the windowsapps folder. 
 
-So armed with this information, I decided I wasnt going to play MSs game anymore, and simply shipped the files somewhere else. I zipped up the windbg folder, and moved it to a fresh VM. Following a strange mishmash of every set of instructions on [corelans windbglib readme](https://github.com/corelan/windbglib), I was able to get mona running on a bastardised windbg preview.
+So armed with this information, I decided I wasnt going to play MSs game anymore, and simply shipped the files somewhere else. The permissions are just zany, so I zipped up the windbg folder, which put itself into the windowsapps folder, and moved it to a fresh VM. Following a strange mishmash of every set of instructions on [corelans windbglib readme](https://github.com/corelan/windbglib), I was able to get mona running on a bastardised windbg preview.
 
 I seem to be having a lot of issues with the internet lately. There are three possibilities I think are occuring; something is wrong with my google account and my search results are slowly becoming poisoned and results are related to my previous searches, or google search is steadily becoming worse and worse with every passing year, or I have [ONCE AGAIN stumbled upon a problem no other human being has had](https://onecloudemoji.github.io/projects/model-location/). As special as I think I am, the odds of me being the only human being in the infosec sphere who has fucking HAD IT with how hard to read the common debugging tools are and wanting to implement the mona suite into the preview version seem incredibly low. 
 
@@ -44,7 +48,7 @@ So far I have gotten this working on a windows 32bit machine with the 32bit vers
 - install vcredist from the repo
 - open an admin cmd session in ````c:\program files\common files\microsoft shared\vc```` and do ````regsrv32 msdia90.dll````
 - put your acquired windbg folder somewhere and extract it in its new home
-- put mona dna windbglib from the repo into the ````x86```` folder
+- put mona.py and windbglib.py from the repo into the ````x86```` folder
 - put pykd from the repo into the ````x86\winext```` folder
 - ???
 - profit
