@@ -33,6 +33,8 @@ Theres two parts to solving this dillema, each with their own set of problems. T
 
 Everything Ive read suggests the minute you start messing with the windowsapps folder, the machine is fucked.
 
+![rekt](/assets/images/mona/rekt.png)
+
 Part two, installing mona.
 
 So far I have gotten this working on a windows 32bit machine with the 32bit version of windbg. I have not tried it on anything else, but will certainly update this with different version recipes if I ever feel the need to use them.
