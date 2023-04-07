@@ -10,7 +10,7 @@ tags:
 ---
 Because I do not wish to go any more blind than I already i am, I refuse to touch the standard version of windbg, nor do I wish to ever in my life fire up immunity again. windbg preview looks nice, REAL nice. Its a good tool. I WANT to like it, but because its a windows store application, its a fucking nightmare to manipulate. This is another of those trustedinstaller situations, things I thought I had left behind in my sordid sysadmin past. Any problem that repeatedly has the solution "use hirens boot cd" can get absolutley fucked, I am not dealing with bullshit like that.
 
-![cmake](/assets/images/mona/blind.png)
+![blind](/assets/images/mona/cheese.png)
 
 Thankfully, due to some strange oversight that I am not in the mood to investigate any further, whilst changes cant be made INSIDE the windbg preview folder itself, I can do shit TO the windbg folder after taking ownership of it and all sub files (but as mentioned, this somehow excludes the files and folders relating to windbg preview), since it is inside the windowsapps folder. 
 
