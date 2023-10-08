@@ -10,13 +10,16 @@ tags:
 
 In an act of sheer irony, after passing my OSWE, I have been on all manner of odd, bespoke testing but not as much web work as I was doing before taking the course. And its occured to me in this absense from that realm that I actually **really** like web work. I needed another project for the blog to skew the content ratio back towards infosec, and figured some of the rather interesting ways we can cause service degredation and denial of service using GraphQL would be good.
 
+Like most things I write in here, this isnt for you, it is for me.
+![respect](/assets/images/graphql/respect.jpg)
+
 For these exercises we will use [Damn Vulnerable GraphQL project](https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application). I 100000% recommend using the docker instance, otherwise youre really going to be DOSing yourself.
 
 ````docker container run --rm -p 5013:5013 -e WEB_HOST=0.0.0.0 dvga````
 
 This post will not go into what GraphQL is, will only reference introspection in the context of abusing it for a DOS, and will not cover most other important but general GraphQL information. For that, I genuinely and unironically suggest the Blackhat GraphQL No Starch Press book. It covers pretty much everything you need, including filling in a few gaps the Portswigger GraphQL academy doesnt. 
 
-As consistent readers may have gathered, I have a massive hardon for No Starch; their books formed the basis of mine and my [hacking homies](kymbo) careers and continue to aid me along to this day. Please send me 1x copy of your deep learning book if you are reading this No Starch.
+As consistent readers may have gathered, I have a massive hardon for No Starch; their books formed the basis of mine and my [hacking homies](https://kymb0.github.io/) careers and continue to aid me along to this day. Please send me 1x copy of your deep learning book if you are reading this No Starch.
 
 DOS on APIs? Cant we just put rate limiting in place and be done with this?
 
@@ -136,10 +139,10 @@ And if I do it 5k times, it takes 13510ms.
 
 we can really begin to be stupid. This is most DEF something to keep in mind when doing testing, if the client has agreed to DOS testing in the ROE. Unless the client has implemented query cost analysis, you should expect to see this in ***ALL*** graphql implementations. Remember, we are simply loading up a SINGLE request. Traditional rate limiting canNOT touch this. 
 
-is THIS real world? surely not? in 2019 gitlab was found to infact BE vulnerable to this. very real world indeed. ***get cve***
+Is THIS real world? Surely not? In 2019 [gitlab was found to infact BE vulnerable to this](https://gitlab.com/gitlab-org/gitlab/-/issues/30096). Very real world indeed.
 
 
-introspection is also vulnerable to circular issues, right out the gate anywhere its enabled. inside the __schema, we can request the types. this takes fields as an input, which can be given type as an input, which can be given fields as an input, which can be given type as an input and so on and so forth. here is a small poc. just keep repeating these loops until it shits the bed.
+Introspection is also vulnerable to circular issues, right out the gate anywhere its enabled. inside the __schema, we can request the types. this takes fields as an input, which can be given type as an input, which can be given fields as an input, which can be given type as an input and so on and so forth. here is a small poc. just keep repeating these loops until it shits the bed.
 
 
 
@@ -221,4 +224,6 @@ If we stack them with aliases however, we see it takes just shy of 4 minutes for
 
 Well what about this attack mr smarty pants? Surely THIS does not have a real world example? yep, it sure does! april 2021 magento (an ecommerce platform that funnily enough my oscp exam in 2019 had built a replica of) was hit by a combination of these techniques in a single attack; aliases were used to send the same query thousands of times, with each query requesting thousands of the same field.
 
-This has by far been one of the most interesting and fulfilling side projects I have done in a while. It genuinely got my excited that theres still fun work to be had out there. Pentesting is pretty fucking dry sometimes, and it starts to wear on your soul when youre seeing the same applications from the same devs written on the same frameworks year after year. This, combined with IOT, feels pretty great. 
+This has by far been one of the most interesting and fulfilling side projects I have done in a while. It genuinely got my excited that theres still fun work to be had out there. Pentesting is pretty fucking dry sometimes, and it starts to wear on your soul when youre seeing the same applications from the same devs written on the same frameworks year after year. These discoveries, combined with IOT research, keep the field from feeling stale. 
+
+![wolfcastle](/assets/images/fable/mcbain.jpg)
