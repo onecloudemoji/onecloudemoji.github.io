@@ -21,7 +21,7 @@ This post will not go into what GraphQL is, will only reference introspection in
 
 As consistent readers may have gathered, I have a massive hardon for No Starch; their books formed the basis of mine and my [hacking homies](https://kymb0.github.io/) careers and continue to aid me along to this day. Please send me 1x copy of your deep learning book if you are reading this No Starch.
 
-DOS on APIs? Cant we just put rate limiting in place and be done with this?
+## DOS on APIs? Cant we just put rate limiting in place and be done with this?
 
 Short answer, no. Long answer, also no. Each of these attacks can be performed in a single query. We are not doing yeolde 'blast the shit out of the endpoint to take it offline' type attacks; we are using/abusing functionality baked into the GraphQL spec.
 
