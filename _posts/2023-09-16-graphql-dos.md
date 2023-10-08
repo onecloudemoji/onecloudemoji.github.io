@@ -8,7 +8,7 @@ tags:
   - pentesting
 ---
 
-In an act of sheer irony, after passing my OSWE, I have been on all manner of odd, bespoke testing but not as much web work as I was doing before taking the course. And its occured to me in this absense from that realm that I actually **really** like web work. I needed another project for the blog to skew the content ratio back towards infosec, and figured some of the rather interesting ways we can cause service degredation and denial of service using GraphQL would be good.
+In an act of sheer irony, after passing my OSWE, I have been on all manner of odd, bespoke testing but not as much web work as I was doing before taking the course. And its occurred to me in this absence from that realm that I actually **really** like web work. I needed another project for the blog to skew the content ratio back towards infosec, and figured some of the rather interesting ways we can cause service degradation and denial of service using GraphQL would be good.
 
 Like most things I write in here, this isnt for you, it is for me.
 ![respect](/assets/images/graphql/respect.jpg)
@@ -27,13 +27,13 @@ As consistent readers may have gathered, I have a massive hardon for No Starch; 
 
 Short answer, no. Long answer, also no. Each of these attacks can be performed in a single query. We are not doing yeolde 'blast the shit out of the endpoint to take it offline' type attacks; we are using/abusing functionality baked into the GraphQL spec.
 
-I want to hammer this one home; we are (for the most part) not relying on the API dev making a misconfiguration, these are (mostly) all functionalites built into GraphQL by the FB devs. The end client we are testing has practically 0 tangiable control over locking these down, because it takes a LOT of work to determine if a SINGLE QUERY, which techincally breaks no rules, needs to be v&.
+I want to hammer this one home; we are (for the most part) not relying on the API dev making a misconfiguration, these are (mostly) all functionalities built into GraphQL by the FB devs. The end client we are testing has practically 0 tangible control over locking these down, because it takes a LOT of work to determine if a SINGLE QUERY, which technically breaks no rules, needs to be v&.
 
 ![van](/assets/images/graphql/van.jpg)
 
 Lets start off with a good one, that made me sit the fuck up and pay attention. Id never seen anything quite like it before; REST APIs expecting strict JSON blobs dont let you fuck around like this and it gets bloody boring after a while. Plus, this is a great showcase on why we use the DVGA docker container. 
 
-Fragments! Essentially these prevent you from having to individually type out the same subset of field names over and over in extended length queries.
+Fragments! Essentially these prevent you from having to individually type out the same subset of field names over and over in extended length queries. If that does not sufficiently satisfy as an explanation, [check this Apollo doco](https://www.apollographql.com/docs/react/data/fragments/) 
 
 They are defined like so
 ````
@@ -82,7 +82,7 @@ fragment TestFields on PasteObject {
 
 Arent you glad we ran it in docker? The entire instance has been taken offline because of this circular query!
 
-This, is spec complient. This does not techincally break any rules of the way GraphQL was designed, and the API dev has not done anything wrong with his implementation for this to occur. It requires third party frameworks to be installed to mitigate, because according to GraphQL, it is simply working by design in this instance.
+This, is spec compliant. This does not technically break any rules of the way GraphQL was designed, and the API dev has not done anything wrong with his implementation for this to occur. It requires third party frameworks to be installed to mitigate, because according to GraphQL, it is simply working by design in this instance.
 
 What if you find a recursive object relationship in graphql voyager, like so? 
 
@@ -110,7 +110,7 @@ but what if we keep stacking it up like so?
 
 this takes 1211ms
 
-What if we go even further beyond? By doubling the number of queries we made it take so long that I literally cancelled the request because I was sick of waiting for a response to measure it; it was over 5 minutes when I qq. That is legit service degredation. Interesting to note here is that this does NOT crash the container, whilst the circular fragment DID.
+What if we go even further beyond? By doubling the number of queries we made it take so long that I literally cancelled the request because I was sick of waiting for a response to measure it; it was over 5 minutes when I qq. That is legit service degradation. Interesting to note here is that this does NOT crash the container, whilst the circular fragment DID.
 
 Is this even realistic? well these examples are small time baby shit with 40 recursive queries. A hackerone payout for a DOS using this exact same technique had over FIFTEEN THOUSAND stacked queries!
 
@@ -155,19 +155,19 @@ query{
   }
 }
 ````
-Here is a nice innococous query, nothing bad happening here!
+Here is a nice innocuous query, nothing bad happening here!
 ![intro1](/assets/images/graphql/intro1.png)
 
 Here we start to stack it up and see it getting a bit wobbly; the response takes over 3x as long to do 2x the work.
 ![intro2](/assets/images/graphql/intro2.png)
 
-And here we send a shitload to it at once. Nearly 3seconds, we have again proven service degredation.
+And here we send a shitload to it at once. Nearly 3seconds, we have again proven service degradation.
 ![intro3](/assets/images/graphql/intro3.png)
 
-Once again, this is spec complient! We are doing nothing here except using introspection in the way it was made! This is why when you find a client with introspection enabled, you have automatically found a bunch of findings. All clients should be disabling introspection, and if they do not, this will happen.
+Once again, this is spec compliant! We are doing nothing here except using introspection in the way it was made! This is why when you find a client with introspection enabled, you have automatically found a bunch of findings. All clients should be disabling introspection, and if they do not, this will happen.
 
 
-What about some of the more..bizare features of GraphQL? How about stacking directives?
+What about some of the more..bizarre features of GraphQL? How about stacking directives?
 
 As it turns out, there is no limit to the number of directives you can stack onto a field. Zero! AND! The server MUST process all directives given to it, in order to determine what is a real directive. Meaning we can literally feed the robot garbage until its sick and it cannot do anything about it.
 
@@ -183,7 +183,7 @@ I decided to put 40,000 fake ones onto a field, and made the query take almost a
 
 [batchql](https://github.com/assetnote/batchql) can help us find batching issues. you cant issue these from altair, youll need to form up some curl to test them. This is because we are sending multiple queries inside our onw query, something that altair does not accept, because it only lets you send queries inside your queries, not queries inside your queries. Ensure you keep up. 
 
-Lets send a curl to retreuve the system health.
+Lets send a curl to retrieve the system health.
 
 ````curl http://localhost:5013/graphql -H "Content-Type: application/json" -d '[{"query":"query {systemHealth}"},{"query":"query {systemHealth}"}]'````
 
