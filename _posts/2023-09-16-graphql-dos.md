@@ -21,13 +21,15 @@ This post will not go into what GraphQL is, will only reference introspection in
 
 As consistent readers may have gathered, I have a massive hardon for No Starch; their books formed the basis of mine and my [hacking homies](https://kymb0.github.io/) careers and continue to aid me along to this day. Please send me 1x copy of your deep learning book if you are reading this No Starch.
 
+![books](/assets/images/graphql/books.jpg)
+
 ## DOS on APIs? Cant we just put rate limiting in place and be done with this?
 
 Short answer, no. Long answer, also no. Each of these attacks can be performed in a single query. We are not doing yeolde 'blast the shit out of the endpoint to take it offline' type attacks; we are using/abusing functionality baked into the GraphQL spec.
 
-I want to hammer this one home; we are (for the most part) not relying on the API dev making a misconfiguration, these are all functionalites built into GraphQL by the FB devs. The end client we are testing has practically 0 tangiable control over locking these down.
+I want to hammer this one home; we are (for the most part) not relying on the API dev making a misconfiguration, these are (mostly) all functionalites built into GraphQL by the FB devs. The end client we are testing has practically 0 tangiable control over locking these down.
 
-Lets start off with a good one, that made me sit the fuck up and pay attention. Id never seen anything quite like it before, and is a great showcase why we use the docker container.
+Lets start off with a good one, that made me sit the fuck up and pay attention. Id never seen anything quite like it before; REST APIs expecting strict JSON blobs dont let you fuck around like this and it gets bloody boring after a while. Plus, this is a great showcase on why we use the DVGA docker container. 
 
 Fragments! Essentially these prevent you from having to individually type out the same subset of field names over and over in extended length queries.
 
@@ -48,20 +50,6 @@ fragment CommonFields on PasteObject {
 
 Lets showcase this in use on a query to retreive pastes
 
-````
-query {
-    pastes{
-      ...CommonFields
-    }
-
-}
-
-fragment CommonFields on PasteObject {
-  title
-  content
-  id
-}
-````
 ![fragment1](/assets/images/graphql/fragment1.png)
 
 it MUST be noted the ... prior to the fragment name IS NOT FILLER!! it will not run without it! its called a spread operator, a pretty stupid name if you ask me.
