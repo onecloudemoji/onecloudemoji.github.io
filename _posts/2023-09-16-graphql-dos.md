@@ -29,6 +29,8 @@ Short answer, no. Long answer, also no. Each of these attacks can be performed i
 
 I want to hammer this one home; we are (for the most part) not relying on the API dev making a misconfiguration, these are (mostly) all functionalites built into GraphQL by the FB devs. The end client we are testing has practically 0 tangiable control over locking these down, because it takes a LOT of work to determine if a SINGLE QUERY, which techincally breaks no rules, needs to be v&.
 
+![van](/assets/images/graphql/van.jpg)
+
 Lets start off with a good one, that made me sit the fuck up and pay attention. Id never seen anything quite like it before; REST APIs expecting strict JSON blobs dont let you fuck around like this and it gets bloody boring after a while. Plus, this is a great showcase on why we use the DVGA docker container. 
 
 Fragments! Essentially these prevent you from having to individually type out the same subset of field names over and over in extended length queries.
@@ -110,7 +112,7 @@ this takes 1211ms
 
 What if we go even further beyond? By doubling the number of queries we made it take so long that I literally cancelled the request because I was sick of waiting for a response to measure it; it was over 5 minutes when I qq. That is legit service degredation. Interesting to note here is that this does NOT crash the container, whilst the circular fragment DID.
 
-Is this even realistic? well these examples are small time baby shit with 40 recursive queries. A hackerone payout for a DOS using this exact same technique had over FIFTEEN THOUSAND stacked queries! ***get report***
+Is this even realistic? well these examples are small time baby shit with 40 recursive queries. A hackerone payout for a DOS using this exact same technique had over FIFTEEN THOUSAND stacked queries!
 
 
 field duplication is SIMILAR to circular queries, except instead of performing this on bi directional fields, we just chuck the same field in a bunch of times.
@@ -134,7 +136,8 @@ Introspection is also vulnerable to circular issues, right out the gate anywhere
 
 
 
-````query{
+````
+query{
   __schema{
     types{
       fields{
