@@ -1,5 +1,5 @@
 ---
-title: "GraphQL denial of service with DVGA"
+title: "GraphQL Denial of Service with DVGA"
 date: 2023-09-16
 categories:
   - pentesting
@@ -8,9 +8,7 @@ tags:
   - pentesting
 ---
 
-In an act of sheer irony, after passing my OSWE, I have been on all manner of odd, bespoke testing but not as much web work as I was doing before taking the course. 
-
-And its occured to me in this absense from that realm that I actually **really** like web work. I needed another project for the blog to skew the content ratio back towards infosec, and figured some of the rather interesting ways we can cause service degredation and denial of service using GraphQL would be good.
+In an act of sheer irony, after passing my OSWE, I have been on all manner of odd, bespoke testing but not as much web work as I was doing before taking the course. And its occured to me in this absense from that realm that I actually **really** like web work. I needed another project for the blog to skew the content ratio back towards infosec, and figured some of the rather interesting ways we can cause service degredation and denial of service using GraphQL would be good.
 
 For these exercises we will use [Damn Vulnerable GraphQL project](https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application). I 100000% recommend using the docker instance, otherwise youre really going to be DOSing yourself.
 
@@ -61,11 +59,11 @@ fragment CommonFields on PasteObject {
   id
 }
 ````
-fragment1
+![fragment1](/assets/images/graphql/fragment1.png)
 
 it MUST be noted the ... prior to the fragment name IS NOT FILLER!! it will not run without it! its called a spread operator, a pretty stupid name if you ask me.
 
-fragment2
+![fragment2](/assets/images/graphql/fragment2.png)
 
 By now I imagine your spidey sense is going apeshit and you have an inkling what is coming next. If we create circular fragments, then call them, we are essentially creating infinite loops with 0 chance to resolve. Much like using teamviewer to hit a machine with teamviewer open.
 
@@ -87,13 +85,15 @@ fragment TestFields on PasteObject {
   ...CommonFields
 }
 ````
-fragment3
+![fragment3](/assets/images/graphql/fragment3.png)
 
 Arent you glad we ran it in docker? The entire instance has been taken offline because of this circular query!
 
 This, is spec complient. This does not techincally break any rules of the way GraphQL was designed, and the API dev has not done anything wrong with his implementation for this to occur. It requires third party frameworks to be installed to mitigate, because according to GraphQL, it is simply working by design in this instance.
 
-What if you find a recursive object relationship in graphql voyager, like so? recurse1 
+What if you find a recursive object relationship in graphql voyager, like so? 
+
+![recurse1](/assets/images/graphql/recurse1.png)
 
 What we need to do when we come across things like this is ASSUME ITS VULNERABLE UNTIL YOUVE TESTED IT. The fact there even IS a recursive relationship is a good indication something might be kinda off in here.
 
@@ -101,16 +101,18 @@ It should be noted! This is NOT a fault with the GraphQL spec unlike circular fr
 
 if we make a circular request like so 
 
-````query{
+````
+query{
   pastes{
     owner{name}
   }
-}````
+}
+````
 this takes 40ms to respond. 
 
 but what if we keep stacking it up like so?
 
-recurse2
+![recurse2](/assets/images/graphql/recurse2.png)
 
 
 this takes 1211ms
@@ -123,13 +125,16 @@ Is this even realistic? well these examples are small time baby shit with 40 rec
 field duplication is SIMILAR to circular queries, except instead of performing this on bi directional fields, we just chuck the same field in a bunch of times.
 
 Here is a nice normal request.
-dup1
+![dup1](/assets/images/graphql/dup1.png)
 
-dup2 
 And here is me stacking up the content a thousand times. This returns in 900ms instead of 64.
+![dup2](/assets/images/graphql/dup2.png)
 
-dup3
-And if I do it 5k times, it takes 13510ms. we can really begin to be stupid. This is most DEF something to keep in mind when doing testing, if the client has agreed to DOS testing in the ROE. Unless the client has implemented query cost analysis, you should expect to see this in ***ALL*** graphql implementations. Remember, we are simply loading up a SINGLE request. Traditional rate limiting canNOT touch this. 
+
+And if I do it 5k times, it takes 13510ms. 
+![dup3](/assets/images/graphql/dup3.png)
+
+we can really begin to be stupid. This is most DEF something to keep in mind when doing testing, if the client has agreed to DOS testing in the ROE. Unless the client has implemented query cost analysis, you should expect to see this in ***ALL*** graphql implementations. Remember, we are simply loading up a SINGLE request. Traditional rate limiting canNOT touch this. 
 
 is THIS real world? surely not? in 2019 gitlab was found to infact BE vulnerable to this. very real world indeed. ***get cve***
 
@@ -154,18 +159,16 @@ introspection is also vulnerable to circular issues, right out the gate anywhere
       }
     }
   }
-}````
-intro1
-
+}
+````
 Here is a nice innococous query, nothing bad happening here!
-
-intro2
+![intro1](/assets/images/graphql/intro1.png)
 
 Here we start to stack it up and see it getting a bit wobbly; the response takes over 3x as long to do 2x the work.
-
-intro3
+![intro2](/assets/images/graphql/intro2.png)
 
 And here we send a shitload to it at once. Nearly 3seconds, we have again proven service degredation.
+![intro3](/assets/images/graphql/intro3.png)
 
 Once again, this is spec complient! We are doing nothing here except using introspection in the way it was made! This is why when you find a client with introspection enabled, you have automatically found a bunch of findings. All clients should be disabling introspection, and if they do not, this will happen.
 
@@ -176,12 +179,12 @@ As it turns out, there is no limit to the number of directives you can stack ont
 
 Here is I believe 100 fake directives being attached to this query, making it take nearly 5 seconds.
 
-directive1
+![directive1](/assets/images/graphql/directive1.png)
+
 
 I decided to put 40,000 fake ones onto a field, and made the query take almost a minute. Whilst the response was a 400, the fact we actually adjusted the response time by a measurable amount says this is most certainly a viable dos.
 
-directive2
-
+![directive2](/assets/images/graphql/directive2.png)
 
 
 batchql can help us find batching issues. you cant issue these from altair, youll need to form up some curl to test them. This is because we are sending multiple queries inside our onw query, something that altair does not accept, because it only lets you send queries inside your queries, not queries inside your queries. Ensure you keep up. 
@@ -190,11 +193,11 @@ Lets send a curl to retreuve the system health.
 
 ````curl http://localhost:5013/graphql -H "Content-Type: application/json" -d '[{"query":"query {systemHealth}"},{"query":"query {systemHealth}"}]'````
 
-batch1
+![batch1](/assets/images/graphql/batch1.png)
 
 lets add that in 30 times.
 
-batch2
+![batch2](/assets/images/graphql/batch2.png)
 
 Tada, once again we have proven we can degrade the server with a single request.
 
@@ -207,13 +210,14 @@ Rather than batching queries, we can stack queries using aliases.
 
 Remember, when run individually update will take a random amount of time (but never an EXCESSIE amount of time. 
 
-stack1
 30 sec for it on its own, 
+![stack1](/assets/images/graphql/stack1.png)
 
-stack2
 50 for a stacked query. surely this 20 sec variance means it worked? NO. keep running the stacked query and youll see that it infact is not multiplying the response time.
+![stack2](/assets/images/graphql/stack2.png)
 
 If we stack them with aliases however, we see it takes just shy of 4 minutes for a response. This is NOT in line with the random return intervals you receive for a single query.
+![stack3](/assets/images/graphql/stack3.png)
 
 Well what about this attack mr smarty pants? Surely THIS does not have a real world example? yep, it sure does! april 2021 magento (an ecommerce platform that funnily enough my oscp exam in 2019 had built a replica of) was hit by a combination of these techniques in a single attack; aliases were used to send the same query thousands of times, with each query requesting thousands of the same field.
 
