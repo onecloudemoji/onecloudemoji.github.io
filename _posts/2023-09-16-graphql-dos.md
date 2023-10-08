@@ -181,7 +181,7 @@ I decided to put 40,000 fake ones onto a field, and made the query take almost a
 ![directive2](/assets/images/graphql/directive2.png)
 
 
-batchql can help us find batching issues. you cant issue these from altair, youll need to form up some curl to test them. This is because we are sending multiple queries inside our onw query, something that altair does not accept, because it only lets you send queries inside your queries, not queries inside your queries. Ensure you keep up. 
+[batchql](https://github.com/assetnote/batchql) can help us find batching issues. you cant issue these from altair, youll need to form up some curl to test them. This is because we are sending multiple queries inside our onw query, something that altair does not accept, because it only lets you send queries inside your queries, not queries inside your queries. Ensure you keep up. 
 
 Lets send a curl to retreuve the system health.
 
@@ -195,14 +195,14 @@ lets add that in 30 times.
 
 Tada, once again we have proven we can degrade the server with a single request.
 
-time for your example, this was used to abuse a wordpress graphql implementation, also in april 21. sending through 10k duplicate fields in 100 chained queries was found to be enough to take most offline. ***find cve***
+time for your example, this was used to abuse a wordpress graphql implementation, also in april 21. sending through 10k duplicate fields in 100 chained queries was found to be enough to take most offline. [EDB link to script](https://www.exploit-db.com/exploits/49807)
 
 
 This is the last example, and it is a little funny. Before we get into it is important to know that the systemUpdate function on DVGA is designed to run for a random amount of time. So you may find your response times dont quite line up with mine, like at all. But if you do the experiments youll find that this vector DOES work.
 
 Rather than batching queries, we can stack queries using aliases. 
 
-Remember, when run individually update will take a random amount of time (but never an EXCESSIE amount of time. 
+Remember, when run individually update will take a random amount of time (but never an EXCESSIVE amount of time). 
 
 30 sec for it on its own, 
 ![stack1](/assets/images/graphql/stack1.png)
