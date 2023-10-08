@@ -27,7 +27,7 @@ As consistent readers may have gathered, I have a massive hardon for No Starch; 
 
 Short answer, no. Long answer, also no. Each of these attacks can be performed in a single query. We are not doing yeolde 'blast the shit out of the endpoint to take it offline' type attacks; we are using/abusing functionality baked into the GraphQL spec.
 
-I want to hammer this one home; we are (for the most part) not relying on the API dev making a misconfiguration, these are (mostly) all functionalites built into GraphQL by the FB devs. The end client we are testing has practically 0 tangiable control over locking these down.
+I want to hammer this one home; we are (for the most part) not relying on the API dev making a misconfiguration, these are (mostly) all functionalites built into GraphQL by the FB devs. The end client we are testing has practically 0 tangiable control over locking these down, because it takes a LOT of work to determine if a SINGLE QUERY, which techincally breaks no rules, needs to be v&.
 
 Lets start off with a good one, that made me sit the fuck up and pay attention. Id never seen anything quite like it before; REST APIs expecting strict JSON blobs dont let you fuck around like this and it gets bloody boring after a while. Plus, this is a great showcase on why we use the DVGA docker container. 
 
