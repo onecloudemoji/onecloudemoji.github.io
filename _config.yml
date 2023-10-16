@@ -58,7 +58,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "James Hay\n | OSCP | OSWE | CRTO"
+  name   : "James Hay \nOSCP | OSWE | CRTO"
   avatar : "/assets/images/mr_sparkle.jpg"
   bio    : "Hello, my friend. Stay a while and listen."
   location    : "Hyperbolic Time Chamber"
