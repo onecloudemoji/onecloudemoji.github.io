@@ -62,6 +62,7 @@ Oh, you thought I wasn’t going to bring this back to infosec?
 
 "Did you really write all this just to bash offsec again?" No. The tide in infosec is rising. It is easier than ever for people to get good (not ironically gitgud, but actually get good) in this field. Which means you, dear reader, being good is no longer enough. A lot of people are good. Are you going to stay an overpriced gibson clinging to dear life through its name alone? Or will you actually become great? Because the price of premium demands a return above good.
 
+I have said it before and I will say it again; there is nothing that comes as close to an education in how to (and how to NOT) navigate your career than Mad Men. The following quote is a sentiment that seems to upset people, but I have hedged my entire life on it. And its fucking worked.
 
-
+![don](/assets/images/good/don.jpg)
 
