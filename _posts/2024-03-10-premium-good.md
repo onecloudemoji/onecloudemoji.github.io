@@ -58,7 +58,7 @@ Premium mediocre is paying 2000$ for an offsec course that hasn’t seen any rel
 
 Oh, you thought I wasn’t going to bring this back to infosec? 
 
-lecheife oops
+![oops](/assets/images/good/oops.gif)
 
 "Did you really write all this just to bash offsec again?" No. The tide in infosec is rising. It is easier than ever for people to get good (not ironically gitgud, but actually get good) in this field. Which means you, dear reader, being good is no longer enough. A lot of people are good. Are you going to stay an overpriced gibson clinging to dear life through its name alone? Or will you actually become great? Because the price of premium demands a return above good.
 
