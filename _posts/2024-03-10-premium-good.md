@@ -22,6 +22,9 @@ Spoiler; I do not answer this, I just complain for hundreds of words.
 
 After an exceptionally good soup at our local soup shop, me my [hacking homie](https://kymb0.github.io/) decided to paroose the wares at the only music shop in town.
 
+![toot](/assets/images/good/music.jpg)
+Similar to toots, it actually is located next to a gigantic booze warehouse.
+
 It has a pretty good line up. Fantastic, really. Signature Gibsons, made in Japan premier  line ibanezs, custom shop telecasters, an SG with active pickups and coil splitting(!!!) and all sorts of other crazy shit. Premium guitars for the premium connoisseur.
 
 So you can imagine my disappointment when playing these things that when totalled, cost more than both our cars, and not being blown the fuck away.
