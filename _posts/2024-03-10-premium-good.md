@@ -50,11 +50,11 @@ What does that have to do with this? Check it again webhead: Premium mediocre is
 
 Premium mediocre is my Indonesian Ibanez feeling no worse than a Japanese premiere Ibanez. It is a 7,000$ signature les paul playing no better than a sub thousand dollar Fernandes on the wall. Oh, you thought this was going to be me grandstanding about my own gear and had already dismissed this as a case of the fox and the grapes? lol gitgud. 
 
-This was a Chinese super strat, with hot as hell Seymour’s, and it was good. It was worth every little penny that I did not buy because I have special criteria I must hit before getting another one, and I would pick it every day of the week over that Gibson, because I could have gotten it and SIX OTHERS OF COMPARABLE QUALITY for the cost of this one fucking les paul; this one les paul that was simply just good. 
+This was a Chinese super strat, with hot as hell Seymour Duncans, and it was good. It was worth every little penny that I did not spend because I have special criteria I must hit before getting another guitar, and I would pick this little made in China unit every day of the week over that Gibson, because I could have gotten it and SIX OTHERS OF COMPARABLE QUALITY for the cost of that one fucking les paul; the one les paul that was simply just good. 
 
 This is it, this is the secret; there are no more shit guitars. So a guitar simply being good, is no longer enough. Your premium lines are good? Everyone’s guitars are good. What else do you bring to the table?
 
-Premium mediocre is paying 2000$ for an offsec course that hasn’t seen any relevant updates in 3 years, when 700$ for CRTO gets you lifetime access and a fresh little update every few months. In fact, in the 12 months since I took it and when I last revisited it, 20% of the course was new! Premium mediorce gets you a name (gibson/offsec) for a product that WAS best in class at the time, but has been eclipsed HARD by everyone else becoming good, and hasn’t kept up AT ALL (les pauls STILL CANNOT STAY IN TUNE/tRy hArDeR is NOT an acceptable argument for omitting course material wtf)
+Premium mediocre is paying 2000$ for an offsec course that hasn’t seen any relevant updates in 3 years (OSEP), when 700$ for CRTO gets you lifetime access and a fresh little update every few months. In fact, in the 12 months since I took it and when I last revisited it, 20% of the course was new! Premium mediorce gets you a name (gibson/offsec) for a product that WAS best in class at the time, but has been eclipsed HARD by everyone else becoming good, and hasn’t kept up AT ALL (les pauls STILL CANNOT STAY IN TUNE/tRy hArDeR is NOT an acceptable argument for omitting course material wtf)
 
 Oh, you thought I wasn’t going to bring this back to infosec? 
 
@@ -62,7 +62,7 @@ Oh, you thought I wasn’t going to bring this back to infosec?
 
 "Did you really write all this just to bash offsec again?" No. The tide in infosec is rising. It is easier than ever for people to get good (not ironically gitgud, but actually get good) in this field. Which means you, dear reader, being good is no longer enough. A lot of people are good. Are you going to stay an overpriced gibson clinging to dear life through its name alone? Or will you actually become great? Because the price of premium demands a return above good.
 
-I have said it before and I will say it again; there is nothing that comes as close to an education in how to (and how to NOT) navigate your career than Mad Men. The following quote is a sentiment that seems to upset people, but I have hedged my entire life on it. And its fucking worked.
+I have said it before and I will say it again; there is nothing that comes as close to an education in how to (and how to NOT) navigate your career than Mad Men. The following quote is a sentiment that seems to upset people, but I have hedged my entire life on it. And its worked. 
 
 ![don](/assets/images/good/don.jpg)
 
