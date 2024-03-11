@@ -36,6 +36,8 @@ Now why is it, that these upper mid level guitars of mine, each of which was 250
 
 What happened? I'll tell you what happened. The democratisation of good is what happened. What the fuck does that mean you ask? Well I am glad to tell you. As the tide came in, not all boats rised. the bottom feeding GARBAGE guitars coming out of Chinese, Indonesian, Korean factories overnight got good. The availability of CNC mills and the proliferation of knowledge meant everyone was capable of making good gear. And make good gear they did (and still do).
 
+![slave](/assets/images/good/slave.jpg)
+
 I have a 300$ bottom of the barrel Ibanez gio I bought in 2020 to occupy myself while at the other side of the country away from my actual gear (you can vaguely infer more about that saga in this post on a [Street Fighter playing Neural Network] (https://onecloudemoji.github.io/projects/games/sf-nn/)); it is no worse than some of the things I played that were 10x the price. 
 
 This is clearly a problem. If the bottom shelf is just as good as the premium gear, what is the point of premium? How did we get to the point where premium mediocre has invaded this corner of the universe? I wish I could take credit for that phrase, but it comes from another article I read many years ago and it made me very angry that I could relate to it while trying my best to eject like a fucking astronaut in his space ship into another social class by trading literal man months of my life at a contracting gig. It can be read [here](https://www.ribbonfarm.com/2017/08/17/the-premium-mediocre-life-of-maya-millennial/)
