@@ -12,6 +12,8 @@ tags:
 
 Alternative titles for this post I came up with included  "What is premium?" and the exceedingly clever "Premium and the art of good enough".
 
+![goodenough](/assets/images/good/good.jpg)
+
 NOTE: this post was written about guitars while dying in my garage after some deadlifts. If you see applicability to anything else, that’s nice, but it was written solely with guitars in mind. For once I am not bashing infosec or offsec. If conclusions can be drawn, this says more about the state of those two things than my post..
 
 The main question I ask is "at what point does premium become only marginally better than the exponentially cheaper option?"
