@@ -46,6 +46,8 @@ But the only line I really needed from that article to transplant here is this: 
 
 What does that have to do with this? Check it again webhead: Premium mediocre is guitars that Instagrams better than it plays. Signature series, bullshit quadruple A flame tops, a fender painted with some paint so fucked up it had a California cancer warning label hanging off the tag (I am not making this one up), distressed or reliced or whatever they are calling it today where you pay extra to have it look like a fucking tank drove over it (someone likes it, that shit isn’t going away despite my laughing at it for the past 15 years), vintage style tuning pegs that can barely handle 5 minutes of abuse before going WILDLY out of tune, but have been artificially aged juuuuust the right amount you’d believe they were actually harvested from Jimmy Pages own 60s era les paul.
 
+![fake](/assets/images/good/fake.jpg)
+
 Premium mediocre is my Indonesian Ibanez feeling no worse than a Japanese premiere Ibanez. It is a 7,000$ signature les paul playing no better than a sub thousand dollar Fernandes on the wall. Oh, you thought this was going to be me grandstanding about my own gear and had already dismissed this as a case of the fox and the grapes? lol gitgud. 
 
 This was a Chinese super strat, with hot as hell Seymour’s, and it was good. It was worth every little penny that I did not buy because I have special criteria I must hit before getting another one, and I would pick it every day of the week over that Gibson, because I could have gotten it and SIX OTHERS OF COMPARABLE QUALITY for the cost of this one fucking les paul; this one les paul that was simply just good. 
