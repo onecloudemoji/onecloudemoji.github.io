@@ -50,7 +50,7 @@ What does that have to do with this? Check it again webhead: Premium mediocre is
 
 Premium mediocre is my Indonesian Ibanez feeling no worse than a Japanese premiere Ibanez. It is a 7,000$ signature les paul playing no better than a sub thousand dollar Fernandes on the wall. Oh, you thought this was going to be me grandstanding about my own gear and had already dismissed this as a case of the fox and the grapes? lol gitgud. 
 
-This was a Chinese super strat, with hot as hell Seymour Duncans, and it was good. It was worth every little penny that I did not spend because I have special criteria I must hit before getting another guitar, and I would pick this little made in China unit every day of the week over that Gibson, because I could have gotten it and SIX OTHERS OF COMPARABLE QUALITY for the cost of that one fucking les paul; the one les paul that was simply just good. 
+This was a Chinese super strat, with hot as hell Seymour Duncans, and it was good. It was worth every little penny that I did not spend because I have special criteria I must hit before getting another guitar, and I would pick this little made in China unit every day of the week over that Gibson, because I could have gotten it and SIX OTHERS OF COMPARABLE QUALITY for the cost of that one fucking les paul; the one les paul that was simply *just* good. 
 
 This is it, this is the secret; there are no more shit guitars. So a guitar simply being good, is no longer enough. Your premium lines are good? Everyone’s guitars are good. What else do you bring to the table?
 
