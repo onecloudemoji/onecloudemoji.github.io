@@ -28,6 +28,8 @@ Much, MUCH is missing from these instructions, holy shit. The following tool cha
 
 We build, and we wait. My goodness, this takes an enormous amount of time to compile. Oh would you look at that, the vague instructions did not say that those are the commands to compile it ON windows, I assumed these were the instructions to compile it FOR windows, excellent thank you for my error at 94% of the compilation!
 
+![fuckmylife](/assets/images/model_location/2021-03-05_19h59_10.png)
+
 After finally realising how STUPID I was being for applying LOGIC to this repo, I get it built. And already we have a problem. I had assumed, because I am a fucking moron, that Linux and Windows both used the __vst3__ format, because the _vst3 project_ I am compiling is indeed SUPPOSED to be a _vst3 project_, and all my _vst3 plugins on windows_ are, you guessed it, __vst3__ format! But no, they are infact __.so__ on Linux and I am __.so__ fucking over this project already. The only reason I am continuing is because it is on the whiteboard, and things do not get taken off the whiteboard until they are completed. This is simple logic me and my [hacking homie](https://kymb0.github.io/) have used to brute force our ways into being champions of the universe. It cannot come off until it’s done.
 
 ![champions](/assets/images/vst/champion.jpg)
