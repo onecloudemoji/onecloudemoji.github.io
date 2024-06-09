@@ -22,7 +22,7 @@ Yes, if you are living in dreamland where the mountains are made of chocolate an
 
 This project, that should have taken me about ten minutes from end to end, has been pushed back for WEEKS because of these unhelpful GitHub instructions. This has infact made me go back and amend my [C.A.P.S.U.L.E.S. instructions](https://onecloudemoji.github.io/labbing/projects/learning/capsules/), simply because these were so dogshit I wasted literal portions of my life.
 
-Much, MUCH is missing from these instructions, holy shit. The following tool chain is required to even begin getting this built and is absolutely not mentioned anywhere in the repo.
+Much, MUCH is missing from these instructions, holy shit. The following tool chain is required to even begin getting this built (on linux) and is absolutely not mentioned anywhere in the repo.
 
 ````apt-get install build-essential cmake git libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libfreetype6-dev pkg-config libxcb-util-dev libxcb-cursor-dev libxcb-keysyms1-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev libcairo2-dev libpango1.0-dev libgtkmm-3.0-dev libsqlite3-dev````
 
