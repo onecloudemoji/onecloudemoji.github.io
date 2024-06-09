@@ -43,7 +43,7 @@ onto the real star of the show, is inserting
 ````#include <cstdlib>````
 ````system("calc.exe");````
 	
-where the plugin gets created. 
+where the plugin gets created. astute readers will note i am not using calc in my example.
 
 ![code](/assets/images/vst/code.jpg)
 
