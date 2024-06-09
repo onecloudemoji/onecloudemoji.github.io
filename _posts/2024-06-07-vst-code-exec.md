@@ -59,3 +59,5 @@ Also, the [C.A.P.S.U.L.E.S.](https://github.com/onecloudemoji/C.A.P.S.U.L.E.S.) 
 
 Back into the lab we go, the research wont conduct itself.
 
+![lab](/assets/images/vst/lab.jpg)
+
