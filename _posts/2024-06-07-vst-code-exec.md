@@ -12,7 +12,7 @@ tags:
 
 For the second time this month I have been forced to realise that I need to build up a golden image for a dedicated development machine. Unrelated to this post but will be mentioned anyway is Parrot is not suited for building AFL++ without enormous amounts of effort, and is equally unsuitable for compiling VST plugins.
 
-A nice easy one tldr on what a VST is: “A VST plugin is a software module for digital audio workstations (DAWs) that adds audio effects or instruments.” Thanks robot overlord. Why do we care about this particular technology? Well, most of you fictional readers probably won’t at all. This is the least likely thing to ever come up in an engagement, but I think it’s neat.
+A nice easy one tldr on what a VST is: “_A VST plugin is a software module for digital audio workstations (DAWs) that adds audio effects or instruments._” Thanks robot overlord. Why do we care about this particular technology? Well, most of you fictional readers probably won’t at all. This is the least likely thing to ever come up in an engagement, but I think it’s neat.
 
 [A blog post by infosecnoodle](https://www.infosecnoodle.com/p/vst-plug-ins-for-initial-access) (excellent name) got me interested, it’s just that nice intersection between two of my favourite things that gets me excited. If the above analogy didn’t clear it up, VSTs are how the [neural network generated drum loops](https://onecloudemoji.github.io/projects/drums-rnn/) are played back. Looking through and the [linked VST repo](https://github.com/steinbergmedia/vst3_example_plugin_hello_world) gives pretty simple instructions. Literally clone and build, right?
 
