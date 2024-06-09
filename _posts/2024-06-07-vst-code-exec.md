@@ -34,7 +34,7 @@ After finally realising how STUPID I was being for applying LOGIC to this repo, 
 
 ![champions](/assets/images/vst/champion.jpg)
 
-One may ask why did I even bother compiling this on Linux when it was always going to be used in a windows based daw? Because the last time I opened visual studio to compile a c# proxy server to reproduce [this blog on NetNTLM relaying]((https://badoption.eu/blog/2024/04/25/netntlm.html)), it bitched and moaned about needing updates like every modern game does when I open steam. Giving in i update, and imagine my disappointment and resentment for the steinberg repo maintainers (and myself) for not just starting with the windows compilation; it just fucking works. Flawlessly. No issues. Amazing. nothing required at all, it just fuckign works. i have wasted so much time truing to jam this project into linux for no good reason, other than i was too lazy to press update.
+One may ask why did I even bother compiling this on Linux when it was always going to be used in a windows based daw? Because the last time I opened visual studio to compile a c# proxy server to reproduce [this blog on NetNTLM relaying]((https://badoption.eu/blog/2024/04/25/netntlm.html)), it bitched and moaned about needing updates like every modern game does when I open steam. Giving in i update, and imagine my disappointment and resentment for the steinberg repo maintainers (and myself) for not just starting with the windows compilation; it just fucking works. Flawlessly. No issues. Amazing. nothing required at all, it just works. I have wasted so much time trying to jam this project into linux for no good reason, other than I was too lazy to press update.
 
 ![disappointment](/assets/images/vst/disappointment.jpg)
 
@@ -45,17 +45,17 @@ onto the real star of the show, is inserting
 ````#include <cstdlib>````
 ````system("calc.exe");````
 	
-where the plugin gets created. astute readers will note i am not using calc in my example.
+where the plugin gets created. Astute readers will note I am not using calc in my example.
 
 ![code](/assets/images/vst/code.jpg)
 
-Thats it you say? I sat through this nonsense to read about you inserting a call to system? Remember this blog isn’t for you, it is for me. And it is interesting the ways that you can get fucked even by little technologies you don’t even think have the capacity to handle baked in malware. Here is it pushing the response to hostname out to a webhook. Not terribly exciting, but it took 6 seconds to insert and now every single time open this vst, the call is made. Because this is simply code, that does not mess with the inner workings of the plugin, it (the plugin) continues to function without any issue. 
+Thats it you say? I sat through this nonsense to read about you inserting a call to system? Remember this blog isn’t for you, it is for me. And it is interesting the ways that you can get fucked even by little technologies you don’t even think have the capacity to handle baked in malware. Here is it pushing the response to hostname out to a webhook. Not terribly exciting, but it took 6 seconds to insert and now every single time open this vst, the call is made. Because this is simply code that does not mess with the inner workings of the plugin, it (the plugin) continues to function without any issue.
 
 ![champions](/assets/images/vst/webhook.jpg)
 
-What’s going on here is this is an interesting test bed for me to try some interesting vectors in the future, beyond just chucking some c# into msbuild and csc. For funsies I shall in a future instalment implement some shellcode runners in cpp, but the pressing need is not there right now since its really got no applicability to work or any thing other project. 
+What’s going on here is this is an interesting test bed for me to try some interesting vectors in the future, beyond just chucking some c# into __msbuild__ and __csc__. For funsies I shall in a future instalment implement some shellcode runners in cpp, but the pressing need is not there right now since its really got no applicability to work or any thing other project. 
 
-This blog post has been written in the bathtub to satisfy my own personal need to publish. It’s not especially novel or ground breaking, but the other little bits of research I am pursuing are taking a lot longer than I expected. As such I felt a need to publish SOMETHING, and I am just mad that this something, that should have been a 30 minute exercise to put up a 200 post, turned into a slog thats taken most of Q2 to get out and a 1000 word+ diatribe.
+This blog post has been written in the bathtub to satisfy my own personal need to publish. It’s not especially novel or ground breaking, but the other little bits of research I am pursuing are taking a lot longer than I expected. As such I felt a need to publish SOMETHING, and I am just mad that this something, that should have been a 30 minute exercise to put up a 75 word at the maximum post, turned into a slog thats taken most of Q2 to get out and a 1000 word+ diatribe of vitriol.
 
 Also, the [C.A.P.S.U.L.E.S.](https://github.com/onecloudemoji/C.A.P.S.U.L.E.S.) project is now up to 4 independent modules. A regular cadence of one module a quarter has been applied; it will begin to grow out more. 
 
