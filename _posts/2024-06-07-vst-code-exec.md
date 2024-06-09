@@ -34,6 +34,8 @@ After finally realising how STUPID I was being for applying LOGIC to this repo, 
 
 One may ask why did I even bother compiling this on Linux when it was always going to be used in a windows based daw? Because the last time I opened visual studio to compile a c# proxy server to reproduce [this blog on NetNTLM relaying]((https://badoption.eu/blog/2024/04/25/netntlm.html)), it bitched and moaned about needing updates like every modern game does when I open steam. Giving in i update, and imagine my disappointment and resentment for the steinberg repo maintainers (and myself) for not just starting with the windows compilation; it just fucking works. Flawlessly. No issues. Amazing. nothing required at all, it just fuckign works. i have wasted so much time truing to jam this project into linux for no good reason, other than i was too lazy to press update.
 
+![disappointment](/assets/images/vst/disappointment.jpg)
+
 Fantastic, where’s the code execution? Well here’s the thing, this is just a cpp application, and we can make it do anything. Because we are compiling an application, essentially. Is it especially tricky to smuggle in some post reqs to a webhook to exfil data? No, not really. As I said this won’t ever come up on a client engagement.
 
 onto the real star of the show, is inserting 
