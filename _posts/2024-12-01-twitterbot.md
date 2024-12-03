@@ -1,4 +1,14 @@
-LLM powered Yu-Gi-Oh! card posting Twitter Bot
+---
+title: "LLM Powered Yu-Gi-Oh! Card Posting Twitter Bot"
+date: 2024-12-01
+categories:
+  - projects
+  - experiments
+  
+tags:
+  - why?
+  - AI
+---
 
 Alternatively titled "DIY self licking icecream cone", "Spend a weekend building the worlds worst Pojos Forum clone", and other very unclever titlings.
 
