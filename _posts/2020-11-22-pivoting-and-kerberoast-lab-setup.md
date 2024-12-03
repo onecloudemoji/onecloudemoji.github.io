@@ -1,12 +1,12 @@
 ---
 title: "Setting up a pivoting and kerberoasting lab"
 categories:
-  - Labbing
+  - labbing
 tags:
-  - Windows
-  - Lab
-  - Kerberoast
-  - Pivoting
+  - windows
+  - lab
+  - kerberoast
+  - pivoting
 ---
 
 Because I feel like being fancy, I have decided to go on the journey of setting up a fully functioning lab for me to attack in a similar vein to OSCP/HTB labs. This is for two reasons; first and foremost is to improve my infrastructure/sysadmin skills. For the foreseeable future this is my career track, so if I can turn study into a fun exercise I will be more likely to engage with it and continue to excel.
