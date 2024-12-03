@@ -10,7 +10,7 @@ tags:
   - AI
 ---
 
-Alternatively titled "DIY self licking icecream cone", "Spend a weekend building the worlds worst Pojos Forum clone", and other very unclever titlings. tldr steps(ish) on how to overcome stumbling blocks I encountered when building out a very useless twitter bot that posts a Yu-Gi-Oh! card every two hours, complete with full card art from the ygoprodb and a description provided by an 80b param llama 3.
+Alternatively titled "DIY self licking icecream cone", "Spend a weekend building the worlds worst Pojos Forum clone", and other very unclever titlings. tldr steps(ish) on how to overcome stumbling blocks I encountered when building out a very useless twitter bot that posts a Yu-Gi-Oh! card every two hours, complete with full card art from the ygoprodb and a description provided by an 80b param llama 3. Watch it be very wrong [here](https://x.com/Yugioh_COTD).
 
 It has dawned on me that I am actually entering another manic period, [much like in June when I went through](https://github.com/onecloudemoji/C.A.P.S.U.L.E.S./tree/main/Guarded%20Machines%20Still%20Accessible) a [number of projects](https://onecloudemoji.github.io/pentesting/simulating-cve-fuzzing/) in [a period of weeks](https://onecloudemoji.github.io/pentesting/music/vst-code-exec/), I am doing the same thing again. It is like I have woken up from sleepwalking and am aware how much ground I have lost while trying to not kill myself, so I must produce and conquer projects at a rapid pace just to not move backwards. The list of items in my blog post list is increasing at an insane rate; armed with token generation machines and a fresh perspective I am the most powerful version of myself I could have ever imagined.
 
@@ -22,11 +22,14 @@ So what is the problem we are trying to solve here (regarding oauth)?
 
 Essentially we want one of these to popup, and we want to authenticate it, in order to receive a bunch of tokens we can use to post etc.
 ![authorize](/assets/images/twitterbot/authorize.png)
+
 Sounds pretty simple on the surface, but I had to jump through a LOT of hoops to get to the end state because the docos seem to want to frustrate you and seem to dislike the idea of you choosing to perform this locally.
 
-Here is the complete script I used to stand up the request and token capture server. There are amendments from the github repo; these are necessary for the way I handle refresh tokens (I dont). I will elaborate later on.
+[Here](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/authserver.py) is the complete script I used to stand up the request and token capture server. There are amendments from the github repo; these are necessary for the way I handle refresh tokens (not the way I should, but it works). I will elaborate later on.
 
-Obvs the port number listed in the script must reflect what is set in the twitter dev portal. It is no matter what you set, it just must match. Now this is the interesting part: the callback URI must be a complete URL. You canNOT just put in the callback URI, it must be the entire http://127.0.0.1:5000 if using my script. For the website URL section however, put literally anythign, as long as its a valid URL. I put mine down as the blog URL lol.
+Obvs the port number listed in the script must reflect what is set in the twitter dev portal. It is no matter what you set, it just must match. Now this is the interesting part: the callback URI must be a complete URL. You canNOT just put in the callback URI, it must be the entire http://127.0.0.1:5000/callback if using my script. For the website URL section however, put literally anythign, as long as its a valid URL. I put mine down as the blog URL lol.
+
+![appinfo](/assets/images/twitterbot/appinfo.png)
 
 Remember: if you are developing a posting bot, you must give the app permissions to post.
 ![perms](/assets/images/twitterbot/perms.png)
@@ -49,14 +52,34 @@ Cool now we can post! But we can only post posts, we cannot upload images, becau
 
 Fortunately its actually pretty easy, we just generate api keys, access tokens and their secrets in the dev portal. These do NOT need to be autnehticated with a workflow like the v2 api keys, nor do they need rotating. 
 
-Two seperate steps need to occur; the image is uploaded to the server, and then the uploaded media is posted. It makes sense in a way, kind of, if you squint a bit. I have attached to demonstrate.
+Two seperate steps need to occur; the image is uploaded to the server, and then the uploaded media is posted. It makes sense in a way, kind of, if you squint a bit. [I have attached to demonstrate.](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/image_post.py)
 
-This is 1/3rd of the toy; yes it posts to twitter, but we need it to select a card out of the Yu-Gi-Oh! card database, and get a tweet from an LLM. I have attached here the scripts I used to pull the card listings from the ygoprodb API. Theres not a lot to it. Next a little function is run that will randomely select one out of the CSV file I have of all pre-5DS cards, make a call to the DB to get full card art and saves it. I probably need to add a function to clean up the saved files before it tips my RPI over.
+This is 1/3rd of the toy; yes it posts to twitter, but we need it to select a card out of the Yu-Gi-Oh! card database, and get a tweet from an LLM. I have attached here the scripts I used to [pull the cards from the pre 5DS sets from the ygoprodb API](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/get_cards_into_csv.ps1), and one [to pull the full card art](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/get_random_card_from_csv.ps1). Theres not a lot to it, and no real reason why I got gpt to write them in powershell. I think I was in the middle of cloning virtual machines so I didnt have a linux box available. Next a little function is run that will randomely select one out of the CSV file I have of all pre-5DS cards, make a call to the DB to get full card art and saves it. I probably need to add a function to clean up the saved files before it tips my RPI over.
 
-The irony is in all of this, the actual easiest part was the LLM. I have never heard of them before, and only stumbled upon them because I literally googled free llm api, and found groq. I like it, it looks like grugq. And they provide a fucking LOT for free, half a million daily tokens. I am going to use all of them in an upcoming project, but for now I am happy that this service exists for my shitposting bot.
+The irony is in all of this, the actual easiest part was the LLM. I have never heard of them before, and only stumbled upon them because I literally googled free llm api, [and found groq](https://groq.com/). I like it, it looks like grugq. And they provide a fucking LOT for free, half a million daily tokens. I am going to use all of them in an upcoming project, but for now I am happy that this service exists for my shitposting bot.
 
 Heres an example to send and retreive from the site. Its DEAD SIMPLE. You literally feed it your api key, what model you want to use and what your prompt is.
+````
+import os
 
+from groq import Groq
+
+client = Groq(
+    api_key="APIKEY",
+)
+
+chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Explain the importance of fast language models",
+        }
+    ],
+    model="llama3-8b-8192",
+)
+
+print(chat_completion.choices[0].message.content)
+````
 So putting this all together, what do we end up with? Well our efforts reward with a shit poster. The space is intentional. I present the following post from last night that had me in absolute fucking fits of laughter at the absurdity of it.
 
 ![result](/assets/images/twitterbot/result.jpg)
@@ -65,5 +88,5 @@ This is another of those silly ideas that floated into my conciousness while on 
 
 Could this be done via an LLM on the rpi? It could, in theory. But these shit tweets are generated with am 80b param model; anything capable of fitting on an rpi would be an order of magnitude worse.
 
-Here is the final script. Somehow, despite pumping project after project out, my to do list keeps fucking growing. 
+[Here is the final script](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/final.py). Somehow, despite pumping project after project out, my to do list keeps fucking growing. 
 ![notfine](/assets/images/twitterbot/notfine.jpg)
