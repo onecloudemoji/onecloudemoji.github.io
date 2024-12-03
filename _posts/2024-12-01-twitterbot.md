@@ -21,7 +21,7 @@ The twitter API docs are missing a fuckload of info. Perhaps their postman colle
 So what is the problem we are trying to solve here (regarding oauth)?
 
 Essentially we want one of these to popup, and we want to authenticate it, in order to receive a bunch of tokens we can use to post etc.
-
+![authorize](/assets/images/twitterbot/authorize.png)
 Sounds pretty simple on the surface, but I had to jump through a LOT of hoops to get to the end state because the docos seem to want to frustrate you and seem to dislike the idea of you choosing to perform this locally.
 
 Here is the complete script I used to stand up the request and token capture server. There are amendments from the github repo; these are necessary for the way I handle refresh tokens (I dont). I will elaborate later on.
@@ -29,6 +29,7 @@ Here is the complete script I used to stand up the request and token capture ser
 Obvs the port number listed in the script must reflect what is set in the twitter dev portal. It is no matter what you set, it just must match. Now this is the interesting part: the callback URI must be a complete URL. You canNOT just put in the callback URI, it must be the entire http://127.0.0.1:5000 if using my script. For the website URL section however, put literally anythign, as long as its a valid URL. I put mine down as the blog URL lol.
 
 Remember: if you are developing a posting bot, you must give the app permissions to post.
+![perms](/assets/images/twitterbot/perms.png)
 
 Host the script, navigate to it, click the big ass URL, allow the app to manage the account, and scoop up all your tokens. We will be needing them. 
 
@@ -58,9 +59,11 @@ Heres an example to send and retreive from the site. Its DEAD SIMPLE. You litera
 
 So putting this all together, what do we end up with? Well our efforts reward with a shit poster. The space is intentional. I present the following post from last night that had me in absolute fucking fits of laughter at the absurdity of it.
 
+![result](/assets/images/twitterbot/result.jpg)
+
 This is another of those silly ideas that floated into my conciousness while on a flight a while ago, something dredged up out of my past desires I had long forgotten about. Originally I wanted to get an LCD hat for my rpi and have it display the card of the day on the hat (somehow I dont think I am using that word right) but given it lives connected to a USB port behind my television, I most certainly will not be looking at it.
 
 Could this be done via an LLM on the rpi? It could, in theory. But these shit tweets are generated with am 80b param model; anything capable of fitting on an rpi would be an order of magnitude worse.
 
 Here is the final script. Somehow, despite pumping project after project out, my to do list keeps fucking growing. 
-
+![notfine](/assets/images/twitterbot/notfine.jpg)
