@@ -10,7 +10,7 @@ tags:
   - AI
 ---
 
-Alternatively titled "DIY self licking icecream cone", "Spend a weekend building the worlds worst Pojos Forum clone", and other very unclever titlings.
+Alternatively titled "DIY self licking icecream cone", "Spend a weekend building the worlds worst Pojos Forum clone", and other very unclever titlings. tldr steps(ish) on how to overcome stumbling blocks I encountered when building out a very useless twitter bot that posts a Yu-Gi-Oh! card every two hours, complete with full card art from the ygoprodb and a description provided by an 80b param llama 3.
 
 It has dawned on me that I am actually entering another manic period, [much like in June when I went through](https://github.com/onecloudemoji/C.A.P.S.U.L.E.S./tree/main/Guarded%20Machines%20Still%20Accessible) a [number of projects](https://onecloudemoji.github.io/pentesting/simulating-cve-fuzzing/) in [a period of weeks](https://onecloudemoji.github.io/pentesting/music/vst-code-exec/), I am doing the same thing again. It is like I have woken up from sleepwalking and am aware how much ground I have lost while trying to not kill myself, so I must produce and conquer projects at a rapid pace just to not move backwards. The list of items in my blog post list is increasing at an insane rate; armed with token generation machines and a fresh perspective I am the most powerful version of myself I could have ever imagined.
 
