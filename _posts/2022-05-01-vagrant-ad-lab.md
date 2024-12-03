@@ -2,13 +2,13 @@
 title: "Automated Active Directory Lab"
 date: 2022-05-01
 categories:
-  - Labbing
+  - labbing
   
 tags:
-  - Windows
-  - Lab
-  - Kerberoast
-  - Vagrant
+  - windows
+  - lab
+  - kerberoast
+  - vagrant
 ---
 
 On a trip away, I caught up with my [hacking homie](https://kymb0.github.io/) for a bit. We commenced work on some personal projects while watching lotr and sipping whisky. What was born from this was the finalisation of a project that’s been on my todo list for literally years; [self deploying AD infrastructure](https://github.com/onecloudemoji/ADLAB).
