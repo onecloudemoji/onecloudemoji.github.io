@@ -8,6 +8,7 @@ categories:
 tags:
   - pentesting
   - music
+  - rants
 ---
 
 Alternative titles for this post I came up with included  "What is premium?" and the exceedingly clever "Premium and the art of good enough".
