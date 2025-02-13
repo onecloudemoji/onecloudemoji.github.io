@@ -6,6 +6,7 @@ categories:
   
 tags:
   - study
+  - rants
 ---
 
 Games are games and learning is learning. I found out in the second fucking grade that never shall the two meet, because the quality of both declines.
