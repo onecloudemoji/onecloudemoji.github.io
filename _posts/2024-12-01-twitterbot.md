@@ -10,7 +10,7 @@ tags:
   - AI
 ---
 
-Alternatively titled "DIY self licking icecream cone", "Spend a weekend building the worlds worst Pojos Forum clone", and other very unclever titlings. tldr steps(ish) on how to overcome stumbling blocks I encountered when building out a very useless twitter bot that posts a Yu-Gi-Oh! card every two hours, complete with full card art from the ygoprodb and a description provided by an 80b param llama 3. Watch it be very wrong [here](https://x.com/Yugioh_COTD).
+Alternatively titled "DIY self licking icecream cone", "Spend a weekend building the worlds worst Pojos Forum clone", and other very unclever titlings. tldr steps(ish) on how to overcome stumbling blocks I encountered when building out a very useless twitter bot that posts a Yu-Gi-Oh! card every two hours, complete with full card art from the ygoprodb and a description provided by an 8b param llama 3. Watch it be very wrong [here](https://x.com/Yugioh_COTD).
 
 It has dawned on me that I am actually entering another manic period, [much like in June when I went through](https://github.com/onecloudemoji/C.A.P.S.U.L.E.S./tree/main/Guarded%20Machines%20Still%20Accessible) a [number of projects](https://onecloudemoji.github.io/pentesting/simulating-cve-fuzzing/) in [a period of weeks](https://onecloudemoji.github.io/pentesting/music/vst-code-exec/), I am doing the same thing again. It is like I have woken up from sleepwalking and am aware how much ground I have lost while trying to not kill myself, so I must produce and conquer projects at a rapid pace just to not move backwards. The list of items in my blog post list is increasing at an insane rate; armed with token generation machines and a fresh perspective I am the most powerful version of myself I could have ever imagined.
 
@@ -56,9 +56,9 @@ Two seperate steps need to occur; the image is uploaded to the server, and then 
 
 This is 1/3rd of the toy; yes it posts to twitter, but we need it to select a card out of the Yu-Gi-Oh! card database, and get a tweet from an LLM. I have attached here the scripts I used to [pull the cards from the pre 5DS sets from the ygoprodb API](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/get_cards_into_csv.ps1), and one [to pull the full card art](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/get_random_card_from_csv.ps1). Theres not a lot to it, and no real reason why I got gpt to write them in powershell. I think I was in the middle of cloning virtual machines so I didnt have a linux box available. Next a little function is run that will randomely select one out of the CSV file I have of all pre-5DS cards, make a call to the DB to get full card art and saves it. I probably need to add a function to clean up the saved files before it tips my RPI over.
 
-The irony is in all of this, the actual easiest part was the LLM. I have never heard of them before, and only stumbled upon them because I literally googled free llm api, [and found groq](https://groq.com/). I like it, it looks like grugq. And they provide a fucking LOT for free, half a million daily tokens. I am going to use all of them in an upcoming project, but for now I am happy that this service exists for my shitposting bot.
+~~The irony is in all of this, the actual easiest part was the LLM. I have never heard of them before, and only stumbled upon them because I literally googled free llm api, [and found groq](https://groq.com/). I like it, it looks like grugq. And they provide a fucking LOT for free, half a million daily tokens. I am going to use all of them in an upcoming project, but for now I am happy that this service exists for my shitposting bot.~~
 
-Heres an example to send and retreive from the site. Its DEAD SIMPLE. You literally feed it your api key, what model you want to use and what your prompt is.
+``Heres an example to send and retreive from the site. Its DEAD SIMPLE. You literally feed it your api key, what model you want to use and what your prompt is.``
 ````
 import os
 
@@ -80,6 +80,9 @@ chat_completion = client.chat.completions.create(
 
 print(chat_completion.choices[0].message.content)
 ````
+
+Yeah I got fucking BANNED and all my api keys revoked because I was rotating keys to avoid rate limits. So now it all runs off my NUC, where a little 8b param llama 3 model is sitting doing cpu only inference. Fuck it, it works, I cant be banned from my own shit, and it powers my article summary bot. Which I havent posted about yet, but will..
+
 So putting this all together, what do we end up with? Well our efforts reward with a shit poster. The space is intentional. I present the following post from last night that had me in absolute fucking fits of laughter at the absurdity of it.
 
 ![result](/assets/images/twitterbot/result.jpg)
