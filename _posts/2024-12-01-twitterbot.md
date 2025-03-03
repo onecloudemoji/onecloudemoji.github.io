@@ -91,5 +91,5 @@ This is another of those silly ideas that floated into my conciousness while on 
 
 Could this be done via an LLM on the rpi? It could, in theory. But these shit tweets are generated with am 80b param model; anything capable of fitting on an rpi would be an order of magnitude worse.
 
-[Here is the final script](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/final.py). Somehow, despite pumping project after project out, my to do list keeps fucking growing. 
+~~[Here is the final script](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/final.py).~~ [THIS](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/twitterbot/local.py) is the script post ban. Somehow, despite pumping project after project out, my to do list keeps fucking growing. 
 ![notfine](/assets/images/twitterbot/notfine.jpg)
