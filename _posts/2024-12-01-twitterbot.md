@@ -58,7 +58,7 @@ This is 1/3rd of the toy; yes it posts to twitter, but we need it to select a ca
 
 ~~The irony is in all of this, the actual easiest part was the LLM. I have never heard of them before, and only stumbled upon them because I literally googled free llm api, [and found groq](https://groq.com/). I like it, it looks like grugq. And they provide a fucking LOT for free, half a million daily tokens. I am going to use all of them in an upcoming project, but for now I am happy that this service exists for my shitposting bot.~~
 
-``Heres an example to send and retreive from the site. Its DEAD SIMPLE. You literally feed it your api key, what model you want to use and what your prompt is.``
+~~Heres an example to send and retreive from the site. Its DEAD SIMPLE. You literally feed it your api key, what model you want to use and what your prompt is.~~
 ````
 import os
 
