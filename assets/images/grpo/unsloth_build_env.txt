@@ -1,0 +1,185 @@
+install visual studio, and ensure all this shit is added
+
+all the c++ workloads
+the sdk workloads
+
+these individual components
+
+.NET Framework 4.8 SDK
+
+.NET Framework 4.7.2 targeting pack
+
+C# and Visual Basic Roslyn compilers
+
+MSBuild
+
+MSVC v143 - VS 2022 C++ x64/x86 build tools
+
+C++ 2022 Redistributable Update
+
+C++ CMake tools for Windows
+
+C++/CLI support for v143 build tools (Latest)
+
+MSBuild support for LLVM (clang-cl) toolset
+
+C++ Clang Compiler for Windows (19.1.1)
+
+Windows 11 SDK (10.0.22621.0)
+
+Windows Universal CRT SDK
+
+C++ 2022 Redistributable MSMs
+
+
+install git https://git-scm.com/downloads/win
+
+install cmake https://cmake.org/download/
+
+pop temrinal and run 'where git' without quotes and note where its at
+
+create conda
+
+in C:\Users\root\anaconda3\envs\NAME_OF_CONDA_VENV_GO_HERE\etc\conda\activate.d
+
+create a file called git_path.bat
+
+@echo off
+set "PATH=C:\Program Files\Git\cmd;%PATH%"
+
+if needed replace the path with the actual path gits at
+
+run C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat
+
+change the vs2019_compiler_vars.bat a little
+
+set "PY_VCRUNTIME_REDIST=%PREFIX%\bin\vcruntime140.dll" we want to remove the bin from the path, its not located there.
+
+we are going to change the vars file a LOT. we need to add in the paths of the compilers, the runtimes, everything. below is what got working on  mine with vs 2022. 
+
+
+@echo on
+:: Set env vars that tell distutils to use the compiler that we put on path
+SET DISTUTILS_USE_SDK=1
+:: This is probably not good. It is for the pre-UCRT msvccompiler.py *not* _msvccompiler.py
+SET MSSdk=1
+
+SET "VS_VERSION=17.13"
+SET "VS_MAJOR=17"
+SET "VS_YEAR=2022"
+
+set "MSYS2_ARG_CONV_EXCL=/AI;/AL;/OUT;/out"
+set "MSYS2_ENV_CONV_EXCL=CL"
+
+:: For Python 3.5+, ensure that we link with the dynamic runtime.  See
+:: http://stevedower.id.au/blog/building-for-python-3-5-part-two/ for more info
+set "PY_VCRUNTIME_REDIST=%PREFIX%\vcruntime140.dll"
+
+:: set CC and CXX for cmake
+set "CXX=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\Hostx64\x64\cl.exe"
+set "CC=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\bin\Hostx64\x64\cl.exe"
+
+set "VSINSTALLDIR="
+:: Try to find actual vs2017 installations
+for /f "usebackq tokens=*" %%i in (`vswhere.exe -nologo -products * -version ^[17.0^,18.0^] -property installationPath`) do (
+  :: There is no trailing back-slash from the vswhere, and may make vcvars64.bat fail, so force add it
+  set "VSINSTALLDIR=%%i\"
+)
+if not exist "%VSINSTALLDIR%" (
+    :: VS2019 install but with vs2017 compiler stuff installed
+	for /f "usebackq tokens=*" %%i in (`vswhere.exe -nologo -products * -requires Microsoft.VisualStudio.Component.VC.v142.x86.x64 -property installationPath`) do (
+	:: There is no trailing back-slash from the vswhere, and may make vcvars64.bat fail, so force add it
+	set "VSINSTALLDIR=%%i\"
+	)
+)
+if not exist "%VSINSTALLDIR%" (
+set "VSINSTALLDIR=%ProgramFiles%\Microsoft Visual Studio\2022\Professional\"
+)
+if not exist "%VSINSTALLDIR%" (
+set "VSINSTALLDIR=%ProgramFiles%\Microsoft Visual Studio\2022\Community\"
+)
+if not exist "%VSINSTALLDIR%" (
+set "VSINSTALLDIR=%ProgramFiles%\Microsoft Visual Studio\2022\BuildTools\"
+)
+if not exist "%VSINSTALLDIR%" (
+set "VSINSTALLDIR=%ProgramFiles%\Microsoft Visual Studio\2022\Enterprise\"
+)
+
+IF NOT "%CONDA_BUILD%" == "" (
+  :: building packages
+  set "INCLUDE=%LIBRARY_INC%;%INCLUDE%"
+  set "LIB=%LIBRARY_LIB%;%LIB%"
+  set "CMAKE_PREFIX_PATH=%LIBRARY_PREFIX%;%CMAKE_PREFIX_PATH%"
+) else (
+  :: normal environment
+  set "INCLUDE=%CONDA_PREFIX%\Library\include;%INCLUDE%"
+  set "LIB=%CONDA_PREFIX%\Library\lib;%LIB%"
+  set "CMAKE_PREFIX_PATH=%CONDA_PREFIX%\Library;%CMAKE_PREFIX_PATH%"
+)
+
+
+call :GetWin10SdkDir
+:: dir /ON here is sorting the list of folders, such that we use the latest one that we have
+for /F %%i in ('dir /ON /B "%WindowsSdkDir%\include"') DO (
+  if NOT "%%~i" == "wdf" (
+    :: SDKs including and after 10.0.22621.0 do not offer optimal compatibility with VS2019.
+    for /f "tokens=3 delims=." %%a in ("%%~i") do (
+        if %%a LSS 22621 (
+            SET WindowsSDKVer=%%~i
+        )
+    )
+  )
+)
+if errorlevel 1 (
+    echo "Didn't find any windows 10 SDK. I'm not sure if things will work, but let's try..."
+) else (
+    echo Windows SDK version found as: "%WindowsSDKVer%"
+)
+
+IF "win-64" == "win-64" (
+  set "CMAKE_GEN=Visual Studio 17 2022 Win64"
+  set "BITS=64"
+) else (
+  set "CMAKE_GEN=Visual Studio 17 2022"
+  set "BITS=32"
+)
+
+pushd %VSINSTALLDIR%
+set VSCMD_DEBUG=1
+CALL "VC\Auxiliary\Build\vcvars%BITS%.bat" -vcvars_ver=14.43 %WindowsSDKVer%
+popd
+
+IF "%CMAKE_GENERATOR%" == "" SET "CMAKE_GENERATOR=%CMAKE_GEN%"
+set "PATH=C:\Program Files\CMake\bin;%PATH%"
+
+:GetWin10SdkDir
+call :GetWin10SdkDirHelper HKLM\SOFTWARE\Wow6432Node > nul 2>&1
+if errorlevel 1 call :GetWin10SdkDirHelper HKCU\SOFTWARE\Wow6432Node > nul 2>&1
+if errorlevel 1 call :GetWin10SdkDirHelper HKLM\SOFTWARE > nul 2>&1
+if errorlevel 1 call :GetWin10SdkDirHelper HKCU\SOFTWARE > nul 2>&1
+if errorlevel 1 exit /B 1
+exit /B 0
+
+
+:GetWin10SdkDirHelper
+@REM `Get Windows 10 SDK installed folder`
+for /F "tokens=1,2*" %%i in ('reg query "%1\Microsoft\Microsoft SDKs\Windows\v10.0" /v "InstallationFolder"') DO (
+    if "%%i"=="InstallationFolder" (
+        SET WindowsSdkDir=%%~k
+    )
+)
+exit /B 0
+
+
+
+
+next install some more shit
+
+conda install nvidia::cuda --no-channel-priority
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+pip install "unsloth[windows] @ git+https://github.com/unslothai/unsloth.git"
+
+pip install ipykernel
+
+ta da, ready to rock
