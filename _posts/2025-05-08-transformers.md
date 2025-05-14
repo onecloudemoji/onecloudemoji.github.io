@@ -144,11 +144,13 @@ Brighter = more attention == more "relationship"
 
 As we can see, shat has been broken up! This is because shat is not in its vocab, so it is being split up into "sub word units".
 
-Let us change shat to shit, and see what happens!
+What else is cool though is we can see my and cat, as well as cat and my are linked in heads 0 and 1 respectively. It is working!
+
+Let us change shat to shit, and see what happens, since I have a feeling (well given I am writing this after conducting the experiment so I know) that shit should be in the list.
 
 ![shit](/assets/images/transformers/shit.png)
 
-Check it out, theres a corrolation between cat and shit on head 1! And shit and on on head 3!
+Check it out, theres a corrolation between cat and shit on head 1! And shit and on on head 3! Neat.
 
 This concludes our cursory look into what a transformer is, and is another post Ive been meaning to make since like last October. I am getting better at scrubbing things off the to do list; I finally bought that nice new drill last night I have been meaning to get for ages. 
 
