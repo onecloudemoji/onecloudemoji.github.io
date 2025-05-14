@@ -10,6 +10,8 @@ tags:
 
 I tried my absolute best to work in some robots in disguise and attention is all you need pun, but they all sucked so you get no alternative titles and a barely functional title as it is.
 
+![shat](/assets/images/transformers/sad_transformer.jpg)
+
 *"In the context of machine learning, a "transformer" refers to a type of neural network architecture that excels at processing sequential data, such as text or audio, by leveraging an "attention" mechanism"*
 
 Well that certainly technically qualifies as an answer, but raises more questions! Namely, what is attention?
@@ -20,11 +22,14 @@ OK, this makes some sense, sounds like how speed reading works (here is a good b
 
 This is pretty interesting; when we are taught to read there isnt a list of words that mean more than others at all times, its contextual. For instance: "a cat shat on my hat" vs "my cat shat on the hat". If we look at the words my and a. Their placement in the sentence structure changes it entirely; one is a personal tragedy and the other is an amusing anecdote i would chuckle about, respectively.
 
+![shat](/assets/images/transformers/cat_hat.jpg)
+I do not have a picture of what I seek but instead enjoy my cat wearing a hat.
+
 We are not taught that "my" or "a" holds more weight as a word, ie that instances of my are more "powerful" or deserve more "attention" (you getting it now?) than the word a, which is in itself another branch on this metaphor; a is a (lol) word and a letter and in some cases, a number. It is all contextual, and the models learn this context dependancy in the same way we do; by reading the current input and applying meaning at real time, unlike say linear regression where the model learns that the coffecient is equal to w and will always be equal to w, no matter the inputs.
 
 But how does the NN do it? 
 
-1. sentence is inputted. Lets use "my cat shat on a hat"
+1. Sentence is inputted. Lets use "my cat shat on a hat"
 
 2. The sentence is broken down into tokens. How tokens are defined depends on how the creater of the network defined it. For this instance, we will use words as tokens.
 
@@ -52,9 +57,9 @@ Vectors are randomly initialised at the start of training. During training, the 
 
 Once we have the words vectors from the table, we assign a positional encoding vector. This is important because despite the sentence being my cat shat on a hat, the vectors are not passed sequentially to the transformer; they are processed all at once! Without tagging the vectors to ensure they are reassembled in the right order (think TCP) we could end up looking at the wrong sentence, ie on a hat shat my cat (ok bad example because that actually still works lmfao)
 
-These are not tacked onto the end, a bunch of functions are performed against the inputs. I am not going to detail them because I a) dont understand them and b) as people smarter than me have said (BC YT AI VID link here) unless you are actually looking to reinvent the field, there is little benefit to getting into the weeds of the maths.
+These are not tacked onto the end, a bunch of functions are performed against the inputs. I am not going to detail them because I a) dont understand them and b) [as people smarter than me have said]([BC YT AI VID link here](https://www.youtube.com/watch?v=KPqx0t1uup8)) unless you are actually looking to reinvent the field, there is little benefit to getting into the weeds of the maths. This is not a quote from that video, but my very smart brain; I guarantee you Lewis Hamilton has 0 idea how the craft he pilots works, yet he is still able to hold the record for most F1 wins, ever.
 
-Our new table becomes
+Our new table becomes (once the not described math is applied)
 
 'my'	27287		0.23 0.44 -0.008		0.23 1.44 -0.008  
 'cat' 	28498		0.72 -0.45 0.33			1.56 0.09 1.17  
