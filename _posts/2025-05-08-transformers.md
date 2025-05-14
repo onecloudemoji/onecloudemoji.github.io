@@ -38,38 +38,40 @@ But how does the NN do it?
 This would look like 'my' 'cat' 'shat' 'on' 'a' 'hat'
 
 3. Each token is mapped to a unique numerical identifier based on the models vocab. In this instance, we will pretend the mapping washed out like so (for illustrative purposes it is irrelevent).
-
+```
 'my'	27287
 'cat' 	28498
 'shat' 	47385
 'on' 	7265
 'a' 	27020
 'hat'	3828
-
+```
 4. Each token id is converted to a dense vector (aka an embedding) to capture the meaning of it within the sentence. Wait, what is an embedding? A trainable lookup table where each ID in the vocab corrpospondes with a row, and each row is a vector (array/list) of floating point numbers.
 
 Vectors are randomly initialised at the start of training. During training, the model updates the vectors with similar usage patterns end up with similar embeddings. ie cat/dog might become closer, hat and helmet, shit and shat, onwards and upwards. The number of floats in each row is equal to the embedding size (which you set prior to training). For example the old BERT uses 768. Our fake example will use 3. Dense means that each element in the array must contain a value, unlike say IPV6 where you can just set :: and omitt part of your address. Elements in the array are usually (ie 99.9999% of the time) between -1 and 1.
 
+```
 'my'	27287		0.23 0.44 -0.008
 'cat' 	28498		0.72 -0.45 0.33
 'shat' 	47385		0.48 -0.92 0.16
 'on' 	7265		0.71 -0.33 0.04
 'a' 	27020		-0.77 0.88 0.29
 'hat'	3828		-0.65 0.01 0.63
+```
 
 Once we have the words vectors from the table, we assign a positional encoding vector. This is important because despite the sentence being my cat shat on a hat, the vectors are not passed sequentially to the transformer; they are processed all at once! Without tagging the vectors to ensure they are reassembled in the right order (think TCP) we could end up looking at the wrong sentence, ie on a hat shat my cat (ok bad example because that actually still works lmfao)
 
 These are not tacked onto the end, a bunch of functions are performed against the inputs. I am not going to detail them because I a) dont understand them and b) [as people smarter than me have said](https://www.youtube.com/watch?v=KPqx0t1uup8) unless you are actually looking to reinvent the field, there is little benefit to getting into the weeds of the maths. I guarantee you Lewis Hamilton has 0 idea how the craft he pilots works, yet he is still able to hold the record for most F1 wins, ever. You dont know all the details about how something works to push the limits of what is possible with it.
 
 Our new table becomes (once the not described math is applied)
-
+```
 'my'	27287		0.23 0.44 -0.008		0.23 1.44 -0.008  
 'cat' 	28498		0.72 -0.45 0.33			1.56 0.09 1.17  
 'shat' 	47385		0.48 -0.92 0.16			1.39 -1.34 1.07  
 'on' 	7265		0.71 -0.33 0.04			0.85 -1.32 0.18  
 'a' 	27020		-0.77 0.88 0.29			-1.53 0.23 -0.47  
 'hat'	3828		-0.65 0.01 0.63			-1.61 0.29 -0.33
-
+```
 5. Attention Calculation is calculated. The transformer doesn’t just stare at the word vectors and guess what's important. It projects each word into three new vectors using mini neural networks (well, linear layers):
 
 Query (Q): What am I looking for?
