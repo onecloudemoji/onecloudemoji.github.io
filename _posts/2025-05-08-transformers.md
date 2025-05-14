@@ -22,9 +22,10 @@ OK, this makes some sense, sounds like how speed reading works (here is a good b
 
 This is pretty interesting; when we are taught to read there isnt a list of words that mean more than others at all times, its contextual. For instance: "a cat shat on my hat" vs "my cat shat on the hat". If we look at the words my and a. Their placement in the sentence structure changes it entirely; one is a personal tragedy and the other is an amusing anecdote i would chuckle about, respectively.
 
+I do not nor do I want an accessiable picture of a cat shitting on a hat, but instead enjoy my cat *wearing* a hat.
+
 ![shat](/assets/images/transformers/cat_hat.jpg)
 
-I do not nor do I want an accessiable picture of a cat shitting on a hat, but instead enjoy my cat *wearing* a hat.
 
 We are not taught that "my" or "a" holds more weight as a word, ie that instances of my are more "powerful" or deserve more "attention" (you getting it now?) than the word a, which is in itself another branch on this metaphor; a is a (lol) word and a letter and in some cases, a number. It is all contextual, and the models learn this context dependancy in the same way we do; by reading the current input and applying meaning at real time, unlike say linear regression where the model learns that the coffecient is equal to w and will always be equal to w, no matter the inputs.
 
