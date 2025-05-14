@@ -123,3 +123,5 @@ Check it out, theres a corrolation between cat and shit on head 1! And shit and 
 This concludes our cursory look into what a transformer is, and is another post Ive been meaning to make since like last October. I am getting better at scrubbing things off the to do list; I finally bought that nice new drill last night I have been meaning to get for ages. 
 
 Stay tuned for more halfbaked musings, hopefully the next one will finally be where I post about the workflows (bash and python loops) I have set up that literally make me feel like I have command over the palantir. 
+
+![palantir](/assets/images/agency/palantir.jpg)
