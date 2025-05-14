@@ -124,6 +124,8 @@ In our case, it is 3 layers. Output from pass 1 is fed as input for pass 2, and 
 #### FIN
 Once we have processed the input through all N layers, were left with another sequence of vectors; one per input token. With this sequence, we can move to output generation. This is not really part of the transformer now, so we will assume the outputter is a magic box capable of giving me gold coins and a good nights rest.
 
+![coins](/assets/images/transformers/coins.jpg)
+
 So now we know (in theory) how transformers work. And we could (in theory) patch together our own implementation! But, much like upon finishing the hardware section of NAND2TETRIS, the reality is "you could, but noone does this because it already exists on the shelf". This is not meant to be disliiusioning, in fact it is freeing. One COULD produce an entire CPU from nand gates, just as one could grab existing components and use them. It all depends what you want. I could use existing research and bookmark management software, or I could put my own together with string and glue. This is like the 4th or 5th time I have mentioned this project without posting it, I will get there.
 
 #### DEMO
