@@ -38,6 +38,8 @@ But how does the NN do it?
 This would look like 'my' 'cat' 'shat' 'on' 'a' 'hat'
 
 3. Each token is mapped to a unique numerical identifier based on the models vocab. In this instance, we will pretend the mapping washed out like so (for illustrative purposes it is irrelevent).
+
+
 ```
 'my'	27287
 'cat' 	28498
@@ -46,6 +48,8 @@ This would look like 'my' 'cat' 'shat' 'on' 'a' 'hat'
 'a' 	27020
 'hat'	3828
 ```
+
+
 4. Each token id is converted to a dense vector (aka an embedding) to capture the meaning of it within the sentence. Wait, what is an embedding? A trainable lookup table where each ID in the vocab corrpospondes with a row, and each row is a vector (array/list) of floating point numbers.
 
 Vectors are randomly initialised at the start of training. During training, the model updates the vectors with similar usage patterns end up with similar embeddings. ie cat/dog might become closer, hat and helmet, shit and shat, onwards and upwards. The number of floats in each row is equal to the embedding size (which you set prior to training). For example the old BERT uses 768. Our fake example will use 3. Dense means that each element in the array must contain a value, unlike say IPV6 where you can just set :: and omitt part of your address. Elements in the array are usually (ie 99.9999% of the time) between -1 and 1.
@@ -72,12 +76,16 @@ Our new table becomes (once the not described math is applied)
 'a' 	27020		-0.77 0.88 0.29			-1.53 0.23 -0.47  
 'hat'	3828		-0.65 0.01 0.63			-1.61 0.29 -0.33
 ```
+
 5. Attention Calculation is calculated. The transformer doesn’t just stare at the word vectors and guess what's important. It projects each word into three new vectors using mini neural networks (well, linear layers):
+
+
 ```
 Query (Q): What am I looking for?
 Key (K): What do I offer?
 Value (V): What info do I carry?
 ```
+
 For every word, the model compares the query of that word with the keys of all other words using dot products. A dot product is a math operation between two lists of numbers that gives you a single output telling you how similar the two lists/vectors are. This tells it how much attention to pay to each other word.
 
 Then it squashes those comparisons with a softmax to get probabilities. A softmax is where we turn a list of numbers into a probability distribution, which is a list of values between 0 and 1 that all add up to 1. I vaguely recall this shit from a stupid uni class I did in summer semester because I was behind in credits. Basically things that are more probable get weighted higher (almost stunningly obvious here). It uses theese probabilities to blend together the values, creating a new vector that mixes in info from all the other tokens depending on relevance.
