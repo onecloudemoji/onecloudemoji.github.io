@@ -10,11 +10,11 @@ tags:
 
 I tried my absolute best to work in some robots in disguise and attention is all you need pun, but they all sucked so you get no alternative titles and a barely functional title as it is.
 
-"In the context of machine learning, a "transformer" refers to a type of neural network architecture that excels at processing sequential data, such as text or audio, by leveraging an "attention" mechanism"
+*"In the context of machine learning, a "transformer" refers to a type of neural network architecture that excels at processing sequential data, such as text or audio, by leveraging an "attention" mechanism"*
 
 Well that certainly technically qualifies as an answer, but raises more questions! Namely, what is attention?
 
-"Attention is a machine learning method that determines the importance of each component in a sequence relative to the other components in that sequence."
+*"Attention is a machine learning method that determines the importance of each component in a sequence relative to the other components in that sequence."*
 
 OK, this makes some sense, sounds like how speed reading works (here is a good blog on it I paroosed some time ago from [Tim Ferris](https://tim.blog/2009/07/30/speed-reading-and-accelerated-learning/) that i can confirm does work (but i dont do it, i find joy in reading and do so slowly)). Essentially in any given sentence, there are words that provide more value to the overall meaning trying to be conveyed. Attention, in the ML sense, is a method used to do the same thing, work out which words are important.
 
@@ -104,15 +104,19 @@ Our little demo, will now use the transformers package. There is a little bit of
 
 ````pip install transformers torch matplotlib````
 
-Run this python script.
+Run [this](https://raw.githubusercontent.com/onecloudemoji/onecloudemoji.github.io/refs/heads/master/assets/images/transformers/transformer_visualise.py) python script.
 
 Each square in a heatmap represents how much one token (on the Y-axis) pays attention to another token (on the X-axis).
 
 Brighter = more attention == more "relationship"
 
+![shat](/assets/images/transformers/shat.png)
+
 As we can see, shat has been broken up! This is because shat is not in its vocab, so it is being split up into "sub word units".
 
 Let us change shat to shit, and see what happens!
+
+![shit](/assets/images/transformers/shit.png)
 
 Check it out, theres a corrolation between cat and shit on head 1! And shit and on on head 3!
 
