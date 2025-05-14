@@ -59,7 +59,7 @@ Vectors are randomly initialised at the start of training. During training, the 
 
 Once we have the words vectors from the table, we assign a positional encoding vector. This is important because despite the sentence being my cat shat on a hat, the vectors are not passed sequentially to the transformer; they are processed all at once! Without tagging the vectors to ensure they are reassembled in the right order (think TCP) we could end up looking at the wrong sentence, ie on a hat shat my cat (ok bad example because that actually still works lmfao)
 
-These are not tacked onto the end, a bunch of functions are performed against the inputs. I am not going to detail them because I a) dont understand them and b) [as people smarter than me have said]([BC YT AI VID link here](https://www.youtube.com/watch?v=KPqx0t1uup8)) unless you are actually looking to reinvent the field, there is little benefit to getting into the weeds of the maths. This is not a quote from that video, but my very smart brain; I guarantee you Lewis Hamilton has 0 idea how the craft he pilots works, yet he is still able to hold the record for most F1 wins, ever.
+These are not tacked onto the end, a bunch of functions are performed against the inputs. I am not going to detail them because I a) dont understand them and b) [as people smarter than me have said](https://www.youtube.com/watch?v=KPqx0t1uup8) unless you are actually looking to reinvent the field, there is little benefit to getting into the weeds of the maths. This is not a quote from that video, but my very smart brain; I guarantee you Lewis Hamilton has 0 idea how the craft he pilots works, yet he is still able to hold the record for most F1 wins, ever.
 
 Our new table becomes (once the not described math is applied)
 
