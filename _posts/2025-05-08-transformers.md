@@ -107,7 +107,7 @@ Remember at their core, NNs are stasticical machines, and a lot of stats is sift
 
 So now we know (in theory) how transformers work. And we could (in theory) patch together our own implementation! But, much like upon finishing the hardware section of NAND2TETRIS, the reality is "you could, but noone does this because it already exists on the shelf". This is not meant to be disliiusioning, in fact it is freeing. One COULD produce an entire CPU from nand gates, just as one could grab existing components and use them. It all depends what you want. I could use existing research and bookmark management software, or I could put my own together with string and glue. This is like the 4th or 5th time I have mentioned this project without posting it, I will get there.
 
-Our little demo, will now use the transformers package. There is a little bit of downloading we must do. Torch, transformers and the little model are approx half a gb.
+Our little demo, will now use the transformers package. There is a little bit of downloading we must do. Torch, transformers and the little model are approx half a gb. This will visualise the correlation that goes on during the attention mechanism. As we are not doing anything with the outputs as mentioned in step 11, there will be no follow through or response, because that is a very very different topic. Much as reading and writing are linked, they are taught independantly becuase after all, they ARE different topics.  
 
 ````pip install transformers torch matplotlib````
 
