@@ -1,6 +1,6 @@
 ---
 title: "Time Dulls the Bleeding Edge"
-date: 2025-08-10
+date: 2025-10-08
 categories:
   - learning
   - experiments
@@ -99,5 +99,6 @@ i have referenced multiple times the concept of agents being bash loops. this is
 back to the main point here; unless you are actively invested in pushing the boundaries and being a fronteirer in your respective domain, there is little ADVANTAGE to being on the bleeding edge. the truth of all my little experiments, despite their seemingly disapointing conclusions (because for some reason i attributed being a super special unique flower with providing me satisfaction) the undeniable reality of it is i built them because it was fun. the fact they served a purpose is incidental and tangental; these pieces are only getting mentioned because they are the ones actively in use today - other pieces suchg as the novel drafting toolkit and the barebones of a pokemon playing agent and a series of jwt tools in a workflow were built out but sit in a folder called 'zzz_requires sorting' where they will probably be deleted once its been a year since i last touched them.
 
 its fun to build things. its exhausting racing to be first all the time. it is also impossible to be across every piece of new research from every lab. id rather spend time in my own lab tinkering with stupid shit and being delighted and building for the fuck of it. because ultimately, in what has to be the most cruel joke to those chasing the bleeding edge, time will erode that edge. if i ignore what is happening in The Field (an interchangble placeholder for ml/infosec/whatever it is that has my attention this month) for any period of time, whatever is at the forefront when i return will have overrode whatever i missed while i was away, almost as if it never happened, making it extremley futile to even attempt to continually chase the every shifting fronteir. 
+
 
 this has been a somewhat cleansing musing and in some ways feels spiritually like the end of  year summaries i write into my sigil book every year. things didnt really go to plan most of the time, but only because i have the freedom to potter and fuck around with little doodads and build oddities was i able to even miss the mark. 
