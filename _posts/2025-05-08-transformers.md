@@ -109,7 +109,7 @@ Since our example has an embedding size of 3, we can use 3 heads, or 1 heads, si
 #### The output from the heads is passed through a feedforward neural network. 
 This is a tiny nn with a ReLU in the middle. Which is Rectified Linear Unit. It basically, not to triviliase it too much, takes any negative inputs and returns 0. Its kinda like an inverse compressor; where a compressor will take anything too positive and crush it to x, ReLU will take anything too negative (ie negative at all) and push it up to 0.
 
-Why on earth would we do this? Without a non-linear activation function (like a ReLU) our little FFNN will, by virtue of NOT being non-linear (ie BEING linear) is just going to stack its linear operations ontop of each other, bigger and bigger, upwards and upwards, like a straight line. This is nice for things such as [measuring the relationship between sulphur presence and demonic entities](blog link go here) but things like words, semantics and meaning, context, are not linear, simple things to understand. So we need to make our functions "non simple" and able to repersent non linear patterns like curves, corners etc instead of big ass straight lines.
+Why on earth would we do this? Without a non-linear activation function (like a ReLU) our little FFNN will, by virtue of NOT being non-linear (ie BEING linear) is just going to stack its linear operations ontop of each other, bigger and bigger, upwards and upwards, like a straight line. This is nice for things such as measuring the relationship between sulphur presence and demonic entities but things like words, semantics and meaning, context, are not linear, simple things to understand. So we need to make our functions "non simple" and able to repersent non linear patterns like curves, corners etc instead of big ass straight lines.
 
 #### Processed inputs (ie all negatives brought to 0) are added back to the original input of the FFNN.
 This helps the model retain the original signal (context from earlier layers), helps prevent the nw forgetting useful patterns, enables gradient flow through the networks. 
@@ -157,3 +157,4 @@ This concludes our cursory look into what a transformer is, and is another post 
 Stay tuned for more halfbaked musings, hopefully the next one will finally be where I post about the workflows (bash and python loops) I have set up that literally make me feel like I have command over the palantir. 
 
 ![palantir](/assets/images/agency/palantir.jpg)
+
