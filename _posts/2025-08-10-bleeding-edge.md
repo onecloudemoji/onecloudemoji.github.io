@@ -35,7 +35,7 @@ I then find out, a week after its finished, ironically through a summary email, 
 
 Here is a small tally of the artefacts produced. This list will be updated as the story continues towards its laboured and confused conclusion.
 
-•web scraper
+•web scraper  
 •ability to "see" contents of webpages
 
 It is january 2025. Rumblings begin about this "deep research" business. It sounds pretty fantastic, and the next logical step of the above project; instead of providing the product to distill, have it go and RETREIVE its own product and THEN distill. Everything that had been mentioned about it at this point indicated it was (and it indeed turned out to be true) going to be gatekept behind the $200 USD per month subscription. So a line entry was put onto The Whiteboard (TM) saying i was going to build out a deep research tool of my own. Not having used one i was not too sure exactly what it needed, but figured being able to "see" webpages was a great start, and perhaps some sort of OCR capability to read PDFs?
@@ -44,8 +44,8 @@ A second function is added to the website; to ingest pdfs, run an ocr tool over 
 
 the tally so far sits at
 
--web scraper
--ability to "see" contents of webpages
+-web scraper  
+-ability to "see" contents of webpages  
 -ability to "see" contents of pdfs
 
 It is february, and I have my nice lime green yeti from my wife and my new ebook reader. I quite like my ebook reader. Being eink however, it does have some problems with webpages. Not every web page can be properly scraped by my toolset, because I am limited by the context length of the llama 8b model I am hosting; some pages are simply too large. I have a clunky sort of check mechanism in place to validate its under 30k tokens, this works and prevents it fucking out and requiring me to ssh into boxes id rather not touch. So if a site is too big to be summarised, this means its too big for me to read on the computer (I dont like READING on the computer, I SKIM fine, but I want somethign nicer to my eyes for long haul reads (which is ironic because editing this inside darkmode github is doing bad things to my sight)). So a new addition to the site was generated that will take a website, make a pdf of it and then crunch that through to an epub. It works well but I was really kidding myself cause most of the epubs I have generated I still havent read. cest la vie.
@@ -108,6 +108,7 @@ Its fun to build things. Its exhausting racing to be first all the time. It is a
 This has been a somewhat cleansing musing and in some ways feels spiritually like the end of  year summaries I write into my sigil book every year. Things didnt really go to plan most of the time, but only because I have the freedom to potter and fuck around with little doodads and build oddities was I able to even miss the mark. There is a quote I saw I very much like; "you waste years not being able to waste hours". I will not elaborate any further, but end this with a koan - if I wasnt actively building out the toolsets I was supplanted by, would I have ever known about their existence?
 
 I forged a key and found the door already open. Had I not forged, would the hinge have shown itself?
+
 
 
 
