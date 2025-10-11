@@ -44,18 +44,18 @@ A second function is added to the website; to ingest pdfs, run an ocr tool over 
 
 the tally so far sits at
 
--web scraper  
--ability to "see" contents of webpages  
--ability to "see" contents of pdfs
+•web scraper  
+•ability to "see" contents of webpages  
+•ability to "see" contents of pdfs
 
 It is february, and I have my nice lime green yeti from my wife and my new ebook reader. I quite like my ebook reader. Being eink however, it does have some problems with webpages. Not every web page can be properly scraped by my toolset, because I am limited by the context length of the llama 8b model I am hosting; some pages are simply too large. I have a clunky sort of check mechanism in place to validate its under 30k tokens, this works and prevents it fucking out and requiring me to ssh into boxes id rather not touch. So if a site is too big to be summarised, this means its too big for me to read on the computer (I dont like READING on the computer, I SKIM fine, but I want somethign nicer to my eyes for long haul reads (which is ironic because editing this inside darkmode github is doing bad things to my sight)). So a new addition to the site was generated that will take a website, make a pdf of it and then crunch that through to an epub. It works well but I was really kidding myself cause most of the epubs I have generated I still havent read. cest la vie.
 
 thus far we have 
 
--web scraper
--ability to "see" contents of webpages
--ability to "see" contents of pdfs
--ability to take sites too big to parse summaries from and crunch to pdf -> epub
+•web scraper  
+•ability to "see" contents of webpages  
+•ability to "see" contents of pdfs  
+•ability to take sites too big to parse summaries from and crunch to pdf -> epub  
 
 It is march and I am talking a lot about using ai to aid in testing. And I do, in indirect ways. I have no interest in feeding entire dumps of traffic to the tool; as an experiment I tried this and it fucking CHOKED, was a very pointless afternoon. it is march, and i decided to take [burpference](https://github.com/dreadnode/burpference) to the nth degree and cobbled my own config together to get it to point to my lmstudio api. Escaping all the shit that appears in raw traffic logs was a nightmare. It languished on the ever present to do list for a while, because I could feel that with some more work, it was actually going to be an insanely useful tool. Surgical, targeted precision instead of asking the poor little palantir to eat the firehose
 
@@ -65,34 +65,34 @@ Imagine my disappointment (yes I AM that conceited, how did you know?) when a fe
 
 we have obtained at this point
 
--a web scraper
--a tool with the ability to "see" contents of webpages
--a tool with the ability to "see" contents of pdfs.
--ability to take sites too big to parse summaries from and crunch to pdf -> epub
--a real hard lesson in the differences in compute between my 3060 and real inference g/tpus
+•a web scraper  
+•a tool with the ability to "see" contents of webpages  
+•a tool with the ability to "see" contents of pdfs.  
+•ability to take sites too big to parse summaries from and crunch to pdf -> epub  
+•a real hard lesson in the differences in compute between my 3060 and real inference g/tpus  
 
 It is may, and I get around to testing the gemma models. These have vision capabilities, but lmstudio does not. I want to be able to feed the model an image and have it describe it and or read whats on it if needed. This feels like another step towards the diy at home deep research capes I am still planning on building out. Its felt like a "missing piece" for quite a while now; gpt has had the ability to see images for ages, why not the at home models? So a new api is written up, that will ingest an uploaded image and retreive a description from gemma. It would be nice for it to keep it in context however, not just discard it. This is a piece i am struggling with, and put the project down for a while.
 
 we have obtained at this point
 
--a web scraper
--a tool with the ability to "see" contents of webpages
--a tool with the ability to "see" contents of pdfs
--ability to take sites too big to parse summaries from and crunch to pdf -> epub
--a real hard lesson in the differences in compute between my 3060 and real inference g/tpus
--a half baked api to truely look at images
+•a web scraper  
+•a tool with the ability to "see" contents of webpages  
+•a tool with the ability to "see" contents of pdfs  
+•ability to take sites too big to parse summaries from and crunch to pdf -> epub  
+•a real hard lesson in the differences in compute between my 3060 and real inference g/tpus  
+•a half baked api to truely look at images  
 
 It is now june. we have a list of compostable pieces; with enough string and glue, surely we can take all of these seperate pieces and produce a functional deep research agent. It is june, and chatgpts deep research has been released to the plus subscribers, one of which is me. This is not demoralising; it is infact more impetus to get this project working, as I am blown the absolute fuck away by how good the product is and burn through my queries often. Nothing, and i mean fucking NOTHING i have used up to this point (STORM is the only name I can recall from my testing periods) has ever been able to properly address my test question about the yugioh ocg format in the late 90s. its esoteric as all fuck and its intentionally designed to trip the bots up. This is due to the inclusion of three letters - OCG. I will perhaps elaborate in another post another day.
 
 Surely, I have enough pieces to string together some sort of research model, right? It can get webpages, read them, get summaries, do the same with pdfs, format sites too big to parse normally, and look at images? This has got to be all thats required to get somethign semi useful up and running (and look future me genuinely agrees - cobbling them together WOULD produce some results of note for sure). But I am exposed to the project [local deep research](github.com/LearningCircuit/local-deep-research) and wouldnt you believe it it actually fucking works. So once again, I am thoroughly beaten to the punch, and become reasonably disappointed again that my work would be pointless upon this task. (see this post for steps to set it up - turns out i would spend about as much time as i figured it would take to BUILD something out trying to TROUBLESHOOT this solution)
 
--a web scraper
--a tool with the ability to "see" contents of webpages
--a tool with the ability to "see" contents of pdfs
--ability to take sites too big to parse summaries from and crunch to pdf -> epub
--a real hard lesson in the differences in compute between my 3060 and real inference g/tpus
--a half baked api to truely look at images
--a functional deep research tool for when i have burnt my OAI queries
+•a web scraper  
+•a tool with the ability to "see" contents of webpages  
+•a tool with the ability to "see" contents of pdfs  
+•ability to take sites too big to parse summaries from and crunch to pdf -> epub  
+•a real hard lesson in the differences in compute between my 3060 and real inference g/tpus  
+•a half baked api to truely look at images  
+•a functional deep research tool for when i have burnt my OAI queries
 
 It is september, and I am looking once again at RAG solutions. LM studio has an update, and it adds rag functionality...as well as this little icon. *lm image upload*
 
@@ -108,6 +108,7 @@ Its fun to build things. Its exhausting racing to be first all the time. It is a
 This has been a somewhat cleansing musing and in some ways feels spiritually like the end of  year summaries I write into my sigil book every year. Things didnt really go to plan most of the time, but only because I have the freedom to potter and fuck around with little doodads and build oddities was I able to even miss the mark. There is a quote I saw I very much like; "you waste years not being able to waste hours". I will not elaborate any further, but end this with a koan - if I wasnt actively building out the toolsets I was supplanted by, would I have ever known about their existence?
 
 I forged a key and found the door already open. Had I not forged, would the hinge have shown itself?
+
 
 
 
