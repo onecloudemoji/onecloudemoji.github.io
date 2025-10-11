@@ -1,3 +1,4 @@
+---
 title: "Time Dulls the Bleeding Edge"
 date: 2025-10-08
 categories:
