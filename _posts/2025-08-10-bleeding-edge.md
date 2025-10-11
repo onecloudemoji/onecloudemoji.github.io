@@ -23,8 +23,6 @@ After being very, very angry at being banned by groq I decided everything needed
 
 First plain old beauitfulsoup was employed, and it worked ok, some of the time, sometimes. Sites that use heavy amounts of javascript, like 4chan, refused to load properly and as such were not able to be scraped. Moving to selenium, I was then able to parse the posts in a random /x/ thread and receive summaries of it after chucking the raw parse to an llm. Progress!
 
-![progress](/assets/images/edge/progress.jpg)
-
 But then came sites that put content in particular tags. I will not be elaborating upon this because it was almost a full year ago and I dont recall exactly what the issues were and the artifacts I retained were only the final versions, not the progressions I am describing. This necessatated the combination of BOTH selenium and beauitfulsoup, as I couldnt work out how to control the selenium api enough to get the sort of control I am used to working with with beauitfulsoup (thanks to time spent refactoring the black hat python repo from p2 to p3 back in 2020 (you will have to believe that I did it, the repo has been deleted since the 2nd edition of the books come out, making it unnecessary to keep around (I do need to further my no starch press book additcion and get the 2nd ed))) so I had a strange mechanism that would first try a selenium pass, and if that failed to produce any content move to a bs scrape.
 
 I didnt like what bs (hue) this had turned into, and in the bath researched what alternatives to selenium existed. Every now and then I am surprised who releases foss tools of note, and in this instance I am refering to microsoft and playwright. an excellent tool, but necessetated me to throw out all I had put together thus far and begin anew, which ended up being the right move because it fucking works. I say works, in the current, present tense, because the code I and various gpts (including local ones!) cobbled together between december 24 and the 2nd of jan 25 when I hoisted it onto its permament home, is still intact. The only changes its received are context length expansions when I found gemma 3 4b was just as smart as llama 3.1 8b and lets me have 2x as much context for the same ram usage, and a reduction in the amount of articles I get per day. Everything else, has been running smoothly and perfectly except when telegram has an outtage.
@@ -58,8 +56,6 @@ thus far we have
 •ability to take sites too big to parse summaries from and crunch to pdf -> epub  
 
 It is march and I am talking a lot about using ai to aid in testing. And I do, in indirect ways. I have no interest in feeding entire dumps of traffic to the tool; as an experiment I tried this and it fucking CHOKED, was a very pointless afternoon. it is march, and i decided to take [burpference](https://github.com/dreadnode/burpference) to the nth degree and cobbled my own config together to get it to point to my lmstudio api. Escaping all the shit that appears in raw traffic logs was a nightmare. It languished on the ever present to do list for a while, because I could feel that with some more work, it was actually going to be an insanely useful tool. Surgical, targeted precision instead of asking the poor little palantir to eat the firehose
-
-*homer donut gif*
 
 Imagine my disappointment (yes I AM that conceited, how did you know?) when a few weeks later burp ai drops. And it does what i was lookign to do, but within the ui itself instead of via a second rate plugin modified by a third rate hack (me). Once again I am beaten to the punch, but this time I choose to not see my experiments through to their conclusion and throw them out.
 
@@ -108,6 +104,7 @@ Its fun to build things. Its exhausting racing to be first all the time. It is a
 This has been a somewhat cleansing musing and in some ways feels spiritually like the end of  year summaries I write into my sigil book every year. Things didnt really go to plan most of the time, but only because I have the freedom to potter and fuck around with little doodads and build oddities was I able to even miss the mark. There is a quote I saw I very much like; "you waste years not being able to waste hours". I will not elaborate any further, but end this with a koan - if I wasnt actively building out the toolsets I was supplanted by, would I have ever known about their existence?
 
 I forged a key and found the door already open. Had I not forged, would the hinge have shown itself?
+
 
 
 
