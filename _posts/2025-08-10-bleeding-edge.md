@@ -35,8 +35,8 @@ I then find out, a week after its finished, ironically through a summary email, 
 
 Here is a small tally of the artefacts produced. This list will be updated as the story continues towards its laboured and confused conclusion.
 
--web scraper
--ability to "see" contents of webpages
+•web scraper
+•ability to "see" contents of webpages
 
 It is january 2025. Rumblings begin about this "deep research" business. It sounds pretty fantastic, and the next logical step of the above project; instead of providing the product to distill, have it go and RETREIVE its own product and THEN distill. Everything that had been mentioned about it at this point indicated it was (and it indeed turned out to be true) going to be gatekept behind the $200 USD per month subscription. So a line entry was put onto The Whiteboard (TM) saying i was going to build out a deep research tool of my own. Not having used one i was not too sure exactly what it needed, but figured being able to "see" webpages was a great start, and perhaps some sort of OCR capability to read PDFs?
 
@@ -108,6 +108,7 @@ Its fun to build things. Its exhausting racing to be first all the time. It is a
 This has been a somewhat cleansing musing and in some ways feels spiritually like the end of  year summaries I write into my sigil book every year. Things didnt really go to plan most of the time, but only because I have the freedom to potter and fuck around with little doodads and build oddities was I able to even miss the mark. There is a quote I saw I very much like; "you waste years not being able to waste hours". I will not elaborate any further, but end this with a koan - if I wasnt actively building out the toolsets I was supplanted by, would I have ever known about their existence?
 
 I forged a key and found the door already open. Had I not forged, would the hinge have shown itself?
+
 
 
 
