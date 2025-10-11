@@ -1,4 +1,3 @@
-<img width="827" height="634" alt="image" src="https://github.com/user-attachments/assets/d5981537-a8dd-40b5-b6cd-5ebea0951f19" />---
 title: "Time Dulls the Bleeding Edge"
 date: 2025-10-08
 categories:
@@ -108,6 +107,7 @@ Its fun to build things. Its exhausting racing to be first all the time. It is a
 This has been a somewhat cleansing musing and in some ways feels spiritually like the end of  year summaries I write into my sigil book every year. Things didnt really go to plan most of the time, but only because I have the freedom to potter and fuck around with little doodads and build oddities was I able to even miss the mark. There is a quote I saw I very much like; "you waste years not being able to waste hours". I will not elaborate any further, but end this with a koan - if I wasnt actively building out the toolsets I was supplanted by, would I have ever known about their existence?
 
 I forged a key and found the door already open. Had I not forged, would the hinge have shown itself?
+
 
 
 
