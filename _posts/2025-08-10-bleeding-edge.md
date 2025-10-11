@@ -1,4 +1,4 @@
----
+<img width="827" height="634" alt="image" src="https://github.com/user-attachments/assets/d5981537-a8dd-40b5-b6cd-5ebea0951f19" />---
 title: "Time Dulls the Bleeding Edge"
 date: 2025-10-08
 categories:
@@ -22,6 +22,8 @@ This sets the scene (somewhat) for how a few of my tools have lived - running of
 After being very, very angry at being banned by groq I decided everything needed to be local, and set out to formulate my own tooling to solve issues and replicate products that are censored. I havent tried it again since then so this may be incorrect information now, but at the time the gpt web browser would for instance refuse to have a look at 4chan. I decided it would be a good idea to build out my own scaffolding to scrape web pages in order to have summaries sent to me. This was partially born from two realisations; I spend far too much time online, and, much like my api key debacle, I will probably get banned for wrongthink at some point in time for simply using the tools in a manner deemed unacceptable (ie putting them over links and articles unfit for corporate consumption).
 
 First plain old beauitfulsoup was employed, and it worked ok, some of the time, sometimes. Sites that use heavy amounts of javascript, like 4chan, refused to load properly and as such were not able to be scraped. Moving to selenium, I was then able to parse the posts in a random /x/ thread and receive summaries of it after chucking the raw parse to an llm. Progress!
+
+![progress](/assets/images/edge/progress.jpg)
 
 But then came sites that put content in particular tags. I will not be elaborating upon this because it was almost a full year ago and I dont recall exactly what the issues were and the artifacts I retained were only the final versions, not the progressions I am describing. This necessatated the combination of BOTH selenium and beauitfulsoup, as I couldnt work out how to control the selenium api enough to get the sort of control I am used to working with with beauitfulsoup (thanks to time spent refactoring the black hat python repo from p2 to p3 back in 2020 (you will have to believe that I did it, the repo has been deleted since the 2nd edition of the books come out, making it unnecessary to keep around (I do need to further my no starch press book additcion and get the 2nd ed))) so I had a strange mechanism that would first try a selenium pass, and if that failed to produce any content move to a bs scrape.
 
@@ -106,5 +108,6 @@ Its fun to build things. Its exhausting racing to be first all the time. It is a
 This has been a somewhat cleansing musing and in some ways feels spiritually like the end of  year summaries I write into my sigil book every year. Things didnt really go to plan most of the time, but only because I have the freedom to potter and fuck around with little doodads and build oddities was I able to even miss the mark. There is a quote I saw I very much like; "you waste years not being able to waste hours". I will not elaborate any further, but end this with a koan - if I wasnt actively building out the toolsets I was supplanted by, would I have ever known about their existence?
 
 I forged a key and found the door already open. Had I not forged, would the hinge have shown itself?
+
 
 
