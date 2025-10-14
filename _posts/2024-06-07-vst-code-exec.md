@@ -34,7 +34,7 @@ After finally realising how STUPID I was being for applying LOGIC to this repo, 
 
 ![champions](/assets/images/vst/champion.jpg)
 
-One may ask why did I even bother compiling this on Linux when it was always going to be used in a windows based daw? Because the last time I opened visual studio to compile a c# proxy server to reproduce [this blog on NetNTLM relaying]((https://badoption.eu/blog/2024/04/25/netntlm.html)), it bitched and moaned about needing updates like every modern game does when I open steam. Giving in i update, and imagine my disappointment and resentment for the steinberg repo maintainers (and myself) for not just starting with the windows compilation; it just fucking works. Flawlessly. No issues. Amazing. nothing required at all, it just works. I have wasted so much time trying to jam this project into linux for no good reason, other than I was too lazy to press update.
+One may ask why did I even bother compiling this on Linux when it was always going to be used in a windows based daw? Because the last time I opened visual studio to compile a c# proxy server to reproduce [this blog on NetNTLM relaying](https://badoption.eu/blog/2024/04/25/netntlm.html), it bitched and moaned about needing updates like every modern game does when I open steam. Giving in i update, and imagine my disappointment and resentment for the steinberg repo maintainers (and myself) for not just starting with the windows compilation; it just fucking works. Flawlessly. No issues. Amazing. nothing required at all, it just works. I have wasted so much time trying to jam this project into linux for no good reason, other than I was too lazy to press update.
 
 ![disappointment](/assets/images/vst/disappointment.jpg)
 
@@ -62,4 +62,5 @@ Also, the [C.A.P.S.U.L.E.S.](https://github.com/onecloudemoji/C.A.P.S.U.L.E.S.) 
 Back into the lab we go, the research wont conduct itself.
 
 ![lab](/assets/images/vst/lab.jpg)
+
 
